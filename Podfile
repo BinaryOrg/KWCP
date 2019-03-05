@@ -23,4 +23,6 @@ target 'KDCP' do
   pod 'SSZipArchive'
   pod 'Masonry'
   pod 'MFExtractColor'
+  pod 'MFHUDManager'
+
 end

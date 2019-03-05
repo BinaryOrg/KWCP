@@ -3,14 +3,14 @@
 //  Template
 //
 //  Created by 张冬冬 on 2019/2/19.
-//  Copyright © 2019 binary. All rights reserved.
+//  Copyright © 2019 KWCP. All rights reserved.
 //
 
 #import "ZDDTabBarController.h"
 #import "ZDDThemeConfiguration.h"
 #import "TEMPMacro.h"
 
-#import "ZDDOneTabController.h"
+#import "ZDDHomePageController.h"
 #import "ZDDTwoTabController.h"
 #import "ZDDThreeTabController.h"
 #import "ZDDFourTabController.h"
@@ -59,7 +59,7 @@ UITabBarControllerDelegate
 }
 
 - (void)setupChildViewControllers {
-    ZDDOneTabController *one = [[ZDDOneTabController alloc] initWithTabImageName:@"tab_now_nor"
+    ZDDHomePageController *one = [[ZDDHomePageController alloc] initWithTabImageName:@"tab_now_nor"
                                                                selectedImageName:@"tab_now_press"
                                                                            title:@"G"];
     ZDDTwoTabController *two = [[ZDDTwoTabController alloc] initWithTabImageName:@"tab_see_nor"

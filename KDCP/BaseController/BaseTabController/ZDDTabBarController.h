@@ -3,7 +3,7 @@
 //  Template
 //
 //  Created by 张冬冬 on 2019/2/19.
-//  Copyright © 2019 binary. All rights reserved.
+//  Copyright © 2019 KWCP. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
