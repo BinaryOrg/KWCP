@@ -67,7 +67,7 @@
         
         ASTextNode *nameTN = [ASTextNode new];
         nameTN.attributedText = [NSMutableAttributedString lh_makeAttributedString:@"豆腐" attributes:^(NSMutableDictionary *make) {
-            make.lh_font([UIFont fontWithName:@"PingFangSC-Medium" size:18]).lh_color([UIColor blueColor]);
+            make.lh_font([UIFont fontWithName:@"PingFangSC-Medium" size:18]).lh_color(GODColor(38, 79, 180));
         }];
         nameTN.style.minWidth = ASDimensionMake(ScreenWidth - 150);
         ASTextNode *countTN = [ASTextNode new];
