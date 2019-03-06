@@ -3,7 +3,7 @@
 //  KDCP
 //
 //  Created by Maker on 2019/3/5.
-//  Copyright © 2019 binary. All rights reserved.
+//  Copyright © 2019 KWCP. All rights reserved.
 //
 
 #import "ZDDMenuListController.h"
@@ -57,7 +57,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 250;
+    return 300;
 }
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{

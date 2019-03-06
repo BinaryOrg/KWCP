@@ -3,7 +3,7 @@
 //  KDCP
 //
 //  Created by Maker on 2019/3/5.
-//  Copyright © 2019 binary. All rights reserved.
+//  Copyright © 2019 KWCP. All rights reserved.
 //
 
 #import "ZDDMenuDetailTopCellNode.h"
@@ -45,6 +45,12 @@
     return self;
 }
 
+- (void)clickImageNode {
+    if ([self.delegate respondsToSelector:@selector(menuCellNode:didClickImageNode:clickIndex:)]) {
+        [self.delegate menuCellNode:self didClickImageNode:@[self.topImageNode] clickIndex:0];
+    }
+}
+
 - (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize {
     
     ASStackLayoutSpec *imgAndTitleSpec = [ASStackLayoutSpec stackLayoutSpecWithDirection:ASStackLayoutDirectionVertical spacing:20 justifyContent:ASStackLayoutJustifyContentStart alignItems:ASStackLayoutAlignItemsStart children:@[self.topImageNode, self.titleNode]];
@@ -62,6 +68,7 @@
     self.topImageNode = [[ASNetworkImageNode alloc] init];
     self.topImageNode.contentMode = UIViewContentModeScaleAspectFill;
     self.topImageNode.style.preferredSize = CGSizeMake(SCREENWIDTH, 300);
+    [self.topImageNode addTarget:self action:@selector(clickImageNode) forControlEvents:ASControlNodeEventTouchUpInside];
     [self addSubnode:self.topImageNode];
 }
 
@@ -82,6 +89,10 @@
     self.lineNode.backgroundColor = GODColor(238, 238, 238);
     [self.lineNode setLayerBacked:YES];
     [self addSubnode:self.lineNode];
+}
+
+- (void)dealloc {
+    self.delegate = nil;
 }
 
 @end

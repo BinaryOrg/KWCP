@@ -3,7 +3,7 @@
 //  WriteToYou
 //
 //  Created by Maker on 2019/2/21.
-//  Copyright © 2019 binary. All rights reserved.
+//  Copyright © 2019 KWCP. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

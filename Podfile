@@ -14,6 +14,7 @@ target 'KDCP' do
   pod 'MBProgressHUD',:inhibit_warnings => true
   pod 'YTKNetwork',:inhibit_warnings => true
   pod 'YYModel',:inhibit_warnings => true
+  pod 'YYCategories'
   pod 'Bugly',:inhibit_warnings => true
   pod 'Texture',:inhibit_warnings => true
   pod 'DateTools',:inhibit_warnings => true
@@ -25,5 +26,13 @@ target 'KDCP' do
   pod 'MFExtractColor'
   pod 'MFHUDManager'
   pod 'mob_smssdk'
+  
+  pod 'XHLaunchAd'
+  pod 'SDWebImage'
+  pod 'SDWebImage/GIF'
+  pod 'FLAnimatedImage'
 
+  pod 'AVOSCloud'               # 数据存储、短信、云引擎调用等基础服务模块
+  pod 'AVOSCloudIM'
+  
 end

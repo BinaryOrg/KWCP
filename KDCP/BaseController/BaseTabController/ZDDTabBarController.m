@@ -40,6 +40,7 @@ UITabBarControllerDelegate
     [super viewDidLoad];
     [self setupChildViewControllers];
     self.delegate = self;
+    self.hasCenterButton = NO;
     if (self.hasCenterButton) {
         UIButton *addButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [self.tabBar addSubview:addButton];

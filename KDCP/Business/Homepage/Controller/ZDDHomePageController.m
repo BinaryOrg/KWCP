@@ -3,12 +3,15 @@
 //  KDCP
 //
 //  Created by Maker on 2019/3/5.
-//  Copyright © 2019 binary. All rights reserved.
+//  Copyright © 2019 KWCP. All rights reserved.
 //
 
 #import "ZDDHomePageController.h"
 #import "ZDDCategoryTagView.h"
 #import "ZDDMenuListController.h"
+
+#import "UINavigationController+FDFullscreenPopGesture.h"
+
 
 @interface ZDDHomePageController ()<ZDDCategoryTagViewDelegate, UIPageViewControllerDelegate, UIPageViewControllerDataSource>
 
@@ -35,6 +38,8 @@
 - (void)setReloadBtn {
     
     self.title = @"菜谱大全";
+    self.fd_prefersNavigationBarHidden = YES;
+
     UIButton *reloadBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.view addSubview:reloadBtn];
     [reloadBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -55,8 +60,12 @@
 - (void)loadData {
     
     ZDDMenuModel *model = [ZDDMenuModel new];
-    model.title = @"aaa";
-    self.dataArrray = @[model];
+    model.title = @"家常菜";
+    
+    ZDDMenuModel *model1 = [ZDDMenuModel new];
+    model1.title = @"爽口菜";
+    
+    self.dataArrray = @[model, model1];
     [self setupUI];
     return;
     
@@ -88,7 +97,7 @@
     [self.changeTypeView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(0);
         make.top.mas_equalTo(0);
-        make.height.mas_equalTo(50);
+        make.height.mas_equalTo(55 + StatusBarHeight);
     }];
     
     [self addChildViewController:self.pageController];

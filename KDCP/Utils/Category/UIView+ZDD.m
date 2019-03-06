@@ -3,7 +3,7 @@
 //  V2EX
 //
 //  Created by Maker on 2019/2/16.
-//  Copyright © 2019 binary. All rights reserved.
+//  Copyright © 2019 KWCP. All rights reserved.
 //
 
 #import "UIView+ZDD.h"
@@ -21,6 +21,13 @@
     }
     return nil;
 }
+
+
+-(id)extra
+{
+    return objc_getAssociatedObject(self,@"uiview_extra");
+}
+
 #pragma mark - 快速返回frame的属性
 - (void)setX:(CGFloat)x
 {

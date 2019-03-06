@@ -3,7 +3,7 @@
 //  KDCP
 //
 //  Created by Maker on 2019/3/6.
-//  Copyright © 2019 binary. All rights reserved.
+//  Copyright © 2019 KWCP. All rights reserved.
 //
 
 #import "ZDDMenuBaseNavController.h"
@@ -30,7 +30,7 @@
     
     [self.navigationBar setShadowImage:[UIImage new]]; // 去除navBar下的1px的横线
     [self.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    
+    [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor],NSFontAttributeName : [UIFont fontWithName:@"PingFangSC-Light" size:17]}];
     // 设置导航控制器的代理
     self.delegate = self;
 }

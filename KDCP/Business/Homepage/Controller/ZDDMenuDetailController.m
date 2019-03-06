@@ -3,7 +3,7 @@
 //  KDCP
 //
 //  Created by Maker on 2019/3/5.
-//  Copyright © 2019 binary. All rights reserved.
+//  Copyright © 2019 KWCP. All rights reserved.
 //
 
 #import "ZDDMenuDetailController.h"
@@ -15,11 +15,14 @@
 #import "ZDDMenuFoodsListCellNode.h"
 #import "ZDDMenuOpenCommentCellNode.h"
 #import "ZDDmenuCollectView.h"
+#import "ZDDPhotoBrowseView.h"
+
+#import <YYAnimatedImageView.h>
 
 #import "UINavigationController+FDFullscreenPopGesture.h"
 
 
-@interface ZDDMenuDetailController () <ASTableDelegate, ASTableDataSource>
+@interface ZDDMenuDetailController () <ASTableDelegate, ASTableDataSource, ZDDMenuDelegate>
 
 @property (nonatomic, strong) ASTableNode *tableNode;
 
@@ -34,8 +37,10 @@
 }
 
 - (void)setupUI {
+    
     self.title = @"臭豆腐";
     self.fd_prefersNavigationBarHidden = YES;
+    
     [self.view addSubview:self.tableNode.view];
     [self.tableNode.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(0);
@@ -71,6 +76,34 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+//点击图片
+- (void)menuCellNode:(ASCellNode *)node didClickImageNode:(NSArray<ASNetworkImageNode *> *)imageNodes clickIndex:(NSInteger)index{
+    
+    NSMutableArray *tempArr = [NSMutableArray arrayWithCapacity:imageNodes.count];
+    [imageNodes enumerateObjectsUsingBlock:^(ASNetworkImageNode * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        LHPhotoGroupItem *item = [[LHPhotoGroupItem alloc]init];
+        YYAnimatedImageView * animatedIV = [[YYAnimatedImageView alloc] init];
+        animatedIV.image = obj.image;
+        item.thumbView = animatedIV;
+        item.largeImageURL = obj.URL;
+        [tempArr addObject:item];
+        //    item.largeImageSize = imageNode.image.size;
+    }];
+    
+    UIView *fromView = [imageNodes[index] view];
+    
+
+    ZDDPhotoBrowseView *photoGroupView = [[ZDDPhotoBrowseView alloc] initWithGroupItems:tempArr.copy];
+    [photoGroupView.pager removeFromSuperview];
+    photoGroupView.fromItemIndex = 0;
+    photoGroupView.backtrack = YES;
+    [photoGroupView presentFromImageView:fromView
+                             toContainer:self.navigationController.view
+                                animated:YES
+                              completion:nil];
+    
+}
+
 
 - (NSInteger)tableNode:(ASTableNode *)tableNode numberOfRowsInSection:(NSInteger)section {
 
@@ -81,6 +114,7 @@
     return ^ASCellNode *() {
         if (indexPath.row == 0) {
             ZDDMenuDetailTopCellNode *node = [[ZDDMenuDetailTopCellNode alloc] init];
+            node.delegate = self;
             node.selectionStyle = UITableViewCellSelectionStyleNone;
             return node;
         }
@@ -91,6 +125,7 @@
         }
         else if (indexPath.row == 2) {
             ZDDMenuStepsCellNode *node = [[ZDDMenuStepsCellNode alloc] init];
+            node.delegate = self;
             node.selectionStyle = UITableViewCellSelectionStyleNone;
             return node;
         }

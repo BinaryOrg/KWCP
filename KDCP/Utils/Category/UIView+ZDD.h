@@ -3,7 +3,7 @@
 //  V2EX
 //
 //  Created by Maker on 2019/2/16.
-//  Copyright © 2019 binary. All rights reserved.
+//  Copyright © 2019 KWCP. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -32,6 +32,14 @@ NS_ASSUME_NONNULL_BEGIN
  *  快速找出当前view所在的控制器
  */
 -(UIViewController *)viewController;
+
+
+/**
+ *  快速取出数据
+ */
+-(id)extra;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

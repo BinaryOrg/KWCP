@@ -13,6 +13,8 @@
 		371D3A34222E65B0007C14F7 /* ZDDMenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 371D3A33222E65B0007C14F7 /* ZDDMenuModel.m */; };
 		371D3A37222E697C007C14F7 /* ZDDMenuListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 371D3A36222E697C007C14F7 /* ZDDMenuListCell.m */; };
 		371D3A47222E77C2007C14F7 /* ZDDMenuDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371D3A46222E77C2007C14F7 /* ZDDMenuDetailController.m */; };
+		37655825222FB7EB00CC4D47 /* GODWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37655824222FB7EB00CC4D47 /* GODWebViewController.m */; };
+		37ADF4E1222FCCAE001FE491 /* ZDDPhotoBrowseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ADF4E0222FCCAE001FE491 /* ZDDPhotoBrowseView.m */; };
 		37F2A58B222EA23F00EACEC4 /* ZDDMenuDetailTopCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F2A58A222EA23F00EACEC4 /* ZDDMenuDetailTopCellNode.m */; };
 		37F2A591222EB5EE00EACEC4 /* ZDDMenuFoodsListCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F2A590222EB5EE00EACEC4 /* ZDDMenuFoodsListCellNode.m */; };
 		37F2A594222EBAAE00EACEC4 /* ZDDMenuStepsCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F2A593222EBAAE00EACEC4 /* ZDDMenuStepsCellNode.m */; };
@@ -73,6 +75,11 @@
 		371D3A36222E697C007C14F7 /* ZDDMenuListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDMenuListCell.m; sourceTree = "<group>"; };
 		371D3A45222E77C2007C14F7 /* ZDDMenuDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDMenuDetailController.h; sourceTree = "<group>"; };
 		371D3A46222E77C2007C14F7 /* ZDDMenuDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDMenuDetailController.m; sourceTree = "<group>"; };
+		37517A24222FC5AC006AC869 /* ZDDMenuDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDMenuDelegate.h; sourceTree = "<group>"; };
+		37655823222FB7EA00CC4D47 /* GODWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GODWebViewController.h; sourceTree = "<group>"; };
+		37655824222FB7EB00CC4D47 /* GODWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GODWebViewController.m; sourceTree = "<group>"; };
+		37ADF4DF222FCCAE001FE491 /* ZDDPhotoBrowseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDPhotoBrowseView.h; sourceTree = "<group>"; };
+		37ADF4E0222FCCAE001FE491 /* ZDDPhotoBrowseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDPhotoBrowseView.m; sourceTree = "<group>"; };
 		37F2A589222EA23F00EACEC4 /* ZDDMenuDetailTopCellNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDMenuDetailTopCellNode.h; sourceTree = "<group>"; };
 		37F2A58A222EA23F00EACEC4 /* ZDDMenuDetailTopCellNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDMenuDetailTopCellNode.m; sourceTree = "<group>"; };
 		37F2A58F222EB5EE00EACEC4 /* ZDDMenuFoodsListCellNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDMenuFoodsListCellNode.h; sourceTree = "<group>"; };
@@ -309,6 +316,23 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		37517A23222FC598006AC869 /* ZDDMenuDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				37517A24222FC5AC006AC869 /* ZDDMenuDelegate.h */,
+			);
+			path = ZDDMenuDelegate;
+			sourceTree = "<group>";
+		};
+		37ADF4DE222FCC8B001FE491 /* ZDDPhotoBrowse */ = {
+			isa = PBXGroup;
+			children = (
+				37ADF4DF222FCCAE001FE491 /* ZDDPhotoBrowseView.h */,
+				37ADF4E0222FCCAE001FE491 /* ZDDPhotoBrowseView.m */,
+			);
+			path = ZDDPhotoBrowse;
+			sourceTree = "<group>";
+		};
 		37F2A595222EC36D00EACEC4 /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,6 +441,7 @@
 		4AF49DCE221A8F3F004F45EB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				37ADF4DE222FCC8B001FE491 /* ZDDPhotoBrowse */,
 				37F2A595222EC36D00EACEC4 /* Category */,
 				4AF49E14221A9E31004F45EB /* ThemeColorConfiguration */,
 				4AF49DEE221A92F7004F45EB /* UIColorCategory */,
@@ -490,6 +515,7 @@
 		4AF49DFB221A95B2004F45EB /* BaseController */ = {
 			isa = PBXGroup;
 			children = (
+				37517A23222FC598006AC869 /* ZDDMenuDelegate */,
 				4AF49DFC221A95C9004F45EB /* BaseTabController */,
 			);
 			path = BaseController;
@@ -537,6 +563,8 @@
 		4AF49E07221A9AA8004F45EB /* ZDDFourTabController */ = {
 			isa = PBXGroup;
 			children = (
+				37655823222FB7EA00CC4D47 /* GODWebViewController.h */,
+				37655824222FB7EB00CC4D47 /* GODWebViewController.m */,
 				4AF49E11221A9B1A004F45EB /* ZDDFourTabController.h */,
 				4AF49E12221A9B1A004F45EB /* ZDDFourTabController.m */,
 			);
@@ -632,6 +660,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-KDCP/Pods-KDCP-resources.sh",
+				"${PODS_ROOT}/AVOSCloud/AVOS/AVOSCloud/AVOSCloud_Art.inc",
 				"${PODS_ROOT}/DateTools/DateTools/DateTools/DateTools.bundle",
 				"${PODS_ROOT}/MFHUDManager/Image/notice_type_error.png",
 				"${PODS_ROOT}/MFHUDManager/Image/notice_type_success.png",
@@ -642,6 +671,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AVOSCloud_Art.inc",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DateTools.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/notice_type_error.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/notice_type_success.png",
@@ -688,6 +718,7 @@
 				4AF49DE9221A92B8004F45EB /* Foundation+Log.m in Sources */,
 				37F2A5A4222EC36D00EACEC4 /* NSMutableDictionary+Attributes.m in Sources */,
 				37F5E367222F655000CAE1CE /* ZDDMenuLogInController.m in Sources */,
+				37ADF4E1222FCCAE001FE491 /* ZDDPhotoBrowseView.m in Sources */,
 				37F5E377222F777D00CAE1CE /* GODUserTool.m in Sources */,
 				371D3A34222E65B0007C14F7 /* ZDDMenuModel.m in Sources */,
 				371D3A30222E6190007C14F7 /* ZDDMenuListController.m in Sources */,
@@ -723,6 +754,7 @@
 				37F5E381222F7DC500CAE1CE /* ZDDMenuOpenCommentCellNode.m in Sources */,
 				37F2A5A7222EC36D00EACEC4 /* UIColor+CustomColors.m in Sources */,
 				37F2A5A5222EC36D00EACEC4 /* NSMutableAttributedString+Chain.m in Sources */,
+				37655825222FB7EB00CC4D47 /* GODWebViewController.m in Sources */,
 				4AF49DB4221A8A18004F45EB /* TEMPAppDelegate.m in Sources */,
 				371D3A2D222E60AB007C14F7 /* ZDDCategoryTagView.m in Sources */,
 				4AF49DE6221A92B8004F45EB /* NSDictionary+HYBUnicodeReadable.m in Sources */,
