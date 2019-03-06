@@ -39,6 +39,7 @@
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
     
     if (self.childViewControllers.count == 1) { // 根控制器
+       
         // 如果是根控制器,设回手势代理
         self.interactivePopGestureRecognizer.delegate = self.popDelegate;
     }
@@ -47,7 +48,9 @@
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     if (self.childViewControllers.count) { // 非根控制器
         viewController.hidesBottomBarWhenPushed = YES;
+        UIImage *backImage = [[UIImage imageNamed:@"nav_back_black"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         
+        viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:backImage style:0 target:self action:@selector(back)];
         self.interactivePopGestureRecognizer.delegate = nil;
     }
     [super pushViewController:viewController animated:animated];

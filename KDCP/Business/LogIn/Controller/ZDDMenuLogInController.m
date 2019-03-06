@@ -152,7 +152,7 @@
     loginBtn.backgroundColor = kRGBColor(24, 154, 204);
     [loginBtn setTitle:@"登录" forState:UIControlStateNormal];
     loginBtn.layer.cornerRadius = 3;
-    [loginBtn addTarget:self action:@selector(loginButtonDidClick) forControlEvents:UIControlEventTouchUpInside];
+    [loginBtn addTarget:self action:@selector(loginButtonDidClick:) forControlEvents:UIControlEventTouchUpInside];
     [loginBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.view addSubview:loginBtn];
     [loginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
