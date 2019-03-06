@@ -16,6 +16,10 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>MOBAppKey</key>
+	<string>2a57ee961466c</string>
+	<key>MOBAppSecret</key>
+	<string>a75c4b334a09581b7a22c11187a3a1ba</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>NSAppTransportSecurity</key>

@@ -44,10 +44,24 @@
         make.edges.mas_equalTo(0);
     }];
     
+    [self.backgroundIV addSubview:self.subTitleLb];
+    [self.subTitleLb mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(8);
+        make.bottom.mas_equalTo(-8);
+        make.right.mas_equalTo(-10);
+    }];
+    
+    [self.backgroundIV addSubview:self.titleLb];
+    [self.titleLb mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(8);
+        make.bottom.mas_equalTo(self.subTitleLb.mas_top).mas_equalTo(-8);
+        make.right.mas_equalTo(-10);
+    }];
+    
     
     self.backgroundIV.yy_imageURL = [NSURL URLWithString:@"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=208717556,829408777&fm=26&gp=0.jpg"];
-    
-    
+    self.titleLb.text = @"臭豆腐";
+    self.subTitleLb.text = @"正宗长沙臭豆腐，一口下去，满嘴清香，绕唇三日，消而不绝，口齿留香";
 }
 
 
@@ -66,7 +80,7 @@
 - (UILabel *)titleLb {
     if (!_titleLb) {
         _titleLb = [[UILabel alloc] init];
-        _titleLb.font = [UIFont fontWithName:@"PingFangSC-Mediu" size:18];
+        _titleLb.font = [UIFont fontWithName:@"PingFangSC-Medium" size:18];
         _titleLb.textAlignment = NSTextAlignmentLeft;
         _titleLb.textColor = [UIColor whiteColor];
     }

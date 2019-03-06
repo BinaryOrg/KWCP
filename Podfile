@@ -24,5 +24,6 @@ target 'KDCP' do
   pod 'Masonry'
   pod 'MFExtractColor'
   pod 'MFHUDManager'
+  pod 'mob_smssdk'
 
 end

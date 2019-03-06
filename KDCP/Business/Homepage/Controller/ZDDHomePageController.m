@@ -87,7 +87,7 @@
     [self.view addSubview:self.changeTypeView];
     [self.changeTypeView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(0);
-        make.top.mas_equalTo(NavBarHeight);
+        make.top.mas_equalTo(0);
         make.height.mas_equalTo(50);
     }];
     

@@ -14,6 +14,7 @@
 #import "ZDDTwoTabController.h"
 #import "ZDDThreeTabController.h"
 #import "ZDDFourTabController.h"
+#import "ZDDMenuBaseNavController.h"
 
 @interface ZDDTabBarController ()
 <
@@ -59,34 +60,35 @@ UITabBarControllerDelegate
 }
 
 - (void)setupChildViewControllers {
-    ZDDHomePageController *one = [[ZDDHomePageController alloc] initWithTabImageName:@"tab_now_nor"
-                                                               selectedImageName:@"tab_now_press"
-                                                                           title:@"G"];
-    ZDDTwoTabController *two = [[ZDDTwoTabController alloc] initWithTabImageName:@"tab_see_nor"
-                                                               selectedImageName:@"tab_see_press"
-                                                                           title:@"O"];
-    ZDDThreeTabController *three = [[ZDDThreeTabController alloc] initWithTabImageName:@"tab_qworld_nor"
-                                                                     selectedImageName:@"tab_qworld_press"
-                                                                                 title:@"D"];
-    ZDDFourTabController *four = [[ZDDFourTabController alloc] initWithTabImageName:@"tab_recent_nor"
-                                                                  selectedImageName:@"tab_recent_press"
-                                                                              title:@"Z"];
+    ZDDHomePageController *one = [[ZDDHomePageController alloc] init];
+
+    [self addChileVcWithTitle:@"菜谱大全" vc:one imageName:@"tab_now_nor" selImageName:@"tab_now_press"];
+
+    ZDDTwoTabController *two = [[ZDDTwoTabController alloc] init];
+    [self addChileVcWithTitle:@"G" vc:two imageName:@"tab_see_nor" selImageName:@"tab_see_press"];
     
-    UINavigationController *n1 = [[UINavigationController alloc] initWithRootViewController:one];
-    UINavigationController *n2 = [[UINavigationController alloc] initWithRootViewController:two];
-    UINavigationController *n3 = [[UINavigationController alloc] initWithRootViewController:three];
-    UINavigationController *n4 = [[UINavigationController alloc] initWithRootViewController:four];
     
-    [self addChildViewController:n1];
-    [self addChildViewController:n2];
-    if (self.hasCenterButton) {
-        UIViewController *center = [[UIViewController alloc] init];
-        [self addChildViewController:center];
-    }
-    [self addChildViewController:n3];
-    [self addChildViewController:n4];
+    ZDDThreeTabController *three = [[ZDDThreeTabController alloc] init];
+    [self addChileVcWithTitle:@"D" vc:three imageName:@"tab_qworld_nor" selImageName:@"tab_qworld_press"];
+    
+    
+    ZDDFourTabController *four = [[ZDDFourTabController alloc] init];
+    [self addChileVcWithTitle:@"G" vc:four imageName:@"tab_recent_nor" selImageName:@"tab_recent_press"];
+    
+    
     
 }
+
+- (void)addChileVcWithTitle:(NSString *)title vc:(UIViewController *)vc imageName:(NSString *)imageName selImageName:(NSString *)selImageName {
+    [vc.tabBarItem setTitle:title];
+    if (title.length) {
+        [vc.tabBarItem setImage:[[UIImage imageNamed:imageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+        [vc.tabBarItem setSelectedImage:[[UIImage imageNamed:selImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    }
+    ZDDMenuBaseNavController *navVc = [[ZDDMenuBaseNavController alloc] initWithRootViewController:vc];
+    [self addChildViewController:navVc];
+}
+
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
     //点击发布

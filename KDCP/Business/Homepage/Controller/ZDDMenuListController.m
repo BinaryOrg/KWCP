@@ -7,7 +7,7 @@
 //
 
 #import "ZDDMenuListController.h"
-
+#import "ZDDMenuDetailController.h"
 
 #import "ZDDMenuListCell.h"
 
@@ -45,8 +45,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     ZDDMenuListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ZDDMenuListCell"];
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
+    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ZDDMenuDetailController *vc = [[ZDDMenuDetailController alloc] init];
+     [self.navigationController pushViewController:vc animated:YES];
     
 }
 

@@ -6,11 +6,11 @@
 //  Copyright © 2019 KWCP. All rights reserved.
 //
 
-#import "TEMPBaseTabViewController.h"
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZDDFourTabController : TEMPBaseTabViewController
+@interface ZDDFourTabController : UIViewController
 
 @end
 

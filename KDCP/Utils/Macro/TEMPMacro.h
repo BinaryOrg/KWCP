@@ -26,7 +26,8 @@
 /** 顶部安全距离高度[适配PhoneX底部] */
 #define SafeAreaTopHeight (ScreenHeight >= 812.0 ? 24 : 0)
 #define SafeTabBarHeight (CGFloat)(ScreenHeight >= 812.0?(49.0 + 34.0):(49.0))
-
+// 手机屏幕自动适配
+#define AUTO_FIT(float) ((ScreenHeight < ScreenWidth ? ScreenHeight : ScreenWidth) / 375.0f * float)
 
 #define  SCREENWIDTH                       [UIScreen mainScreen].bounds.size.width
 #define  SCREENHEIGHT                      [UIScreen mainScreen].bounds.size.height
