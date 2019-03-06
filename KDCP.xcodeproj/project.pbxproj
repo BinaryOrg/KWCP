@@ -24,7 +24,6 @@
 		37F2A5A7222EC36D00EACEC4 /* UIColor+CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F2A5A0222EC36D00EACEC4 /* UIColor+CustomColors.m */; };
 		37F5E367222F655000CAE1CE /* ZDDMenuLogInController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F5E366222F655000CAE1CE /* ZDDMenuLogInController.m */; };
 		37F5E371222F726900CAE1CE /* logbgv.gif in Resources */ = {isa = PBXBuildFile; fileRef = 37F5E370222F726900CAE1CE /* logbgv.gif */; };
-		37F5E374222F762100CAE1CE /* NSString+Regex.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F5E372222F762000CAE1CE /* NSString+Regex.m */; };
 		37F5E377222F777D00CAE1CE /* GODUserTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F5E375222F777C00CAE1CE /* GODUserTool.m */; };
 		37F5E37A222F779500CAE1CE /* GODUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F5E379222F779400CAE1CE /* GODUserModel.m */; };
 		37F5E37E222F7D3800CAE1CE /* ZDDMenuCommentCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F5E37D222F7D3800CAE1CE /* ZDDMenuCommentCellNode.m */; };
@@ -34,6 +33,7 @@
 		37F5E38A222F924400CAE1CE /* ZDDInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F5E388222F924300CAE1CE /* ZDDInputView.m */; };
 		37F5E38D222F938800CAE1CE /* UIView+ZDD.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F5E38B222F938700CAE1CE /* UIView+ZDD.m */; };
 		37F5E390222F98FD00CAE1CE /* ZDDmenuCollectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F5E38F222F98FD00CAE1CE /* ZDDmenuCollectView.m */; };
+		37F5E396222F9FBF00CAE1CE /* NSString+Regex.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F5E394222F9FBE00CAE1CE /* NSString+Regex.m */; };
 		4A7FCF06221B94F300CD6876 /* ZDDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7FCF05221B94F300CD6876 /* ZDDTabBarController.m */; };
 		4AF49DB4221A8A18004F45EB /* TEMPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF49DB3221A8A18004F45EB /* TEMPAppDelegate.m */; };
 		4AF49DBC221A8A29004F45EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AF49DBB221A8A29004F45EB /* Assets.xcassets */; };
@@ -94,8 +94,6 @@
 		37F5E365222F655000CAE1CE /* ZDDMenuLogInController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDMenuLogInController.h; sourceTree = "<group>"; };
 		37F5E366222F655000CAE1CE /* ZDDMenuLogInController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDMenuLogInController.m; sourceTree = "<group>"; };
 		37F5E370222F726900CAE1CE /* logbgv.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = logbgv.gif; sourceTree = "<group>"; };
-		37F5E372222F762000CAE1CE /* NSString+Regex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Regex.m"; path = "../../../../ForMoney/Blogger/Util/Category/NSString+Regex.m"; sourceTree = "<group>"; };
-		37F5E373222F762000CAE1CE /* NSString+Regex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Regex.h"; path = "../../../../ForMoney/Blogger/Util/Category/NSString+Regex.h"; sourceTree = "<group>"; };
 		37F5E375222F777C00CAE1CE /* GODUserTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GODUserTool.m; sourceTree = "<group>"; };
 		37F5E376222F777D00CAE1CE /* GODUserTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GODUserTool.h; sourceTree = "<group>"; };
 		37F5E378222F779300CAE1CE /* GODUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GODUserModel.h; sourceTree = "<group>"; };
@@ -114,6 +112,8 @@
 		37F5E38C222F938800CAE1CE /* UIView+ZDD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZDD.h"; sourceTree = "<group>"; };
 		37F5E38E222F98FD00CAE1CE /* ZDDmenuCollectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDmenuCollectView.h; sourceTree = "<group>"; };
 		37F5E38F222F98FD00CAE1CE /* ZDDmenuCollectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDmenuCollectView.m; sourceTree = "<group>"; };
+		37F5E394222F9FBE00CAE1CE /* NSString+Regex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Regex.m"; path = "../../../../NSString+Regex.m"; sourceTree = "<group>"; };
+		37F5E395222F9FBF00CAE1CE /* NSString+Regex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Regex.h"; path = "../../../../NSString+Regex.h"; sourceTree = "<group>"; };
 		4A7FCF04221B94F300CD6876 /* ZDDTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDTabBarController.h; sourceTree = "<group>"; };
 		4A7FCF05221B94F300CD6876 /* ZDDTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDTabBarController.m; sourceTree = "<group>"; };
 		4AF49DAF221A8A18004F45EB /* KDCP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KDCP.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -312,8 +312,8 @@
 		37F2A595222EC36D00EACEC4 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				37F5E373222F762000CAE1CE /* NSString+Regex.h */,
-				37F5E372222F762000CAE1CE /* NSString+Regex.m */,
+				37F5E395222F9FBF00CAE1CE /* NSString+Regex.h */,
+				37F5E394222F9FBE00CAE1CE /* NSString+Regex.m */,
 				37F5E38C222F938800CAE1CE /* UIView+ZDD.h */,
 				37F5E38B222F938700CAE1CE /* UIView+ZDD.m */,
 				37F2A59C222EC36D00EACEC4 /* ASButtonNode+LHExtension.h */,
@@ -681,11 +681,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				371D3A47222E77C2007C14F7 /* ZDDMenuDetailController.m in Sources */,
+				37F5E396222F9FBF00CAE1CE /* NSString+Regex.m in Sources */,
 				4AF49DE8221A92B8004F45EB /* NSSet+HYBUnicodeReadable.m in Sources */,
 				37F5E38A222F924400CAE1CE /* ZDDInputView.m in Sources */,
 				4AF49DF8221A937A004F45EB /* TEMPAppDelegate+PushService.m in Sources */,
 				4AF49DE9221A92B8004F45EB /* Foundation+Log.m in Sources */,
-				37F5E374222F762100CAE1CE /* NSString+Regex.m in Sources */,
 				37F2A5A4222EC36D00EACEC4 /* NSMutableDictionary+Attributes.m in Sources */,
 				37F5E367222F655000CAE1CE /* ZDDMenuLogInController.m in Sources */,
 				37F5E377222F777D00CAE1CE /* GODUserTool.m in Sources */,
