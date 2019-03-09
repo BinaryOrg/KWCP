@@ -5,6 +5,12 @@
 #ifndef TEMPMacro_h
 #define TEMPMacro_h
 
+
+
+#define BASE_URL          @"http://120.78.124.36:10005/"
+
+
+
 #define TEMP_EXTERN extern __attribute__((visibility ("default")))
 
 #define color(r, g, b, a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]

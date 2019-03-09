@@ -23,7 +23,7 @@ static GODUserTool *userTool = nil;
         userTool = [[self alloc] init];
         
         userTool.token = [[NSUserDefaults standardUserDefaults] objectForKey:GODUserTokenKey];
-        userTool.phone = [[NSUserDefaults standardUserDefaults] objectForKey:GODUserPhoneKey];
+        userTool.mobile_number = [[NSUserDefaults standardUserDefaults] objectForKey:GODUserPhoneKey];
         
         // 取出字典, 转成模型后赋值
         NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:GODUserInfoKey];
@@ -38,7 +38,7 @@ static GODUserTool *userTool = nil;
 
 /// 是否登陆
 + (BOOL)isLogin {
-    return [GODUserTool shared].user.id.length ? YES : NO;
+    return [GODUserTool shared].user.user_id.length ? YES : NO;
 }
 
 /// 清除用户信息
@@ -59,9 +59,9 @@ static GODUserTool *userTool = nil;
     }
 }
 
-- (void)setPhone:(NSString *)phone {
-    _phone = phone;
-    [[NSUserDefaults standardUserDefaults] setObject:phone forKey:GODUserPhoneKey];
+- (void)setMobile_number:(NSString *)mobile_number {
+    _mobile_number = mobile_number;
+    [[NSUserDefaults standardUserDefaults] setObject:mobile_number forKey:GODUserPhoneKey];
 }
 
 - (void)setUser:(GODUserModel *)user {

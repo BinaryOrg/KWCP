@@ -301,19 +301,19 @@
     
     
     
-    [SMSSDK commitVerificationCode:self.pwdTextField.text phoneNumber:self.nameTextField.text zone:@"86" result:^(NSError *error) {
-        
-        if (!error)
-        {
+//    [SMSSDK commitVerificationCode:self.pwdTextField.text phoneNumber:self.nameTextField.text zone:@"86" result:^(NSError *error) {
+//
+//        if (!error)
+//        {
             // 验证成功
             [self loginWithTelephone];
-        }
-        else
-        {
-            // error
-            [MFHUDManager showError:@"验证码错误"];
-        }
-    }];
+//        }
+//        else
+//        {
+//            // error
+//            [MFHUDManager showError:@"验证码错误"];
+//        }
+//    }];
     // 请求后台
 }
 
@@ -323,12 +323,12 @@
     
     NSString *phoneNum = self.nameTextField.text;
     MFNETWROK.requestSerialization = MFJSONRequestSerialization;;
-    [MFNETWROK post:@"user/register" params:@{@"phone": phoneNum} success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+    [MFNETWROK post:@"User/Login" params:@{@"mobileNumber": phoneNum} success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
         
         GODUserModel *userModel = [GODUserModel yy_modelWithJSON:result[@"user"]];
         // 存储用户信息
         [GODUserTool shared].user = userModel;
-        [GODUserTool shared].phone = phoneNum;
+        [GODUserTool shared].mobile_number = phoneNum;
   
         [self leftBarButtonItemDidClick];
     } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {

@@ -9,6 +9,7 @@
 #import "ZDDMenuDetailController.h"
 
 #import "ZDDMenuCommentListController.h"
+#import "ZDDMenuLogInController.h"
 
 #import "ZDDMenuDetailTopCellNode.h"
 #import "ZDDMenuStepsCellNode.h"
@@ -69,7 +70,11 @@
 
 //点击收藏
 - (void)clickCollect {
-    
+    if ([GODUserTool isLogin]) {
+        
+    }else {
+        [self jumpToLogIn];
+    }
 }
 //点击返回
 - (void)leftBarButtonItemDidClick {
@@ -140,9 +145,18 @@
 
 - (void)tableNode:(ASTableNode *)tableNode didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 3) {
-        ZDDMenuCommentListController *vc = [[ZDDMenuCommentListController alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
+        if ([GODUserTool isLogin]) {
+            ZDDMenuCommentListController *vc = [[ZDDMenuCommentListController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }else {
+            [self jumpToLogIn];
+        }
     }
+}
+
+- (void)jumpToLogIn {
+    ZDDMenuLogInController *vc = [[ZDDMenuLogInController alloc] init];
+    [self.navigationController presentViewController:vc animated:YES completion:nil];
 }
 
 -(ASTableNode *)tableNode {

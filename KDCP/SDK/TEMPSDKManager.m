@@ -39,6 +39,10 @@ JPUSHRegisterDelegate
                           channel:JPUSH_CHANNEL
                  apsForProduction:NO
             advertisingIdentifier:nil];
+    
+    [MFHUDManager setHUDType:MFHUDTypeNormal];
+    [MFNETWROK startMonitorNetworkType];
+    MFNETWROK.baseURL = BASE_URL;
 }
 
 #pragma mark- JPUSHRegisterDelegate

@@ -19,7 +19,7 @@
 /** token */
 @property (nonatomic, strong) NSString *token;
 /** 用户的手机号码 */
-@property (nonatomic, strong) NSString *phone;
+@property (nonatomic, strong) NSString *mobile_number;
 
 
 /**

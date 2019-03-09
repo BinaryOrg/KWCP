@@ -11,11 +11,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface GODUserModel : NSObject
-@property (nonatomic, strong) NSString *username;
-@property (nonatomic, strong) NSString *id;
-
+@property (nonatomic, strong) NSString *user_name;
+@property (nonatomic, strong) NSString *user_id;
+@property (nonatomic, strong) NSString *gender;
 @property (nonatomic, strong) NSString *avatar;
-@property (nonatomic, strong) NSString *phone;
+@property (nonatomic, strong) NSString *mobile_number;
+@property (nonatomic, assign) NSInteger create_date;
+@property (nonatomic, assign) NSInteger last_login_date;
 
 
 
