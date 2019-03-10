@@ -227,7 +227,7 @@ UITableViewDataSource
             if (!cell) {
                 cell = [[FUCKIngLifeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"fuck1"];
             }
-            [cell.avatarImageView yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, self.note.user.avatar]] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
+            [cell.avatarImageView yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, self.note.user.avater]] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
             cell.nameLabel.text = self.note.user.user_name;
             [cell.imageView1 yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, self.note.picture_path[0]]] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
             cell.summaryLabel.text = self.note.content;
@@ -246,7 +246,7 @@ UITableViewDataSource
             if (!cell) {
                 cell = [[FUCKIngLife2TableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"fuck2"];
             }
-            [cell.avatarImageView yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, self.note.user.avatar]] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
+            [cell.avatarImageView yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, self.note.user.avater]] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
             cell.nameLabel.text = self.note.user.user_name;
             [cell.imageView1 yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, self.note.picture_path[0]]] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
             [cell.imageView2 yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, self.note.picture_path[1]]] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
@@ -269,12 +269,12 @@ UITableViewDataSource
         if (!cell) {
             cell = [[FUCKCommentTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"comment"];
         }
-        [cell.avatarImageView yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, user.avatar]] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
+        [cell.avatarImageView yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, user.avater]] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
         cell.nameLabel.text = user.user_name;
         cell.summaryLabel.text = data.content;
         [cell.summaryLabel setHeight:data.content_height + 10];
         [cell.dateLabel setY:CGRectGetMaxY(cell.summaryLabel.frame)];
-        cell.dateLabel.text = [self formatFromTS:data.last_update_date];
+        cell.dateLabel.text = [self formatFromTS:data.create_date];
         return cell;
     }
     

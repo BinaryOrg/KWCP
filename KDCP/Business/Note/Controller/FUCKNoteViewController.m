@@ -86,7 +86,9 @@ UITableViewDataSource
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadNewData) name:FBSuccessNotification object:nil];
     self.navigationItem.title = @"笔记圈";
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_comment_reply_24x24_"] style:UIBarButtonItemStylePlain target:self action:@selector(fbClick)];
+    if (!self.flag) {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_comment_reply_24x24_"] style:UIBarButtonItemStylePlain target:self action:@selector(fbClick)];
+    }
     [self.view addSubview:self.tableView];
     [self sendRequest];
 }
@@ -102,7 +104,14 @@ UITableViewDataSource
 }
 
 - (void)sendRequest {
-    [MFNETWROK post:@"http://120.78.124.36:10005/Note/ListRecommendNote"
+    NSString *url;
+    if (self.flag) {
+        url = @"http://120.78.124.36:10005/Note/ListNoteByUserId";
+    }
+    else {
+        url = @"http://120.78.124.36:10005/Note/ListRecommendNote";
+    }
+    [MFNETWROK post:url
              params:@{
                       @"orderBy": @"note_create_date",
                       @"userId": [GODUserTool shared].user.user_id ? [GODUserTool shared].user.user_id : @"",
@@ -142,7 +151,7 @@ UITableViewDataSource
     GODUserModel *user = note.user;
     if (note.picture_path.count == 1) {
         FUCKNoteTableViewCell *cell = [[FUCKNoteTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"fuck_note1"];
-        [cell.avatarImageView yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, user.avatar]] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
+        [cell.avatarImageView yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, user.avater]] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
         cell.nameLabel.text = user.user_name;
         [cell.imageView1 yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, note.picture_path[0]]] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
         cell.summaryLabel.text = note.content;
@@ -158,8 +167,8 @@ UITableViewDataSource
         return cell;
     }else {
         FUCKNote2TableViewCell *cell = [[FUCKNote2TableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"fuck_note2"];
-        [cell.avatarImageView yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, user.avatar]] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
-        [cell.avatarImageView yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, user.avatar]] placeholder:[UIImage imageNamed:@"HAO-0"] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation completion:nil];
+        [cell.avatarImageView yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, user.avater]] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
+        [cell.avatarImageView yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, user.avater]] placeholder:[UIImage imageNamed:@"HAO-0"] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation completion:nil];
         cell.nameLabel.text = user.user_name;
         [cell.imageView1 yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, note.picture_path[0]]]  options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
         [cell.imageView2 yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, note.picture_path[1]]]  options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];

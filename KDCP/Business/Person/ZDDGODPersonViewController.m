@@ -19,6 +19,9 @@
 #import "ZDDThemeConfiguration.h"
 #import "UIColor+ZDDColor.h"
 
+#import "FUCKNoteViewController.h"
+
+
 @interface ZDDGODPersonViewController ()
 <
 UITableViewDelegate,
@@ -93,7 +96,7 @@ QMUIImagePickerViewControllerDelegate
     if (!indexPath.section) {
         GODUserModel *user = [GODUserTool shared].user;
         ZDDPersonHeadTableViewCell *cell = [[ZDDPersonHeadTableViewCell alloc] init];
-        [cell.avatarImageView yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://120.78.124.36/%@", user.avatar]] placeholder:[UIImage imageNamed:@"HAO-0"]];
+        [cell.avatarImageView yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://120.78.124.36:10005/%@", user.avater]] placeholder:[UIImage imageNamed:@"HAO-0"]];
         cell.nameLabel.text = [GODUserTool isLogin] ? user.user_name : @"登录";
         [cell.loginButton addTarget:self action:@selector(login) forControlEvents:UIControlEventTouchUpInside];
         [cell.avatarButton addTarget:self action:@selector(avatar) forControlEvents:UIControlEventTouchUpInside];
@@ -131,13 +134,18 @@ QMUIImagePickerViewControllerDelegate
     if (indexPath.section == 1) {
         if (!indexPath.row) {
             if ([GODUserTool isLogin]) {
-//                [self.navigationController pushViewController:[ZDDWDFBViewController new] animated:YES];
+                FUCKNoteViewController *fuck = [[FUCKNoteViewController alloc] init];
+                fuck.flag = 1;
+                
+                [self.navigationController pushViewController:fuck animated:YES];
             }
             else {
                 [self presentViewController:[ZDDMenuLogInController new] animated:YES completion:nil];
             }
         }else if (indexPath.row == 1) {
 //            [self presentViewController:[ZDDYZXSViewController new] animated:YES completion:nil];
+        }else {
+            
         }
     }
     else if (indexPath.section == 2) {
