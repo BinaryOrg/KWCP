@@ -15,6 +15,8 @@
 #import "ZDDThreeTabController.h"
 #import "ZDDFourTabController.h"
 #import "ZDDMenuBaseNavController.h"
+#import "ZDDGODPersonViewController.h"
+#import "FUCKNoteViewController.h"
 
 @interface ZDDTabBarController ()
 <
@@ -65,16 +67,16 @@ UITabBarControllerDelegate
 
     [self addChileVcWithTitle:@"菜谱大全" vc:one imageName:@"tab_now_nor" selImageName:@"tab_now_press"];
 
-    ZDDTwoTabController *two = [[ZDDTwoTabController alloc] init];
-    [self addChileVcWithTitle:@"G" vc:two imageName:@"tab_see_nor" selImageName:@"tab_see_press"];
+//    ZDDTwoTabController *two = [[ZDDTwoTabController alloc] init];
+//    [self addChileVcWithTitle:@"G" vc:two imageName:@"tab_see_nor" selImageName:@"tab_see_press"];
     
     
-    ZDDThreeTabController *three = [[ZDDThreeTabController alloc] init];
-    [self addChileVcWithTitle:@"D" vc:three imageName:@"tab_qworld_nor" selImageName:@"tab_qworld_press"];
+    FUCKNoteViewController *three = [[FUCKNoteViewController alloc] init];
+    [self addChileVcWithTitle:@"笔记圈" vc:three imageName:@"tab_qworld_nor" selImageName:@"tab_qworld_press"];
     
     
-    ZDDFourTabController *four = [[ZDDFourTabController alloc] init];
-    [self addChileVcWithTitle:@"G" vc:four imageName:@"tab_recent_nor" selImageName:@"tab_recent_press"];
+    ZDDGODPersonViewController *four = [[ZDDGODPersonViewController alloc] init];
+    [self addChileVcWithTitle:@"个人中心" vc:four imageName:@"tab_recent_nor" selImageName:@"tab_recent_press"];
     
     
     
@@ -93,13 +95,13 @@ UITabBarControllerDelegate
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
     //点击发布
-    if ([tabBarController.viewControllers objectAtIndex:2] == viewController) {
-        if (self.hasCenterButton) {
-            [self addButtonClick];
-            return NO;
-        }
-        return NO;
-    }
+//    if ([tabBarController.viewControllers objectAtIndex:2] == viewController) {
+//        if (self.hasCenterButton) {
+//            [self addButtonClick];
+//            return NO;
+//        }
+//        return NO;
+//    }
     return YES;
 }
 

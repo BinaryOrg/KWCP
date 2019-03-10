@@ -22,5 +22,6 @@
 #import <UIImageView+YYWebImage.h>
 #import <AsyncDisplayKit/AsyncDisplayKit.h>
 
+#import "ZDDNotificationName.h"
 
 #endif /* PrefixHeader_pch */

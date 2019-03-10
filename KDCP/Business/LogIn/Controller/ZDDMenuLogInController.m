@@ -329,7 +329,8 @@
         // 存储用户信息
         [GODUserTool shared].user = userModel;
         [GODUserTool shared].mobile_number = phoneNum;
-  
+        [[NSNotificationCenter defaultCenter] postNotificationName:LoginSuccessNotification object:nil];
+//        [[NSNotificationCenter defaultCenter] postNotificationName:QRFBSuccessNotification object:nil];
         [self leftBarButtonItemDidClick];
     } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
         [MFHUDManager showError:@"登录失败"];
