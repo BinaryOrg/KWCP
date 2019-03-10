@@ -16,6 +16,8 @@
 #import "FUCKNoteTableViewCell.h"
 #import "FUCKNote2TableViewCell.h"
 #import "ZDDMenuLogInController.h"
+#import "FUCKFBNoteViewController.h"
+#import "GODFuckDetailViewController.h"
 
 @interface FUCKNoteViewController ()
 <
@@ -37,7 +39,7 @@ UITableViewDataSource
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, STATUSBARHEIGHT, SCREENWIDTH, SCREENHEIGHT - STATUSBARHEIGHT) style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT - STATUSBARANDNAVIGATIONBARHEIGHT) style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.tableFooterView = [[UIView alloc] init];
@@ -144,7 +146,7 @@ UITableViewDataSource
         cell.nameLabel.text = user.user_name;
         [cell.imageView1 yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, note.picture_path[0]]] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
         cell.summaryLabel.text = note.content;
-        cell.dateLabel.text = [self formatFromTS:note.last_update_date];
+        cell.dateLabel.text = [self formatFromTS:note.create_date];
         cell.likeCountLabel.text = [NSString stringWithFormat:@"%@", @(note.star_num)];
         cell.commentCountLabel.text = [NSString stringWithFormat:@"%@", @(note.comment_num)];
         if (note.is_star) {
@@ -157,11 +159,12 @@ UITableViewDataSource
     }else {
         FUCKNote2TableViewCell *cell = [[FUCKNote2TableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"fuck_note2"];
         [cell.avatarImageView yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, user.avatar]] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
+        [cell.avatarImageView yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, user.avatar]] placeholder:[UIImage imageNamed:@"HAO-0"] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation completion:nil];
         cell.nameLabel.text = user.user_name;
         [cell.imageView1 yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, note.picture_path[0]]]  options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
         [cell.imageView2 yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, note.picture_path[1]]]  options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
         cell.summaryLabel.text = note.content;
-        cell.dateLabel.text = [self formatFromTS:note.last_update_date];
+        cell.dateLabel.text = [self formatFromTS:note.create_date];
         cell.likeCountLabel.text = [NSString stringWithFormat:@"%@", @(note.star_num)];
         cell.commentCountLabel.text = [NSString stringWithFormat:@"%@", @(note.comment_num)];
         if (note.is_star) {
@@ -231,23 +234,23 @@ UITableViewDataSource
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return ((SCREENWIDTH - 80)/2) + 160;
+    return ((SCREENWIDTH - 80)/2) + 130;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//    ZDDQRDetailViewController *detail = [[ZDDQRDetailViewController alloc] init];
-//    detail.data = self.list[indexPath.row];
-//    self.hidesBottomBarWhenPushed = YES;
-//    [self.navigationController pushViewController:detail animated:YES];
-//    self.hidesBottomBarWhenPushed = NO;
+    GODFuckDetailViewController *detail = [[GODFuckDetailViewController alloc] init];
+    detail.note = self.list[indexPath.row];
+    self.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:detail animated:YES];
+    self.hidesBottomBarWhenPushed = NO;
 }
 
 - (void)fbClick {
     if ([GODUserTool isLogin]) {
-//        self.hidesBottomBarWhenPushed = YES;
-//        [self.navigationController pushViewController:[ZDDFBViewController new] animated:YES];
-//        self.hidesBottomBarWhenPushed = NO;
+        self.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:[FUCKFBNoteViewController new] animated:YES];
+        self.hidesBottomBarWhenPushed = NO;
     }else {
         ZDDMenuLogInController *vc = [ZDDMenuLogInController new];
         

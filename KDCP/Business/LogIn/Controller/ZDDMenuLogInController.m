@@ -9,7 +9,7 @@
 #import "ZDDMenuLogInController.h"
 #import "NSString+Regex.h"
 #import <SMS_SDK/SMSSDK.h>
-
+#import <YYImage/YYAnimatedImageView.h>
 #define MAS_SHORTHAN
 #define MAS_SHORTHAND_GLOBALS
 
@@ -62,7 +62,7 @@
 {
     
 
-    UIImageView *backgroundIV = [UIImageView new];
+    YYAnimatedImageView *backgroundIV = [YYAnimatedImageView new];
     backgroundIV.image = [UIImage imageNamed:@"logbgv.gif"];
     [self.view addSubview:backgroundIV];
     backgroundIV.contentMode = UIViewContentModeScaleAspectFill;
@@ -330,7 +330,7 @@
         [GODUserTool shared].user = userModel;
         [GODUserTool shared].mobile_number = phoneNum;
         [[NSNotificationCenter defaultCenter] postNotificationName:LoginSuccessNotification object:nil];
-//        [[NSNotificationCenter defaultCenter] postNotificationName:QRFBSuccessNotification object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:FBSuccessNotification object:nil];
         [self leftBarButtonItemDidClick];
     } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
         [MFHUDManager showError:@"登录失败"];

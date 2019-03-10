@@ -67,6 +67,12 @@
 		7516DD92223499AC00FE97DC /* FUCKNoteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7516DD91223499AC00FE97DC /* FUCKNoteTableViewCell.m */; };
 		7516DD95223499B900FE97DC /* FUCKNote2TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7516DD94223499B900FE97DC /* FUCKNote2TableViewCell.m */; };
 		7516DD9D2234A11800FE97DC /* FUCKFBNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7516DD9C2234A11800FE97DC /* FUCKFBNoteViewController.m */; };
+		7516DDA02234A67300FE97DC /* UIImage+Blur.m in Sources */ = {isa = PBXBuildFile; fileRef = 7516DD9F2234A67300FE97DC /* UIImage+Blur.m */; };
+		7516DDA32234E0FD00FE97DC /* FUCKIngLifeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7516DDA22234E0FD00FE97DC /* FUCKIngLifeTableViewCell.m */; };
+		7516DDA62234E10B00FE97DC /* FUCKIngLife2TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7516DDA52234E10B00FE97DC /* FUCKIngLife2TableViewCell.m */; };
+		7516DDA92234E17800FE97DC /* FUCKCommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7516DDA82234E17800FE97DC /* FUCKCommentTableViewCell.m */; };
+		7516DDAC2234E20600FE97DC /* GODFuckDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7516DDAB2234E20600FE97DC /* GODFuckDetailViewController.m */; };
+		7516DDAF2234EFD700FE97DC /* UIView+ZDD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7516DDAD2234EFD700FE97DC /* UIView+ZDD.m */; };
 		9A592D327C8F6F7C4FABCD74 /* libPods-KDCP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91BE538803D042BD4B754A12 /* libPods-KDCP.a */; };
 /* End PBXBuildFile section */
 
@@ -191,6 +197,18 @@
 		7516DD94223499B900FE97DC /* FUCKNote2TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FUCKNote2TableViewCell.m; path = KDCP/Business/Note/View/FUCKNote2TableViewCell.m; sourceTree = SOURCE_ROOT; };
 		7516DD9B2234A11800FE97DC /* FUCKFBNoteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FUCKFBNoteViewController.h; sourceTree = "<group>"; };
 		7516DD9C2234A11800FE97DC /* FUCKFBNoteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FUCKFBNoteViewController.m; sourceTree = "<group>"; };
+		7516DD9E2234A67300FE97DC /* UIImage+Blur.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Blur.h"; sourceTree = "<group>"; };
+		7516DD9F2234A67300FE97DC /* UIImage+Blur.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Blur.m"; sourceTree = "<group>"; };
+		7516DDA12234E0FD00FE97DC /* FUCKIngLifeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FUCKIngLifeTableViewCell.h; sourceTree = "<group>"; };
+		7516DDA22234E0FD00FE97DC /* FUCKIngLifeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FUCKIngLifeTableViewCell.m; sourceTree = "<group>"; };
+		7516DDA42234E10B00FE97DC /* FUCKIngLife2TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FUCKIngLife2TableViewCell.h; sourceTree = "<group>"; };
+		7516DDA52234E10B00FE97DC /* FUCKIngLife2TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FUCKIngLife2TableViewCell.m; sourceTree = "<group>"; };
+		7516DDA72234E17800FE97DC /* FUCKCommentTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FUCKCommentTableViewCell.h; sourceTree = "<group>"; };
+		7516DDA82234E17800FE97DC /* FUCKCommentTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FUCKCommentTableViewCell.m; sourceTree = "<group>"; };
+		7516DDAA2234E20600FE97DC /* GODFuckDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GODFuckDetailViewController.h; sourceTree = "<group>"; };
+		7516DDAB2234E20600FE97DC /* GODFuckDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GODFuckDetailViewController.m; sourceTree = "<group>"; };
+		7516DDAD2234EFD700FE97DC /* UIView+ZDD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZDD.m"; sourceTree = "<group>"; };
+		7516DDAE2234EFD700FE97DC /* UIView+ZDD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZDD.h"; sourceTree = "<group>"; };
 		7C615778C541EDDE5C5ED866 /* Pods-KDCP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KDCP.release.xcconfig"; path = "Pods/Target Support Files/Pods-KDCP/Pods-KDCP.release.xcconfig"; sourceTree = "<group>"; };
 		915664136FB0004CAE80CFAA /* Pods-KDCP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KDCP.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KDCP/Pods-KDCP.debug.xcconfig"; sourceTree = "<group>"; };
 		91BE538803D042BD4B754A12 /* libPods-KDCP.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KDCP.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -447,6 +465,10 @@
 				4AF49DDA221A91F5004F45EB /* Notification */,
 				4AF49DD2221A8FCA004F45EB /* KeyConfiguration */,
 				4AF49DCF221A8F70004F45EB /* Macro */,
+				7516DD9E2234A67300FE97DC /* UIImage+Blur.h */,
+				7516DD9F2234A67300FE97DC /* UIImage+Blur.m */,
+				7516DDAE2234EFD700FE97DC /* UIView+ZDD.h */,
+				7516DDAD2234EFD700FE97DC /* UIView+ZDD.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -636,6 +658,12 @@
 				7516DD91223499AC00FE97DC /* FUCKNoteTableViewCell.m */,
 				7516DD93223499B900FE97DC /* FUCKNote2TableViewCell.h */,
 				7516DD94223499B900FE97DC /* FUCKNote2TableViewCell.m */,
+				7516DDA12234E0FD00FE97DC /* FUCKIngLifeTableViewCell.h */,
+				7516DDA22234E0FD00FE97DC /* FUCKIngLifeTableViewCell.m */,
+				7516DDA42234E10B00FE97DC /* FUCKIngLife2TableViewCell.h */,
+				7516DDA52234E10B00FE97DC /* FUCKIngLife2TableViewCell.m */,
+				7516DDA72234E17800FE97DC /* FUCKCommentTableViewCell.h */,
+				7516DDA82234E17800FE97DC /* FUCKCommentTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -645,6 +673,8 @@
 			children = (
 				7516DD9B2234A11800FE97DC /* FUCKFBNoteViewController.h */,
 				7516DD9C2234A11800FE97DC /* FUCKFBNoteViewController.m */,
+				7516DDAA2234E20600FE97DC /* GODFuckDetailViewController.h */,
+				7516DDAB2234E20600FE97DC /* GODFuckDetailViewController.m */,
 			);
 			path = DetailController;
 			sourceTree = "<group>";
@@ -728,8 +758,9 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-KDCP/Pods-KDCP-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-KDCP/Pods-KDCP-resources.sh",
 				"${PODS_ROOT}/AVOSCloud/AVOS/AVOSCloud/AVOSCloud_Art.inc",
+				"${PODS_CONFIGURATION_BUILD_DIR}/CTAssetsPickerController/CTAssetsPickerController.bundle",
 				"${PODS_ROOT}/DateTools/DateTools/DateTools/DateTools.bundle",
 				"${PODS_ROOT}/MFHUDManager/Image/notice_type_error.png",
 				"${PODS_ROOT}/MFHUDManager/Image/notice_type_success.png",
@@ -741,6 +772,7 @@
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AVOSCloud_Art.inc",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CTAssetsPickerController.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DateTools.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/notice_type_error.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/notice_type_success.png",
@@ -751,7 +783,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KDCP/Pods-KDCP-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KDCP/Pods-KDCP-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9BE694A407294B7E9F2A4F49 /* [CP] Check Pods Manifest.lock */ = {
@@ -786,6 +818,7 @@
 				7516DD8F2234984000FE97DC /* FUCKNoteModel.m in Sources */,
 				4AF49DF8221A937A004F45EB /* TEMPAppDelegate+PushService.m in Sources */,
 				4AF49DE9221A92B8004F45EB /* Foundation+Log.m in Sources */,
+				7516DDA32234E0FD00FE97DC /* FUCKIngLifeTableViewCell.m in Sources */,
 				37F2A5A4222EC36D00EACEC4 /* NSMutableDictionary+Attributes.m in Sources */,
 				37F5E367222F655000CAE1CE /* ZDDMenuLogInController.m in Sources */,
 				37ADF4E1222FCCAE001FE491 /* ZDDPhotoBrowseView.m in Sources */,
@@ -799,7 +832,11 @@
 				4AF49DD5221A8FE3004F45EB /* TEMPKeyConfiguration.m in Sources */,
 				37F2A5A3222EC36D00EACEC4 /* UIView+LH.m in Sources */,
 				4A7FCF06221B94F300CD6876 /* ZDDTabBarController.m in Sources */,
+				7516DDAC2234E20600FE97DC /* GODFuckDetailViewController.m in Sources */,
+				7516DDA92234E17800FE97DC /* FUCKCommentTableViewCell.m in Sources */,
 				4AF49E17221A9E58004F45EB /* ZDDThemeConfiguration.m in Sources */,
+				7516DDA62234E10B00FE97DC /* FUCKIngLife2TableViewCell.m in Sources */,
+				7516DDAF2234EFD700FE97DC /* UIView+ZDD.m in Sources */,
 				37F5E37E222F7D3800CAE1CE /* ZDDMenuCommentCellNode.m in Sources */,
 				7516DD8622340D6200FE97DC /* ZDDGODPersonSettingTableViewCell.m in Sources */,
 				37F2A58B222EA23F00EACEC4 /* ZDDMenuDetailTopCellNode.m in Sources */,
@@ -813,6 +850,7 @@
 				37F5E38D222F938800CAE1CE /* UIView+ZDD.m in Sources */,
 				37F5E37A222F779500CAE1CE /* GODUserModel.m in Sources */,
 				7516DD8C223495B700FE97DC /* FUCKNoteViewController.m in Sources */,
+				7516DDA02234A67300FE97DC /* UIImage+Blur.m in Sources */,
 				371D3A2A222E6072007C14F7 /* ZDDHomePageController.m in Sources */,
 				4AF49DDD221A922D004F45EB /* ZDDNotificationName.m in Sources */,
 				4AF49DCD221A8EE2004F45EB /* TEMPLaunchManager.m in Sources */,

@@ -35,6 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSArray<NSString *> *picture_path;
 @property (nonatomic, strong) NSString *content;
 @property (nonatomic, assign) NSInteger last_update_date;
+@property (nonatomic, assign) NSInteger create_date;
 @property (nonatomic, assign) NSInteger star_num;
 @property (nonatomic, assign) NSInteger comment_num;
 @property (nonatomic, assign) BOOL is_star;

@@ -4,7 +4,7 @@
 
 #import "TEMPAppDelegate+BackgroundTask.h"
 #import <objc/runtime.h>
-#import <Bugly/Bugly/Bugly.h>
+#import <Bugly/Bugly.h>
 #import <AVFoundation/AVFoundation.h>
 #import "TEMPMacro.h"
 

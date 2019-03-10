@@ -15,17 +15,9 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
-        self.avatarImageView = [[UIImageView alloc] initWithFrame:CGRectMake(30, 10, 20, 20)];
-        self.avatarImageView.layer.cornerRadius = 3;
-        self.avatarImageView.layer.masksToBounds = YES;
-        [self.contentView addSubview:self.avatarImageView];
         
-        self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(60, 10, 100, 20)];
-        self.nameLabel.textColor = [UIColor zdd_grayColor];
-        self.nameLabel.font = [UIFont systemFontOfSize:13];
-        [self.contentView addSubview:self.nameLabel];
         
-        UILabel *lineLabel = [[UILabel alloc] initWithFrame:CGRectMake(27, CGRectGetMaxY(self.avatarImageView.frame) + 15, 1.5, 20)];
+        UILabel *lineLabel = [[UILabel alloc] initWithFrame:CGRectMake(27, 15, 1.5, 20)];
         lineLabel.backgroundColor = [UIColor zdd_yellowColor];
         [self.contentView addSubview:lineLabel];
         
@@ -48,6 +40,16 @@
         [self.contentView addSubview:self.summaryLabel];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.imageView1.userInteractionEnabled = YES;
+        
+        self.avatarImageView = [[UIImageView alloc] initWithFrame:CGRectMake(30, CGRectGetMaxY(self.summaryLabel.frame) + 5, 20, 20)];
+        self.avatarImageView.layer.cornerRadius = 3;
+        self.avatarImageView.layer.masksToBounds = YES;
+        [self.contentView addSubview:self.avatarImageView];
+        self.avatarImageView.contentMode = UIViewContentModeScaleAspectFill;
+        self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(60, CGRectGetMaxY(self.summaryLabel.frame) + 5, 100, 20)];
+        self.nameLabel.textColor = [UIColor zdd_grayColor];
+//        self.nameLabel.font = [UIFont systemFontOfSize:13];
+        [self.contentView addSubview:self.nameLabel];
         
         
         self.commentImageView = [[UIImageView alloc] initWithFrame:CGRectMake(SCREENWIDTH - 135, CGRectGetMaxY(self.summaryLabel.frame) + 5, 20, 20)];
