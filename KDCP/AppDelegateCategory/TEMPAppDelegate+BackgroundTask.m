@@ -44,7 +44,7 @@ void uncaughtExceptionHandler(NSException *exception) {
             self.count ++;
         }];
     }
-    
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
     [self beginTask];
 }
