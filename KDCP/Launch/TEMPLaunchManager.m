@@ -15,6 +15,7 @@
 
 #import <AVOSCloud/AVOSCloud.h>
 #import <XHLaunchAd.h>
+#import "UIColor+CustomColors.h"
 
 
 @implementation TEMPLaunchManager
@@ -38,11 +39,12 @@
     ZDDThemeConfiguration *theme = [ZDDThemeConfiguration defaultConfiguration];
 
 //    只需要在这里修改如下5个主题颜色即可，注意颜色搭配和理性:
-//    theme.naviTitleColor =
-//    theme.naviTintColor =
-//    theme.themeColor = [UIColor grayColor];
-//    theme.normalTabColor =
-    theme.selectTabColor = [UIColor blackColor];
+//    theme.naviTitleColor = [UIColor zdd_blueColor];
+////    theme.naviTintColor =
+//    theme.themeColor = [UIColor whiteColor];
+//    theme.normalTabColor = [UIColor zdd_blueColor];
+    //31,171,137
+    theme.selectTabColor = [UIColor colorWithRed:31 green:171 blue:137];
     theme.addButtonColor = [UIColor whiteColor];
     //NavigationBar 和 TabBar 偏好设置
     NSDictionary *dict = [NSDictionary dictionaryWithObject:theme.naviTitleColor forKey:NSForegroundColorAttributeName];

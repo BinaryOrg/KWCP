@@ -16,6 +16,8 @@
 #import "UIImage+Blur.h"
 #import "UIColor+ZDDColor.h"
 
+#import "GODCard.h"
+
 @interface FUCKFBNoteViewController ()
 <
 CTAssetsPickerControllerDelegate
@@ -60,46 +62,34 @@ CTAssetsPickerControllerDelegate
     self.count = 0;
     self.navigationItem.title = @"发布新笔记";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:[self rightButton]];
-    [self.view addSubview:self.textView];
-    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(20, 249, SCREENWIDTH - 40, 1)];
-    line.backgroundColor = [UIColor zdd_colorWithRed:214 green:214 blue:214];
-    [self.view addSubview:line];
     
-    UIImageView *addImageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, CGRectGetMaxY(self.textView.frame) + 13, 20, 20)];
-    addImageView.image = [UIImage imageNamed:@"ic_personal_tab_my_topic_20x20_"];
-    [self.view addSubview:addImageView];
-    addImageView.userInteractionEnabled = YES;
+    GODCard *container = [[GODCard alloc] initWithFrame:CGRectMake(10, 10, SCREENWIDTH - 20, 250)];
     
-    UILabel *addLabel = [[UILabel alloc] initWithFrame:CGRectMake(60, CGRectGetMaxY(self.textView.frame), 100, 46)];
-    addLabel.text = @"添加照片";
-    addLabel.textColor = [UIColor zdd_grayColor];
-    [self.view addSubview:addLabel];
+    [self.view addSubview:container];
+    [container addSubview:self.textView];
     
-    UIImageView *rightImageView = [[UIImageView alloc] initWithFrame:CGRectMake(SCREENWIDTH - 30, 17 + CGRectGetMaxY(self.textView.frame), 7, 12)];
-    rightImageView.image = [UIImage imageNamed:@"ic_common_arrow_right_7x12_"];
-    [self.view addSubview:rightImageView];
     
-    UIButton *addButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    addButton.frame = CGRectMake(0, 250, SCREENWIDTH, 46);
-    [addButton addTarget:self action:@selector(addButtonClick) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:addButton];
-    
-    UIView *line1 = [[UIView alloc] initWithFrame:CGRectMake(20, 296, SCREENWIDTH - 40, 1)];
-    line1.backgroundColor = [UIColor zdd_colorWithRed:214 green:214 blue:214];
-    [self.view addSubview:line1];
-    
-    self.imageView1 = [[UIImageView alloc] initWithFrame:CGRectMake(30, CGRectGetMaxY(line1.frame) + 10, (SCREENWIDTH - 80)/2, ((SCREENWIDTH - 80)/2))];
+    self.imageView1 = [[UIImageView alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(container.frame) + 10, (SCREENWIDTH - 40)/2, ((SCREENWIDTH - 40)/2))];
     self.imageView1.layer.cornerRadius = 7;
     self.imageView1.layer.masksToBounds = YES;
     self.imageView1.contentMode = UIViewContentModeScaleAspectFill;
     [self.view addSubview:self.imageView1];
     
-    self.imageView2 = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.imageView1.frame) + 20, CGRectGetMaxY(line1.frame) + 10, (SCREENWIDTH - 80)/2, ((SCREENWIDTH - 80)/2))];
+    self.imageView2 = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.imageView1.frame) + 20, CGRectGetMaxY(container.frame) + 10, (SCREENWIDTH - 40)/2, ((SCREENWIDTH - 40)/2))];
     self.imageView2.layer.cornerRadius = 7;
     self.imageView2.layer.masksToBounds = YES;
     self.imageView2.contentMode = UIViewContentModeScaleAspectFill;
     [self.view addSubview:self.imageView2];
-    
+    ZDDThemeConfiguration *theme = [ZDDThemeConfiguration defaultConfiguration];
+    UIButton *fb = [UIButton buttonWithType:UIButtonTypeCustom];
+    fb.backgroundColor = theme.selectTabColor;
+    fb.frame = CGRectMake(10, CGRectGetMaxY(self.imageView1.frame) + 20, SCREENWIDTH - 20, 45);
+    fb.layer.masksToBounds = YES;
+    fb.layer.cornerRadius = 8;
+    [fb setTitle:@"发布" forState:UIControlStateNormal];
+    [fb setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [fb addTarget:self action:@selector(fbClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:fb];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -114,7 +104,7 @@ CTAssetsPickerControllerDelegate
 -(UITextView *)textView {
     if (!_textView) {
         ZDDThemeConfiguration *theme = [ZDDThemeConfiguration defaultConfiguration];
-        _textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, 250)];
+        _textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH - 20, 230)];
         _textView.textContainerInset = UIEdgeInsetsMake(15, 20, 15, 20);
         _textView.font = [UIFont systemFontOfSize:16];
         _textView.placeholder = @"写下你的笔记吧！";
@@ -125,20 +115,21 @@ CTAssetsPickerControllerDelegate
 
 - (UIView *)rightButton {
     ZDDThemeConfiguration *theme = [ZDDThemeConfiguration defaultConfiguration];
-    UIView *container = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 26)];
+    UIView *container = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 80, 26)];
     container.layer.masksToBounds = YES;
     container.layer.cornerRadius = 5;
     container.backgroundColor = theme.selectTabColor;
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setTitle:@"发布" forState:UIControlStateNormal];
+    [button setTitle:@"添加照片" forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont systemFontOfSize:14];
     button.adjustsImageWhenHighlighted = NO;
     button.frame = container.bounds;
     [container addSubview:button];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(fbClick) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(addButtonClick) forControlEvents:UIControlEventTouchUpInside];
     return container;
 }
+
 
 - (void)fbClick {
     if ([MFHUDManager isShowing]) {

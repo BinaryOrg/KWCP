@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface UIColor (CustomColors)
++ (UIColor *)colorWithRed:(NSUInteger)red
+                    green:(NSUInteger)green
+                     blue:(NSUInteger)blue;
 
 + (UIColor *)themeColor;
 + (UIColor *)customGrayColor;
