@@ -153,6 +153,7 @@
 		4A9E41162235F67000B9E1B2 /* ABCFuckDetail2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABCFuckDetail2.m; sourceTree = "<group>"; };
 		4A9E41192235F98B00B9E1B2 /* ABCFuckCollectionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCFuckCollectionTableViewCell.h; sourceTree = "<group>"; };
 		4A9E411A2235F98B00B9E1B2 /* ABCFuckCollectionTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABCFuckCollectionTableViewCell.m; sourceTree = "<group>"; };
+		4A9E41262236412300B9E1B2 /* KDCP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KDCP.entitlements; sourceTree = "<group>"; };
 		4AF49DAF221A8A18004F45EB /* KDCP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KDCP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AF49DB2221A8A18004F45EB /* TEMPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TEMPAppDelegate.h; sourceTree = "<group>"; };
 		4AF49DB3221A8A18004F45EB /* TEMPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TEMPAppDelegate.m; sourceTree = "<group>"; };
@@ -451,6 +452,7 @@
 		4AF49DB1221A8A18004F45EB /* KDCP */ = {
 			isa = PBXGroup;
 			children = (
+				4A9E41262236412300B9E1B2 /* KDCP.entitlements */,
 				4AF49DB2221A8A18004F45EB /* TEMPAppDelegate.h */,
 				4AF49DB3221A8A18004F45EB /* TEMPAppDelegate.m */,
 				371D3A1D222E5E67007C14F7 /* Business */,
@@ -765,6 +767,9 @@
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.Push = {
+								enabled = 1;
+							};
 						};
 					};
 				};
@@ -1064,6 +1069,7 @@
 			baseConfigurationReference = 915664136FB0004CAE80CFAA /* Pods-KDCP.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = KDCP/KDCP.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 96NZDADFWS;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/PrefixHeader.pch";
@@ -1084,6 +1090,7 @@
 			baseConfigurationReference = 7C615778C541EDDE5C5ED866 /* Pods-KDCP.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = KDCP/KDCP.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 96NZDADFWS;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/PrefixHeader.pch";
