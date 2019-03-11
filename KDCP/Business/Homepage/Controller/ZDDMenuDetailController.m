@@ -123,24 +123,24 @@
 - (ASCellNodeBlock)tableNode:(ASTableNode *)tableNode nodeBlockForRowAtIndexPath:(NSIndexPath *)indexPath {
     return ^ASCellNode *() {
         if (indexPath.row == 0) {
-            ZDDMenuDetailTopCellNode *node = [[ZDDMenuDetailTopCellNode alloc] init];
+            ZDDMenuDetailTopCellNode *node = [[ZDDMenuDetailTopCellNode alloc] initWithModel:self.model];
             node.delegate = self;
             node.selectionStyle = UITableViewCellSelectionStyleNone;
             return node;
         }
         else if (indexPath.row == 1) {
-            ZDDMenuFoodsListCellNode *node = [[ZDDMenuFoodsListCellNode alloc] init];
+            ZDDMenuFoodsListCellNode *node = [[ZDDMenuFoodsListCellNode alloc] initWithModel:self.model];
             node.selectionStyle = UITableViewCellSelectionStyleNone;
             return node;
         }
         else if (indexPath.row == 2) {
-            ZDDMenuStepsCellNode *node = [[ZDDMenuStepsCellNode alloc] init];
+            ZDDMenuStepsCellNode *node = [[ZDDMenuStepsCellNode alloc] initWithModel:self.model];
             node.delegate = self;
             node.selectionStyle = UITableViewCellSelectionStyleNone;
             return node;
         }
         else {
-            ZDDMenuOpenCommentCellNode *node = [[ZDDMenuOpenCommentCellNode alloc] init];
+            ZDDMenuOpenCommentCellNode *node = [[ZDDMenuOpenCommentCellNode alloc] initWithCount:self.model.comment_num];
             node.selectionStyle = UITableViewCellSelectionStyleNone;
             return node;
         }

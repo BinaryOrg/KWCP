@@ -18,7 +18,7 @@
 
 @implementation ZDDMenuOpenCommentCellNode
 
-- (instancetype)init {
+- (instancetype)initWithCount:(NSInteger)count {
     
     if (self = [super init]) {
         self.titleNode = [ASTextNode new];
@@ -27,7 +27,7 @@
         self.titleNode.borderColor = color(137, 137, 137, 0.5).CGColor;
         NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle alloc] init];
         paraStyle.alignment = NSTextAlignmentCenter;
-        self.titleNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:@"查看评论 (100+)" attributes:^(NSMutableDictionary *make) {
+        self.titleNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:[NSString stringWithFormat:@"查看评论 (%ld)", count] attributes:^(NSMutableDictionary *make) {
             make.lh_font([UIFont systemFontOfSize:18]).lh_color(GODColor(137, 137, 137)).lh_paraStyle(paraStyle);
         }];
         [self addSubnode:self.titleNode];

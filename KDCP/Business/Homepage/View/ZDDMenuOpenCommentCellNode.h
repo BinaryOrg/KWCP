@@ -10,7 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZDDMenuOpenCommentCellNode : ASCellNode
-
+- (instancetype)initWithCount:(NSInteger)count ;
 @end
 
 NS_ASSUME_NONNULL_END

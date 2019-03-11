@@ -19,6 +19,7 @@
 		371D3A47222E77C2007C14F7 /* ZDDMenuDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371D3A46222E77C2007C14F7 /* ZDDMenuDetailController.m */; };
 		37655825222FB7EB00CC4D47 /* GODWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37655824222FB7EB00CC4D47 /* GODWebViewController.m */; };
 		37ADF4E1222FCCAE001FE491 /* ZDDPhotoBrowseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ADF4E0222FCCAE001FE491 /* ZDDPhotoBrowseView.m */; };
+		37B647C82236633600C894B0 /* ZDDTagListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B647C72236633600C894B0 /* ZDDTagListController.m */; };
 		37F2A58B222EA23F00EACEC4 /* ZDDMenuDetailTopCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F2A58A222EA23F00EACEC4 /* ZDDMenuDetailTopCellNode.m */; };
 		37F2A591222EB5EE00EACEC4 /* ZDDMenuFoodsListCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F2A590222EB5EE00EACEC4 /* ZDDMenuFoodsListCellNode.m */; };
 		37F2A594222EBAAE00EACEC4 /* ZDDMenuStepsCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F2A593222EBAAE00EACEC4 /* ZDDMenuStepsCellNode.m */; };
@@ -112,6 +113,8 @@
 		37655824222FB7EB00CC4D47 /* GODWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GODWebViewController.m; sourceTree = "<group>"; };
 		37ADF4DF222FCCAE001FE491 /* ZDDPhotoBrowseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDPhotoBrowseView.h; sourceTree = "<group>"; };
 		37ADF4E0222FCCAE001FE491 /* ZDDPhotoBrowseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDPhotoBrowseView.m; sourceTree = "<group>"; };
+		37B647C62236633600C894B0 /* ZDDTagListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDTagListController.h; sourceTree = "<group>"; };
+		37B647C72236633600C894B0 /* ZDDTagListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDTagListController.m; sourceTree = "<group>"; };
 		37F2A589222EA23F00EACEC4 /* ZDDMenuDetailTopCellNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDMenuDetailTopCellNode.h; sourceTree = "<group>"; };
 		37F2A58A222EA23F00EACEC4 /* ZDDMenuDetailTopCellNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDMenuDetailTopCellNode.m; sourceTree = "<group>"; };
 		37F2A58F222EB5EE00EACEC4 /* ZDDMenuFoodsListCellNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDMenuFoodsListCellNode.h; sourceTree = "<group>"; };
@@ -307,6 +310,8 @@
 				37F5E386222F91EA00CAE1CE /* ZDDMenuCommentListController.m */,
 				371B92D82235174D00D3D7DE /* ZDDMenuTagController.h */,
 				371B92D92235174D00D3D7DE /* ZDDMenuTagController.m */,
+				37B647C62236633600C894B0 /* ZDDTagListController.h */,
+				37B647C72236633600C894B0 /* ZDDTagListController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -928,6 +933,7 @@
 				4AF49DD8221A90DE004F45EB /* TEMPSDKManager.m in Sources */,
 				37F2A594222EBAAE00EACEC4 /* ZDDMenuStepsCellNode.m in Sources */,
 				4AF49DF1221A9307004F45EB /* UIColor+ZDDColor.m in Sources */,
+				37B647C82236633600C894B0 /* ZDDTagListController.m in Sources */,
 				4AF49E13221A9B1A004F45EB /* ZDDFourTabController.m in Sources */,
 				37F5E390222F98FD00CAE1CE /* ZDDmenuCollectView.m in Sources */,
 				37F5E38D222F938800CAE1CE /* UIView+ZDD.m in Sources */,

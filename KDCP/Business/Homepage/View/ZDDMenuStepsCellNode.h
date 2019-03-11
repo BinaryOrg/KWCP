@@ -7,12 +7,15 @@
 //
 
 #import "ZDDMenuDelegate.h"
+#import "ABCFuckModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZDDMenuStepsCellNode : ASCellNode
 
 @property (nonatomic, weak) id <ZDDMenuDelegate> delegate;
+
+- (instancetype)initWithModel:(ABCFuckModel *)model;
 
 
 @end

@@ -7,12 +7,15 @@
 //
 
 #import "ZDDMenuFoodsListCellNode.h"
+#import "ABCFuckDetail1.h"
 
 @interface ZDDMenuFoodsListCellNode ()
 
 @property (nonatomic, strong) ASTextNode *titleNode;
 @property (nonatomic, strong) ASDisplayNode *lineNode;
 @property (nonatomic, strong) ASInsetLayoutSpec *listSpec;
+@property (nonatomic, strong) ABCFuckModel *model;
+
 
 @end
 
@@ -21,9 +24,9 @@
 
 @implementation ZDDMenuFoodsListCellNode
 
-- (instancetype)init {
+- (instancetype)initWithModel:(ABCFuckModel *)model {
     if (self = [super init]) {
-        
+        self.model = model;
         [self addTitleNode];
         [self addLineNode];
         [self addFoodsList];
@@ -63,15 +66,15 @@
 
 - (void)addFoodsList {
     NSMutableArray *tempArr = [NSMutableArray array];
-    for (NSInteger i = 0; i < 6; i ++) {
-        
+    for (NSInteger i = 0; i < self.model.food_list.count; i ++) {
+        ABCFuckDetail1 *foodModel = self.model.food_list[i];
         ASTextNode *nameTN = [ASTextNode new];
-        nameTN.attributedText = [NSMutableAttributedString lh_makeAttributedString:@"豆腐" attributes:^(NSMutableDictionary *make) {
+        nameTN.attributedText = [NSMutableAttributedString lh_makeAttributedString:foodModel.food attributes:^(NSMutableDictionary *make) {
             make.lh_font([UIFont fontWithName:@"PingFangSC-Medium" size:18]).lh_color(GODColor(38, 79, 180));
         }];
         nameTN.style.minWidth = ASDimensionMake(ScreenWidth - 150);
         ASTextNode *countTN = [ASTextNode new];
-        countTN.attributedText = [NSMutableAttributedString lh_makeAttributedString:@"100g" attributes:^(NSMutableDictionary *make) {
+        countTN.attributedText = [NSMutableAttributedString lh_makeAttributedString:foodModel.amount attributes:^(NSMutableDictionary *make) {
             make.lh_font([UIFont fontWithName:@"PingFangSC-Light" size:18]).lh_color(GODColor(137, 137, 137));
         }];
         ASStackLayoutSpec *subSpec = [ASStackLayoutSpec stackLayoutSpecWithDirection:ASStackLayoutDirectionHorizontal spacing:10 justifyContent:ASStackLayoutJustifyContentStart alignItems:ASStackLayoutAlignItemsStart children:@[nameTN, countTN]];

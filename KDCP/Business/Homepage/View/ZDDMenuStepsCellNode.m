@@ -7,6 +7,7 @@
 //
 
 #import "ZDDMenuStepsCellNode.h"
+#import "ABCFuckDetail2.h"
 
 @interface ZDDMenuStepsCellNode ()
 
@@ -14,16 +15,16 @@
 @property (nonatomic, strong) ASDisplayNode *lineNode;
 @property (nonatomic, strong) ASInsetLayoutSpec *listSpec;
 @property (nonatomic, strong) NSArray <ASNetworkImageNode *>*imageNodes;
-
+@property (nonatomic, strong) ABCFuckModel *model;
 
 @end
 
 
 @implementation ZDDMenuStepsCellNode
 
-- (instancetype)init {
+- (instancetype)initWithModel:(ABCFuckModel *)model {
     if (self = [super init]) {
-        
+        self.model = model;
         [self addTitleNode];
         [self addLineNode];
         [self addFoodsList];
@@ -70,8 +71,8 @@
     NSMutableArray *tempArr = [NSMutableArray array];
     NSMutableArray *tempImageArr = [NSMutableArray array];
 
-    for (NSInteger i = 0; i < 8; i ++) {
-        
+    for (NSInteger i = 0; i < self.model.cooking_step.count; i ++) {
+        ABCFuckDetail2 *stepMode = self.model.cooking_step[i];
         ASTextNode *stepNode = [ASTextNode new];
         stepNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:[NSString stringWithFormat:@"步骤 %ld", i] attributes:^(NSMutableDictionary *make) {
             make.lh_font([UIFont fontWithName:@"PingFangSC-Medium" size:18]).lh_color([UIColor blackColor]);
@@ -83,13 +84,13 @@
         imgNode.contentMode = UIViewContentModeScaleAspectFill;
         imgNode.style.preferredSize = CGSizeMake(SCREENWIDTH, 250);
         imgNode.cornerRadius = 6;
-        imgNode.URL = [NSURL URLWithString:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1551806874788&di=5d3ce26cd3e61eb4f964b6cbf7ab7da7&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20170110%2F55ea71c59dfc4d6ba7d4060b5cc38e90_th.jpeg"];
+        imgNode.URL = [NSURL URLWithString:stepMode.url];
         [imgNode addTarget:self action:@selector(clickImageNode:) forControlEvents:ASControlNodeEventTouchUpInside];
         [tempImageArr addObject:imgNode];
 
         
         ASTextNode *detailLb = [ASTextNode new];
-        detailLb.attributedText = [NSMutableAttributedString lh_makeAttributedString:@"制豆腐将黄豆用水泡发，泡好后用清水洗净，换入清水20~25kg，用石磨磨成稀糊，再加入与稀糊同样多的温水拌匀，装入布袋内，用力把浆汁挤出，再在豆渣内兑入沸水拌匀后再挤，如此连续豆渣不沾手。豆浆已挤完时，撇去泡沫，将浆汁入锅用大火烧开，倒入缸内，加进石膏汁，边加边用木棍搅动，约搅15~20转后，可滴上少许水，如与浆混合，表示石膏汁不够，须再加进一些石膏汁再搅。如所滴入的水没有同浆混合，嫌麻烦的话，可以到市场上直接买回来" attributes:^(NSMutableDictionary *make) {
+        detailLb.attributedText = [NSMutableAttributedString lh_makeAttributedString:stepMode.word attributes:^(NSMutableDictionary *make) {
             make.lh_font([UIFont fontWithName:@"PingFangSC-Light" size:16]).lh_color(color(100, 100, 100, 1));
             
         }];

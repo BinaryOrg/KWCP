@@ -8,6 +8,9 @@
 
 #import "ZDDMenuTagController.h"
 
+#import "ZDDTagListController.h"
+
+
 #import <TTGTextTagCollectionView.h>
 #import "ZDDMennuCategoryView.h"
 
@@ -78,6 +81,11 @@
 }
 #pragma mark - 点击右边标签
 - (void)textTagCollectionView:(TTGTextTagCollectionView *)textTagCollectionView didTapTag:(NSString *)tagText atIndex:(NSUInteger)index selected:(BOOL)selected tagConfig:(TTGTextTagConfig *)config {
+    if (tagText.length) {
+        ZDDTagListController *vc = [ZDDTagListController new];
+        vc.tag = tagText;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
     
 }
 
@@ -100,18 +108,19 @@
 
 - (TTGTextTagCollectionView *)rightView {
     if (!_rightView) {
-        _rightView = [[TTGTextTagCollectionView alloc] initWithFrame:CGRectMake(leftViewWidth, 0, SCREENWIDTH - leftViewWidth, self.view.height - NavBarHeight)];
+        _rightView = [[TTGTextTagCollectionView alloc] initWithFrame:CGRectMake(leftViewWidth + 20, 20, SCREENWIDTH - leftViewWidth - 20 - 10, self.view.height - NavBarHeight - 20)];
         _rightView.delegate = self;
         
         
         TTGTextTagConfig *config = _rightView.defaultConfig;
         config.textColor = color(53, 64, 72, 1);
-        config.selectedTextColor = color(53, 64, 72, 1);
+        config.selectedTextColor = [UIColor blackColor];
         config.backgroundColor = [UIColor whiteColor];
         config.selectedBackgroundColor = [UIColor whiteColor];
-        config.extraSpace = CGSizeMake(50, 8);
+        config.extraSpace = CGSizeMake(30, 15);
         config.shadowColor = [UIColor clearColor];
         config.borderColor = color(137, 137, 137, 0.3);
+        config.borderWidth = 0.5;
 //        _rightView.defaultConfig = config;
     }
     return _rightView;
