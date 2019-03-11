@@ -46,6 +46,7 @@
 		4A9E41142235F66700B9E1B2 /* ABCFuckDetail1.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9E41132235F66700B9E1B2 /* ABCFuckDetail1.m */; };
 		4A9E41172235F67000B9E1B2 /* ABCFuckDetail2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9E41162235F67000B9E1B2 /* ABCFuckDetail2.m */; };
 		4A9E411B2235F98B00B9E1B2 /* ABCFuckCollectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9E411A2235F98B00B9E1B2 /* ABCFuckCollectionTableViewCell.m */; };
+		4A9E412A2236530D00B9E1B2 /* GODCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9E41292236530D00B9E1B2 /* GODCard.m */; };
 		4AF49DB4221A8A18004F45EB /* TEMPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF49DB3221A8A18004F45EB /* TEMPAppDelegate.m */; };
 		4AF49DBC221A8A29004F45EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AF49DBB221A8A29004F45EB /* Assets.xcassets */; };
 		4AF49DBF221A8A29004F45EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AF49DBD221A8A29004F45EB /* LaunchScreen.storyboard */; };
@@ -165,6 +166,8 @@
 		4A9E41192235F98B00B9E1B2 /* ABCFuckCollectionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCFuckCollectionTableViewCell.h; sourceTree = "<group>"; };
 		4A9E411A2235F98B00B9E1B2 /* ABCFuckCollectionTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABCFuckCollectionTableViewCell.m; sourceTree = "<group>"; };
 		4A9E41262236412300B9E1B2 /* KDCP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KDCP.entitlements; sourceTree = "<group>"; };
+		4A9E41282236530D00B9E1B2 /* GODCard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GODCard.h; sourceTree = "<group>"; };
+		4A9E41292236530D00B9E1B2 /* GODCard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GODCard.m; sourceTree = "<group>"; };
 		4AF49DAF221A8A18004F45EB /* KDCP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KDCP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AF49DB2221A8A18004F45EB /* TEMPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TEMPAppDelegate.h; sourceTree = "<group>"; };
 		4AF49DB3221A8A18004F45EB /* TEMPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TEMPAppDelegate.m; sourceTree = "<group>"; };
@@ -733,6 +736,8 @@
 				7516DDA52234E10B00FE97DC /* FUCKIngLife2TableViewCell.m */,
 				7516DDA72234E17800FE97DC /* FUCKCommentTableViewCell.h */,
 				7516DDA82234E17800FE97DC /* FUCKCommentTableViewCell.m */,
+				4A9E41282236530D00B9E1B2 /* GODCard.h */,
+				4A9E41292236530D00B9E1B2 /* GODCard.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -937,6 +942,7 @@
 				7516DD8922340DC300FE97DC /* ZDDFuckPersonLogoutTableViewCell.m in Sources */,
 				37F5E384222F825300CAE1CE /* ZDDMenuBaseNavController.m in Sources */,
 				4AF49E0D221A9AFD004F45EB /* ZDDTwoTabController.m in Sources */,
+				4A9E412A2236530D00B9E1B2 /* GODCard.m in Sources */,
 				4AF49E10221A9B0E004F45EB /* ZDDThreeTabController.m in Sources */,
 				371D3A37222E697C007C14F7 /* ZDDMenuListCell.m in Sources */,
 				4AF49DE7221A92B8004F45EB /* NSArray+HYBUnicodeReadable.m in Sources */,

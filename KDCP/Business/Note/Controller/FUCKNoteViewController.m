@@ -243,23 +243,23 @@ UITableViewDataSource
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return ((SCREENWIDTH - 80)/2) + 130;
+    return ((SCREENWIDTH - 80)/2) + 140;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     GODFuckDetailViewController *detail = [[GODFuckDetailViewController alloc] init];
     detail.note = self.list[indexPath.row];
-    self.hidesBottomBarWhenPushed = YES;
+//    self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:detail animated:YES];
-    self.hidesBottomBarWhenPushed = NO;
+//    self.hidesBottomBarWhenPushed = NO;
 }
 
 - (void)fbClick {
     if ([GODUserTool isLogin]) {
-        self.hidesBottomBarWhenPushed = YES;
+//        self.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:[FUCKFBNoteViewController new] animated:YES];
-        self.hidesBottomBarWhenPushed = NO;
+//        self.hidesBottomBarWhenPushed = NO;
     }else {
         ZDDMenuLogInController *vc = [ZDDMenuLogInController new];
         

@@ -231,7 +231,7 @@ UITableViewDataSource
             cell.nameLabel.text = self.note.user.user_name;
             [cell.imageView1 yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, self.note.picture_path[0]]] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
             cell.summaryLabel.text = self.note.content;
-            cell.dateLabel.text = [self formatFromTS:self.note.last_update_date];
+            cell.dateLabel.text = [self formatFromTS:self.note.create_date];
             cell.likeCountLabel.text = [NSString stringWithFormat:@"%@", @(self.note.star_num)];
             cell.commentCountLabel.text = [NSString stringWithFormat:@"%@", @(self.note.comment_num)];
             if (self.note.is_star) {

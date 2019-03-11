@@ -46,6 +46,9 @@
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    if (self.childViewControllers.count == 1) {
+        viewController.hidesBottomBarWhenPushed = YES; //viewController是将要被push的控制器
+    }
     if (self.childViewControllers.count) { // 非根控制器
         viewController.hidesBottomBarWhenPushed = YES;
         UIImage *backImage = [[UIImage imageNamed:@"nav_back_black"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
