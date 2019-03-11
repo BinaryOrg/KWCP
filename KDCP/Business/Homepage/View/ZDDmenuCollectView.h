@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZDDmenuCollectView : UIView
 
+/** <#class#> */
+@property (nonatomic, assign) BOOL isCollected;
+
 @end
 
 NS_ASSUME_NONNULL_END

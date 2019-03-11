@@ -34,6 +34,17 @@
     }];
 }
 
+- (void)setIsCollected:(BOOL)isCollected {
+    _isCollected = isCollected;
+    if (isCollected) {
+        self.imgView.image = [UIImage imageNamed:@"collect"];
+        self.titleLb.text = @"已收藏";
+    }else {
+        self.imgView.image = [UIImage imageNamed:@"disCollect"];
+        self.titleLb.text = @"收藏";
+    }
+}
+
 
 - (UIImageView *)imgView {
     if (!_imgView) {

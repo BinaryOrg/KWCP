@@ -27,7 +27,13 @@
         self.titleNode.borderColor = color(137, 137, 137, 0.5).CGColor;
         NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle alloc] init];
         paraStyle.alignment = NSTextAlignmentCenter;
-        self.titleNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:[NSString stringWithFormat:@"查看评论 (%ld)", count] attributes:^(NSMutableDictionary *make) {
+        
+        NSString *title = [NSString stringWithFormat:@"查看评论 (%ld)", count];
+        if (count == 0) {
+            title = @"编写评论";
+        }
+        
+        self.titleNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:title attributes:^(NSMutableDictionary *make) {
             make.lh_font([UIFont systemFontOfSize:18]).lh_color(GODColor(137, 137, 137)).lh_paraStyle(paraStyle);
         }];
         [self addSubnode:self.titleNode];

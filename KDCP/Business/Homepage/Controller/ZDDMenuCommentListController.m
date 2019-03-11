@@ -39,11 +39,13 @@
     [self request];
 }
 
+- (void)setTargetId:(NSString *)targetId {
+    _targetId = targetId;
+    [self request];
+}
+
 - (void)request {
-    [MFNETWROK post:@"http://120.78.124.36:10005/Comment/ListCommentByTargetid"
-             params:@{
-                      @"targetId": self.targetId
-                      }
+    [MFNETWROK post:@"Comment/ListCommentByTargetid" params:@{@"targetId": self.targetId}
             success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
             
             }

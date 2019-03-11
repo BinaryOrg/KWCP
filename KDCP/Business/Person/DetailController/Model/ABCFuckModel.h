@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger collection_num;
 @property (nonatomic, strong) NSArray *food_list;
 @property (nonatomic, strong) NSArray *cooking_step;
+@property (nonatomic, assign) BOOL is_collect;
 /*
  "recipe_id": "00023802-3f6c-11e9-935c-3cf862dae089",
  "recipe_name": "胖头鱼炖豆腐",

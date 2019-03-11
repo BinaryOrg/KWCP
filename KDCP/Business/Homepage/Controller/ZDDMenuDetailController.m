@@ -26,7 +26,7 @@
 @interface ZDDMenuDetailController () <ASTableDelegate, ASTableDataSource, ZDDMenuDelegate>
 
 @property (nonatomic, strong) ASTableNode *tableNode;
-
+@property (nonatomic, strong) ZDDmenuCollectView *collectView;
 @end
 
 @implementation ZDDMenuDetailController
@@ -39,6 +39,7 @@
 
 - (void)setModel:(ABCFuckModel *)model {
     _model = model;
+    self.collectView.isCollected = model.is_collect;
     [self.tableNode reloadData];
 }
 
@@ -71,16 +72,32 @@
     }];
     collectView.userInteractionEnabled = YES;
     [collectView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickCollect)]];
+    self.collectView = collectView;
+    
+    self.collectView.isCollected = self.model.is_collect;
+
 }
 
 //点击收藏
 - (void)clickCollect {
     if ([GODUserTool isLogin]) {
-        
+        MFNETWROK.requestSerialization = MFJSONRequestSerialization;;
+        [MFNETWROK post:@"Collection/AddOrCancel" params:@{@"userId": [GODUserTool shared].user.user_id.length ? [GODUserTool shared].user.user_id : @"", @"targetId" : self.model.recipe_id} success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+            self.model.is_collect = !self.model.is_collect;
+            self.collectView.isCollected = self.model.is_collect;
+            if (self.model.is_collect) {
+                [MFHUDManager showSuccess:@"收藏成功！"];
+            }else {
+                [MFHUDManager showSuccess:@"已经取消收藏"];
+            }
+        } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+         
+        }];
     }else {
         [self jumpToLogIn];
     }
 }
+
 //点击返回
 - (void)leftBarButtonItemDidClick {
     [self.navigationController popViewControllerAnimated:YES];
@@ -152,6 +169,7 @@
     if (indexPath.row == 3) {
         if ([GODUserTool isLogin]) {
             ZDDMenuCommentListController *vc = [[ZDDMenuCommentListController alloc] init];
+            vc.targetId = self.model.recipe_id;
             [self.navigationController pushViewController:vc animated:YES];
         }else {
             [self jumpToLogIn];
