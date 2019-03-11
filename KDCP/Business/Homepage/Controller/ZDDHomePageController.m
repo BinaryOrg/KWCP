@@ -12,6 +12,9 @@
 
 #import "UINavigationController+FDFullscreenPopGesture.h"
 
+#import "ZDDTagListModel.h"
+
+
 
 @interface ZDDHomePageController ()<ZDDCategoryTagViewDelegate, UIPageViewControllerDelegate, UIPageViewControllerDataSource>
 
@@ -58,37 +61,21 @@
 }
 
 - (void)loadData {
-    
-    ZDDMenuModel *model = [ZDDMenuModel new];
-    model.title = @"家常菜";
-    
-    ZDDMenuModel *model1 = [ZDDMenuModel new];
-    model1.title = @"爽口菜";
-    
-    self.dataArrray = @[model, model1];
-    [self setupUI];
-    return;
-    
-    [MFHUDManager showLoading:@"请求中..."];
-    NSDictionary *paragmras = @{
-                                };
-    MFNETWROK.requestSerialization = MFJSONRequestSerialization;
-    [MFNETWROK get:@"getBookByType" params:paragmras success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
-        [MFHUDManager dismiss];
-        if (statusCode == 200) {
-            self.dataArrray = [NSArray yy_modelArrayWithClass:ZDDMenuModel.class json:result[@"data"][@"book"]];
-            
-            [self setupUI];
-            self.reloadBtn.hidden = YES;
-        }else {
-            self.reloadBtn.hidden = NO;
-            [MFHUDManager showError:@"请求失败"];
-        }
-    } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
-        
-        [MFHUDManager dismiss];
-        [MFHUDManager showError:@"请求失败"];
+    NSMutableArray <NSString *>*tempArr = [NSMutableArray array];
+    NSMutableArray <ZDDMenuModel *>*tempModelArr = [NSMutableArray array];
+    NSArray <ZDDTagListModel *>*tagModelArr = [NSArray yy_modelArrayWithClass:ZDDTagListModel.class json:[self readLocalTagWith]];
+    [tagModelArr enumerateObjectsUsingBlock:^(ZDDTagListModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [tempArr addObjectsFromArray:obj.tag];
     }];
+    [tempArr enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        ZDDMenuModel *model = [ZDDMenuModel new];
+        model.title = obj;
+        [tempModelArr addObject:model];
+    }];
+    
+    self.dataArrray = tempModelArr.copy;
+    [self setupUI];
+   
 }
 - (void)setupUI {
     
@@ -137,6 +124,15 @@
 - (void)clickButtonAtIndex:(NSInteger)index {
     NSInteger currentIndex = [self.controllerArray indexOfObject:self.pageController.viewControllers.firstObject];
     [self.pageController setViewControllers:@[[self.controllerArray objectAtIndex:index]] direction:index>currentIndex?UIPageViewControllerNavigationDirectionForward:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
+}
+
+- (NSArray *)readLocalTagWith {
+    // 获取文件路径
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"caipuTagList" ofType:@"json"];
+    // 将文件数据化
+    NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+    // 对数据进行JSON格式化并返回字典形式
+    return [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
 }
 
 - (ZDDCategoryTagView *)changeTypeView {

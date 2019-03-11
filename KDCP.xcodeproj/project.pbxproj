@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		371B92D4223512A600D3D7DE /* caipuTagList.json in Resources */ = {isa = PBXBuildFile; fileRef = 371B92D3223512A600D3D7DE /* caipuTagList.json */; };
+		371B92D72235139500D3D7DE /* ZDDTagListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 371B92D62235139400D3D7DE /* ZDDTagListModel.m */; };
+		371B92DA2235174D00D3D7DE /* ZDDMenuTagController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371B92D92235174D00D3D7DE /* ZDDMenuTagController.m */; };
+		371B92DD2235179500D3D7DE /* ZDDMennuCategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 371B92DC2235179500D3D7DE /* ZDDMennuCategoryView.m */; };
 		371D3A2A222E6072007C14F7 /* ZDDHomePageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371D3A29222E6072007C14F7 /* ZDDHomePageController.m */; };
 		371D3A2D222E60AB007C14F7 /* ZDDCategoryTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 371D3A2C222E60AB007C14F7 /* ZDDCategoryTagView.m */; };
 		371D3A30222E6190007C14F7 /* ZDDMenuListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371D3A2F222E6190007C14F7 /* ZDDMenuListController.m */; };
@@ -62,6 +66,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		371B92D3223512A600D3D7DE /* caipuTagList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = caipuTagList.json; sourceTree = "<group>"; };
+		371B92D52235139400D3D7DE /* ZDDTagListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDTagListModel.h; sourceTree = "<group>"; };
+		371B92D62235139400D3D7DE /* ZDDTagListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDTagListModel.m; sourceTree = "<group>"; };
+		371B92D82235174D00D3D7DE /* ZDDMenuTagController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDMenuTagController.h; sourceTree = "<group>"; };
+		371B92D92235174D00D3D7DE /* ZDDMenuTagController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDMenuTagController.m; sourceTree = "<group>"; };
+		371B92DB2235179500D3D7DE /* ZDDMennuCategoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDMennuCategoryView.h; sourceTree = "<group>"; };
+		371B92DC2235179500D3D7DE /* ZDDMennuCategoryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDMennuCategoryView.m; sourceTree = "<group>"; };
 		371D3A28222E6072007C14F7 /* ZDDHomePageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDHomePageController.h; sourceTree = "<group>"; };
 		371D3A29222E6072007C14F7 /* ZDDHomePageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDHomePageController.m; sourceTree = "<group>"; };
 		371D3A2B222E60AB007C14F7 /* ZDDCategoryTagView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDCategoryTagView.h; sourceTree = "<group>"; };
@@ -229,6 +240,8 @@
 				371D3A46222E77C2007C14F7 /* ZDDMenuDetailController.m */,
 				37F5E385222F91EA00CAE1CE /* ZDDMenuCommentListController.h */,
 				37F5E386222F91EA00CAE1CE /* ZDDMenuCommentListController.m */,
+				371B92D82235174D00D3D7DE /* ZDDMenuTagController.h */,
+				371B92D92235174D00D3D7DE /* ZDDMenuTagController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -238,6 +251,8 @@
 			children = (
 				371D3A32222E65B0007C14F7 /* ZDDMenuModel.h */,
 				371D3A33222E65B0007C14F7 /* ZDDMenuModel.m */,
+				371B92D52235139400D3D7DE /* ZDDTagListModel.h */,
+				371B92D62235139400D3D7DE /* ZDDTagListModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -263,6 +278,8 @@
 				37F5E37D222F7D3800CAE1CE /* ZDDMenuCommentCellNode.m */,
 				37F5E38E222F98FD00CAE1CE /* ZDDmenuCollectView.h */,
 				37F5E38F222F98FD00CAE1CE /* ZDDmenuCollectView.m */,
+				371B92DB2235179500D3D7DE /* ZDDMennuCategoryView.h */,
+				371B92DC2235179500D3D7DE /* ZDDMennuCategoryView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -398,6 +415,7 @@
 				4AF49E03221A9A6D004F45EB /* Controller */,
 				4AF49DCE221A8F3F004F45EB /* Utils */,
 				4AF49DBD221A8A29004F45EB /* LaunchScreen.storyboard */,
+				371B92D3223512A600D3D7DE /* caipuTagList.json */,
 				4AF49DBB221A8A29004F45EB /* Assets.xcassets */,
 				4AF49DC0221A8A29004F45EB /* Info.plist */,
 				37F5E370222F726900CAE1CE /* logbgv.gif */,
@@ -647,6 +665,7 @@
 				4AF49DBF221A8A29004F45EB /* LaunchScreen.storyboard in Resources */,
 				4AF49DBC221A8A29004F45EB /* Assets.xcassets in Resources */,
 				37F5E371222F726900CAE1CE /* logbgv.gif in Resources */,
+				371B92D4223512A600D3D7DE /* caipuTagList.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -728,6 +747,7 @@
 				37F2A5A3222EC36D00EACEC4 /* UIView+LH.m in Sources */,
 				4A7FCF06221B94F300CD6876 /* ZDDTabBarController.m in Sources */,
 				4AF49E17221A9E58004F45EB /* ZDDThemeConfiguration.m in Sources */,
+				371B92DA2235174D00D3D7DE /* ZDDMenuTagController.m in Sources */,
 				37F5E37E222F7D3800CAE1CE /* ZDDMenuCommentCellNode.m in Sources */,
 				37F2A58B222EA23F00EACEC4 /* ZDDMenuDetailTopCellNode.m in Sources */,
 				4AF49DED221A92F1004F45EB /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
@@ -755,9 +775,11 @@
 				37F2A5A7222EC36D00EACEC4 /* UIColor+CustomColors.m in Sources */,
 				37F2A5A5222EC36D00EACEC4 /* NSMutableAttributedString+Chain.m in Sources */,
 				37655825222FB7EB00CC4D47 /* GODWebViewController.m in Sources */,
+				371B92D72235139500D3D7DE /* ZDDTagListModel.m in Sources */,
 				4AF49DB4221A8A18004F45EB /* TEMPAppDelegate.m in Sources */,
 				371D3A2D222E60AB007C14F7 /* ZDDCategoryTagView.m in Sources */,
 				4AF49DE6221A92B8004F45EB /* NSDictionary+HYBUnicodeReadable.m in Sources */,
+				371B92DD2235179500D3D7DE /* ZDDMennuCategoryView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
