@@ -346,6 +346,7 @@ PODS:
     - SDWebImage/Core (= 4.4.5)
   - SDWebImage/Core (4.4.5)
   - SSZipArchive (2.1.4)
+  - SVProgressHUD (2.2.5)
   - Texture (2.7):
     - Texture/PINRemoteImage (= 2.7)
   - Texture/Core (2.7)
@@ -391,6 +392,7 @@ DEPENDENCIES:
   - SAMKeychain
   - SDWebImage
   - SSZipArchive
+  - SVProgressHUD
   - Texture
   - "UITextView+Placeholder"
   - XHLaunchAd
@@ -430,6 +432,7 @@ SPEC REPOS:
     - SAMKeychain
     - SDWebImage
     - SSZipArchive
+    - SVProgressHUD
     - Texture
     - "UITextView+Placeholder"
     - XHLaunchAd
@@ -470,6 +473,7 @@ SPEC CHECKSUMS:
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   SDWebImage: ecc03494e973b93b80213649d32175f8d2d17d4d
   SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   Texture: 9d7e38965cf22ccd7cd9c249dd78b3f14e70ab6c
   "UITextView+Placeholder": 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
   XHLaunchAd: 45048592af01aa501c9d2d0c45e95ca74c4d0596
@@ -480,6 +484,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: cce7223f344303eb039800c3ba6748083fc134bc
+PODFILE CHECKSUM: 7fabc521a9bac1d198a90bf468c1b675d18b7388
 
 COCOAPODS: 1.6.1

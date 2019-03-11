@@ -19,7 +19,7 @@
         self.avatarImageView.layer.cornerRadius = 5;
         self.avatarImageView.layer.masksToBounds = YES;
         [self.contentView addSubview:self.avatarImageView];
-        
+        self.avatarImageView.contentMode = UIViewContentModeScaleAspectFill;
         self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(80, 10, 100, 30)];
         self.nameLabel.textColor = [UIColor zdd_grayColor];
         self.nameLabel.font = [UIFont systemFontOfSize:15];

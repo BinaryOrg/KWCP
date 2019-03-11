@@ -20,7 +20,8 @@
 #import "UIColor+ZDDColor.h"
 
 #import "FUCKNoteViewController.h"
-
+#import "ABCMotherFuckerViewController.h"
+#import "ABCMyCollectionViewController.h"
 
 @interface ZDDGODPersonViewController ()
 <
@@ -72,6 +73,7 @@ QMUIImagePickerViewControllerDelegate
     [self.view addSubview:self.tableView];
     self.navigationItem.title = @"个人中心";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadCustomInfo) name:LoginSuccessNotification object:nil];
+    NSLog(@"%@", [GODUserTool shared].user.user_id);
 }
 
 - (void)reloadCustomInfo {
@@ -143,14 +145,21 @@ QMUIImagePickerViewControllerDelegate
                 [self presentViewController:[ZDDMenuLogInController new] animated:YES completion:nil];
             }
         }else if (indexPath.row == 1) {
-//            [self presentViewController:[ZDDYZXSViewController new] animated:YES completion:nil];
+            if ([GODUserTool isLogin]) {
+                ABCMyCollectionViewController *fuck = [[ABCMyCollectionViewController alloc] init];
+                [self.navigationController pushViewController:fuck animated:YES];
+            }
+            else {
+                [self presentViewController:[ZDDMenuLogInController new] animated:YES completion:nil];
+            }
         }else {
-            
+            ABCMotherFuckerViewController *mf = [[ABCMotherFuckerViewController alloc] init];
+            [self.navigationController pushViewController:mf animated:YES];
         }
     }
     else if (indexPath.section == 2) {
         [[GODUserTool shared] clearUserInfo];
-//        [[NSNotificationCenter defaultCenter] postNotificationName:QRFBSuccessNotification object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:FBSuccessNotification object:nil];
         [self reloadCustomInfo];
     }
     

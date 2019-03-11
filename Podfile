@@ -36,4 +36,6 @@ target 'KDCP' do
   pod 'AVOSCloudIM'
   pod 'UITextView+Placeholder'
   pod 'CTAssetsPickerController',  '~> 3.3.0'
+  
+  pod 'SVProgressHUD'
 end

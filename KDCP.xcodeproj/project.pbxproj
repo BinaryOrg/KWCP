@@ -37,6 +37,12 @@
 		37F5E390222F98FD00CAE1CE /* ZDDmenuCollectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F5E38F222F98FD00CAE1CE /* ZDDmenuCollectView.m */; };
 		4A3100FB222FA10F009292CB /* NSString+Regex.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3100F9222FA10F009292CB /* NSString+Regex.m */; };
 		4A7FCF06221B94F300CD6876 /* ZDDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7FCF05221B94F300CD6876 /* ZDDTabBarController.m */; };
+		4A9E410A2235E62800B9E1B2 /* ABCMotherFuckerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9E41092235E62800B9E1B2 /* ABCMotherFuckerViewController.m */; };
+		4A9E410D2235F45F00B9E1B2 /* ABCMyCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9E410C2235F45F00B9E1B2 /* ABCMyCollectionViewController.m */; };
+		4A9E41112235F5B700B9E1B2 /* ABCFuckModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9E41102235F5B700B9E1B2 /* ABCFuckModel.m */; };
+		4A9E41142235F66700B9E1B2 /* ABCFuckDetail1.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9E41132235F66700B9E1B2 /* ABCFuckDetail1.m */; };
+		4A9E41172235F67000B9E1B2 /* ABCFuckDetail2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9E41162235F67000B9E1B2 /* ABCFuckDetail2.m */; };
+		4A9E411B2235F98B00B9E1B2 /* ABCFuckCollectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9E411A2235F98B00B9E1B2 /* ABCFuckCollectionTableViewCell.m */; };
 		4AF49DB4221A8A18004F45EB /* TEMPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF49DB3221A8A18004F45EB /* TEMPAppDelegate.m */; };
 		4AF49DBC221A8A29004F45EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AF49DBB221A8A29004F45EB /* Assets.xcassets */; };
 		4AF49DBF221A8A29004F45EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AF49DBD221A8A29004F45EB /* LaunchScreen.storyboard */; };
@@ -138,6 +144,18 @@
 		4A3100FA222FA10F009292CB /* NSString+Regex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Regex.h"; sourceTree = "<group>"; };
 		4A7FCF04221B94F300CD6876 /* ZDDTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDTabBarController.h; sourceTree = "<group>"; };
 		4A7FCF05221B94F300CD6876 /* ZDDTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDTabBarController.m; sourceTree = "<group>"; };
+		4A9E41082235E62800B9E1B2 /* ABCMotherFuckerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCMotherFuckerViewController.h; sourceTree = "<group>"; };
+		4A9E41092235E62800B9E1B2 /* ABCMotherFuckerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABCMotherFuckerViewController.m; sourceTree = "<group>"; };
+		4A9E410B2235F45F00B9E1B2 /* ABCMyCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCMyCollectionViewController.h; sourceTree = "<group>"; };
+		4A9E410C2235F45F00B9E1B2 /* ABCMyCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABCMyCollectionViewController.m; sourceTree = "<group>"; };
+		4A9E410F2235F5B700B9E1B2 /* ABCFuckModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCFuckModel.h; sourceTree = "<group>"; };
+		4A9E41102235F5B700B9E1B2 /* ABCFuckModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABCFuckModel.m; sourceTree = "<group>"; };
+		4A9E41122235F66700B9E1B2 /* ABCFuckDetail1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCFuckDetail1.h; sourceTree = "<group>"; };
+		4A9E41132235F66700B9E1B2 /* ABCFuckDetail1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABCFuckDetail1.m; sourceTree = "<group>"; };
+		4A9E41152235F67000B9E1B2 /* ABCFuckDetail2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCFuckDetail2.h; sourceTree = "<group>"; };
+		4A9E41162235F67000B9E1B2 /* ABCFuckDetail2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABCFuckDetail2.m; sourceTree = "<group>"; };
+		4A9E41192235F98B00B9E1B2 /* ABCFuckCollectionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCFuckCollectionTableViewCell.h; sourceTree = "<group>"; };
+		4A9E411A2235F98B00B9E1B2 /* ABCFuckCollectionTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABCFuckCollectionTableViewCell.m; sourceTree = "<group>"; };
 		4AF49DAF221A8A18004F45EB /* KDCP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KDCP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AF49DB2221A8A18004F45EB /* TEMPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TEMPAppDelegate.h; sourceTree = "<group>"; };
 		4AF49DB3221A8A18004F45EB /* TEMPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TEMPAppDelegate.m; sourceTree = "<group>"; };
@@ -382,6 +400,41 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		4A9E41072235E5E800B9E1B2 /* DetailController */ = {
+			isa = PBXGroup;
+			children = (
+				4A9E41182235F97000B9E1B2 /* Cell */,
+				4A9E410E2235F5A900B9E1B2 /* Model */,
+				4A9E41082235E62800B9E1B2 /* ABCMotherFuckerViewController.h */,
+				4A9E41092235E62800B9E1B2 /* ABCMotherFuckerViewController.m */,
+				4A9E410B2235F45F00B9E1B2 /* ABCMyCollectionViewController.h */,
+				4A9E410C2235F45F00B9E1B2 /* ABCMyCollectionViewController.m */,
+			);
+			path = DetailController;
+			sourceTree = "<group>";
+		};
+		4A9E410E2235F5A900B9E1B2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4A9E410F2235F5B700B9E1B2 /* ABCFuckModel.h */,
+				4A9E41102235F5B700B9E1B2 /* ABCFuckModel.m */,
+				4A9E41122235F66700B9E1B2 /* ABCFuckDetail1.h */,
+				4A9E41132235F66700B9E1B2 /* ABCFuckDetail1.m */,
+				4A9E41152235F67000B9E1B2 /* ABCFuckDetail2.h */,
+				4A9E41162235F67000B9E1B2 /* ABCFuckDetail2.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4A9E41182235F97000B9E1B2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4A9E41192235F98B00B9E1B2 /* ABCFuckCollectionTableViewCell.h */,
+				4A9E411A2235F98B00B9E1B2 /* ABCFuckCollectionTableViewCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		4AF49DA6221A8A18004F45EB = {
 			isa = PBXGroup;
 			children = (
@@ -602,6 +655,7 @@
 		7516DD7B2234092B00FE97DC /* Person */ = {
 			isa = PBXGroup;
 			children = (
+				4A9E41072235E5E800B9E1B2 /* DetailController */,
 				7516DD8022340BE900FE97DC /* Cell */,
 				7516DD7C22340A1100FE97DC /* ZDDGODPersonViewController.h */,
 				7516DD7D22340A1100FE97DC /* ZDDGODPersonViewController.m */,
@@ -768,6 +822,7 @@
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/QMUIKit/QMUIKit/QMUIResources/QMUIResources.bundle",
 				"${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -780,6 +835,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QMUIResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SAMKeychain.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -818,13 +874,16 @@
 				7516DD8F2234984000FE97DC /* FUCKNoteModel.m in Sources */,
 				4AF49DF8221A937A004F45EB /* TEMPAppDelegate+PushService.m in Sources */,
 				4AF49DE9221A92B8004F45EB /* Foundation+Log.m in Sources */,
+				4A9E41112235F5B700B9E1B2 /* ABCFuckModel.m in Sources */,
 				7516DDA32234E0FD00FE97DC /* FUCKIngLifeTableViewCell.m in Sources */,
+				4A9E41142235F66700B9E1B2 /* ABCFuckDetail1.m in Sources */,
 				37F2A5A4222EC36D00EACEC4 /* NSMutableDictionary+Attributes.m in Sources */,
 				37F5E367222F655000CAE1CE /* ZDDMenuLogInController.m in Sources */,
 				37ADF4E1222FCCAE001FE491 /* ZDDPhotoBrowseView.m in Sources */,
 				37F5E377222F777D00CAE1CE /* GODUserTool.m in Sources */,
 				371D3A34222E65B0007C14F7 /* ZDDMenuModel.m in Sources */,
 				371D3A30222E6190007C14F7 /* ZDDMenuListController.m in Sources */,
+				4A9E410A2235E62800B9E1B2 /* ABCMotherFuckerViewController.m in Sources */,
 				37F2A5A2222EC36D00EACEC4 /* ASButtonNode+LHExtension.m in Sources */,
 				7516DD9D2234A11800FE97DC /* FUCKFBNoteViewController.m in Sources */,
 				37F2A591222EB5EE00EACEC4 /* ZDDMenuFoodsListCellNode.m in Sources */,
@@ -863,9 +922,12 @@
 				371D3A37222E697C007C14F7 /* ZDDMenuListCell.m in Sources */,
 				4AF49DE7221A92B8004F45EB /* NSArray+HYBUnicodeReadable.m in Sources */,
 				4AF49DC2221A8A29004F45EB /* main.m in Sources */,
+				4A9E41172235F67000B9E1B2 /* ABCFuckDetail2.m in Sources */,
 				37F5E387222F91EA00CAE1CE /* ZDDMenuCommentListController.m in Sources */,
+				4A9E410D2235F45F00B9E1B2 /* ABCMyCollectionViewController.m in Sources */,
 				37F5E381222F7DC500CAE1CE /* ZDDMenuOpenCommentCellNode.m in Sources */,
 				7516DD95223499B900FE97DC /* FUCKNote2TableViewCell.m in Sources */,
+				4A9E411B2235F98B00B9E1B2 /* ABCFuckCollectionTableViewCell.m in Sources */,
 				7516DD8322340C2800FE97DC /* ZDDPersonHeadTableViewCell.m in Sources */,
 				37F2A5A7222EC36D00EACEC4 /* UIColor+CustomColors.m in Sources */,
 				37F2A5A5222EC36D00EACEC4 /* NSMutableAttributedString+Chain.m in Sources */,

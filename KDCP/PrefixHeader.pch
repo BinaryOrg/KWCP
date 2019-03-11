@@ -26,4 +26,6 @@
 #import "UIColor+ZDDColor.h"
 #import "ZDDThemeConfiguration.h"
 #import "UIView+ZDD.h"
+
+#import <SVProgressHUD/SVProgressHUD.h>
 #endif /* PrefixHeader_pch */
