@@ -301,19 +301,19 @@
     
     
     
-//    [SMSSDK commitVerificationCode:self.pwdTextField.text phoneNumber:self.nameTextField.text zone:@"86" result:^(NSError *error) {
-//
-//        if (!error)
-//        {
+    [SMSSDK commitVerificationCode:self.pwdTextField.text phoneNumber:self.nameTextField.text zone:@"86" result:^(NSError *error) {
+
+        if (!error)
+        {
             // 验证成功
             [self loginWithTelephone];
-//        }
-//        else
-//        {
-//            // error
-//            [MFHUDManager showError:@"验证码错误"];
-//        }
-//    }];
+        }
+        else
+        {
+            // error
+            [MFHUDManager showError:@"验证码错误"];
+        }
+    }];
     // 请求后台
 }
 

@@ -34,6 +34,14 @@
 - (void)setDataArr:(NSArray<ZDDMenuModel *> *)dataArr {
     _dataArr = dataArr;
     [self.tableView reloadData];
+    if (dataArr.count) {
+        [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionTop];
+        if ([self.delegate respondsToSelector:@selector(clickCategory:indexPath:)]) {
+            ZDDMenuModel *model = self.dataArr[0];
+            [self.delegate clickCategory:model.title indexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+        }
+    }
+    
 }
 
 #pragma mark - 追问/回答的数据源+代理
