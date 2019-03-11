@@ -10,18 +10,25 @@
 #import "ZDDInputView.h"
 #import "ZDDMenuCommentCellNode.h"
 #import "UIView+ZDD.h"
-
+#import <MFNetworkManager/MFNetworkManager.h>
 
 @interface ZDDMenuCommentListController ()<ASTableDelegate, ASTableDataSource>
 
 @property (nonatomic, strong) ASTableNode *tableNode;
 @property (nonatomic, strong) ZDDInputView *inputView;
 @property (nonatomic, assign) BOOL isForgiveFirstResponse;
-
+@property (nonatomic, strong) NSMutableArray *list;
 
 @end
 
 @implementation ZDDMenuCommentListController
+
+- (NSMutableArray *)list {
+    if (!_list) {
+        _list = @[].mutableCopy;
+    }
+    return _list;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,7 +36,20 @@
     [self setupUI];
     
     [self addNotiObser];
+    [self request];
+}
 
+- (void)request {
+    [MFNETWROK post:@"http://120.78.124.36:10005/Comment/ListCommentByTargetid"
+             params:@{
+                      @"targetId": self.targetId
+                      }
+            success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+            
+            }
+            failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+            
+            }];
 }
 
 - (void)setupUI {
@@ -115,7 +135,7 @@
 #pragma mark - tableNodeDelegate
 - (NSInteger)tableNode:(ASTableNode *)tableNode numberOfRowsInSection:(NSInteger)section {
     
-    return 20;
+    return self.list.count;
 }
 
 
