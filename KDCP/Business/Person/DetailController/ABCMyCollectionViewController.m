@@ -164,9 +164,9 @@ UITableViewDataSource
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     ZDDMenuDetailController *detail = [[ZDDMenuDetailController alloc] init];
 //    detail.note = self.list[indexPath.row];
-    self.hidesBottomBarWhenPushed = YES;
+//    self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:detail animated:YES];
-    self.hidesBottomBarWhenPushed = NO;
+//    self.hidesBottomBarWhenPushed = NO;
 }
 
 
