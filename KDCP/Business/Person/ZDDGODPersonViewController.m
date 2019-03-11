@@ -20,7 +20,6 @@
 #import "UIColor+ZDDColor.h"
 
 #import "FUCKNoteViewController.h"
-#import "ABCMotherFuckerViewController.h"
 #import "ABCMyCollectionViewController.h"
 
 @interface ZDDGODPersonViewController ()
@@ -153,8 +152,7 @@ QMUIImagePickerViewControllerDelegate
                 [self presentViewController:[ZDDMenuLogInController new] animated:YES completion:nil];
             }
         }else {
-            ABCMotherFuckerViewController *mf = [[ABCMotherFuckerViewController alloc] init];
-            [self.navigationController pushViewController:mf animated:YES];
+            [self contact];
         }
     }
     else if (indexPath.section == 2) {
@@ -163,6 +161,21 @@ QMUIImagePickerViewControllerDelegate
         [self reloadCustomInfo];
     }
     
+}
+
+- (void)contact {
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    pasteboard.string = @"Shmily_liuyy";
+    [MFHUDManager showSuccess:@"作者微信号已成功复制到剪切板！"];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSURL * url = [NSURL URLWithString:@"weixin://"];
+        BOOL canOpen = [[UIApplication sharedApplication] canOpenURL:url];
+        if (canOpen) {
+            if (@available(iOS 10.0, *)) {
+                [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
+            }
+        }
+    });
 }
 
 - (void)login {

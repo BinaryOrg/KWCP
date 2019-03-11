@@ -37,7 +37,6 @@
 		37F5E390222F98FD00CAE1CE /* ZDDmenuCollectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F5E38F222F98FD00CAE1CE /* ZDDmenuCollectView.m */; };
 		4A3100FB222FA10F009292CB /* NSString+Regex.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3100F9222FA10F009292CB /* NSString+Regex.m */; };
 		4A7FCF06221B94F300CD6876 /* ZDDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7FCF05221B94F300CD6876 /* ZDDTabBarController.m */; };
-		4A9E410A2235E62800B9E1B2 /* ABCMotherFuckerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9E41092235E62800B9E1B2 /* ABCMotherFuckerViewController.m */; };
 		4A9E410D2235F45F00B9E1B2 /* ABCMyCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9E410C2235F45F00B9E1B2 /* ABCMyCollectionViewController.m */; };
 		4A9E41112235F5B700B9E1B2 /* ABCFuckModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9E41102235F5B700B9E1B2 /* ABCFuckModel.m */; };
 		4A9E41142235F66700B9E1B2 /* ABCFuckDetail1.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9E41132235F66700B9E1B2 /* ABCFuckDetail1.m */; };
@@ -144,8 +143,6 @@
 		4A3100FA222FA10F009292CB /* NSString+Regex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Regex.h"; sourceTree = "<group>"; };
 		4A7FCF04221B94F300CD6876 /* ZDDTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDTabBarController.h; sourceTree = "<group>"; };
 		4A7FCF05221B94F300CD6876 /* ZDDTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDTabBarController.m; sourceTree = "<group>"; };
-		4A9E41082235E62800B9E1B2 /* ABCMotherFuckerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCMotherFuckerViewController.h; sourceTree = "<group>"; };
-		4A9E41092235E62800B9E1B2 /* ABCMotherFuckerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABCMotherFuckerViewController.m; sourceTree = "<group>"; };
 		4A9E410B2235F45F00B9E1B2 /* ABCMyCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCMyCollectionViewController.h; sourceTree = "<group>"; };
 		4A9E410C2235F45F00B9E1B2 /* ABCMyCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABCMyCollectionViewController.m; sourceTree = "<group>"; };
 		4A9E410F2235F5B700B9E1B2 /* ABCFuckModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCFuckModel.h; sourceTree = "<group>"; };
@@ -405,8 +402,6 @@
 			children = (
 				4A9E41182235F97000B9E1B2 /* Cell */,
 				4A9E410E2235F5A900B9E1B2 /* Model */,
-				4A9E41082235E62800B9E1B2 /* ABCMotherFuckerViewController.h */,
-				4A9E41092235E62800B9E1B2 /* ABCMotherFuckerViewController.m */,
 				4A9E410B2235F45F00B9E1B2 /* ABCMyCollectionViewController.h */,
 				4A9E410C2235F45F00B9E1B2 /* ABCMyCollectionViewController.m */,
 			);
@@ -883,7 +878,6 @@
 				37F5E377222F777D00CAE1CE /* GODUserTool.m in Sources */,
 				371D3A34222E65B0007C14F7 /* ZDDMenuModel.m in Sources */,
 				371D3A30222E6190007C14F7 /* ZDDMenuListController.m in Sources */,
-				4A9E410A2235E62800B9E1B2 /* ABCMotherFuckerViewController.m in Sources */,
 				37F2A5A2222EC36D00EACEC4 /* ASButtonNode+LHExtension.m in Sources */,
 				7516DD9D2234A11800FE97DC /* FUCKFBNoteViewController.m in Sources */,
 				37F2A591222EB5EE00EACEC4 /* ZDDMenuFoodsListCellNode.m in Sources */,
