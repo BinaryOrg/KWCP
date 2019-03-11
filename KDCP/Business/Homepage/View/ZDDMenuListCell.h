@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ABCFuckModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZDDMenuListCell : UITableViewCell
+
+/** <#class#> */
+@property (nonatomic, strong) ABCFuckModel *model;
 
 @end
 

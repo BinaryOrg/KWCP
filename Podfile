@@ -29,10 +29,13 @@ target 'KDCP' do
   
   pod 'XHLaunchAd'
   pod 'SDWebImage'
-  pod 'SDWebImage/GIF'
+#  pod 'SDWebImage/GIF'
   pod 'FLAnimatedImage'
 
   pod 'AVOSCloud'               # 数据存储、短信、云引擎调用等基础服务模块
   pod 'AVOSCloudIM'
   pod 'TTGTagCollectionView'
+  pod 'UITextView+Placeholder'
+  pod 'CTAssetsPickerController',  '~> 3.3.0'
+  pod 'SVProgressHUD'
 end

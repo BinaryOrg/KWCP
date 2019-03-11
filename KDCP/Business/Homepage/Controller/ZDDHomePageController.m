@@ -12,7 +12,6 @@
 
 #import "UINavigationController+FDFullscreenPopGesture.h"
 
-#import "ZDDTagListModel.h"
 
 
 
@@ -20,7 +19,6 @@
 
 @property (nonatomic, strong) ZDDCategoryTagView *changeTypeView;
 @property (nonatomic, strong) NSArray *dataArrray;
-@property (nonatomic, strong) NSArray *titleArray;
 
 @property (nonatomic, strong) NSArray <ZDDMenuListController *>*controllerArray;
 @property (nonatomic, strong) UIPageViewController *pageController;
@@ -61,20 +59,7 @@
 }
 
 - (void)loadData {
-    NSMutableArray <NSString *>*tempArr = [NSMutableArray array];
-    NSMutableArray <ZDDMenuModel *>*tempModelArr = [NSMutableArray array];
-    NSArray <ZDDTagListModel *>*tagModelArr = [NSArray yy_modelArrayWithClass:ZDDTagListModel.class json:[self readLocalTagWith]];
-    [tagModelArr enumerateObjectsUsingBlock:^(ZDDTagListModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [tempArr addObjectsFromArray:obj.tag];
-    }];
-    [tempArr enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        ZDDMenuModel *model = [ZDDMenuModel new];
-        model.title = obj;
-        [tempModelArr addObject:model];
-    }];
     
-    self.dataArrray = tempModelArr.copy;
-    [self setupUI];
    
 }
 - (void)setupUI {
@@ -126,34 +111,16 @@
     [self.pageController setViewControllers:@[[self.controllerArray objectAtIndex:index]] direction:index>currentIndex?UIPageViewControllerNavigationDirectionForward:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
 }
 
-- (NSArray *)readLocalTagWith {
-    // 获取文件路径
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"caipuTagList" ofType:@"json"];
-    // 将文件数据化
-    NSData *data = [[NSData alloc] initWithContentsOfFile:path];
-    // 对数据进行JSON格式化并返回字典形式
-    return [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-}
 
-- (ZDDCategoryTagView *)changeTypeView {
-    if (!_changeTypeView) {
-        _changeTypeView = [[ZDDCategoryTagView alloc] initWithTitles:self.titleArray];
-        _changeTypeView.delegate = self;
-    }
-    return _changeTypeView;
-}
 
-- (NSArray *)titleArray {
-    if (!_titleArray) {
-        NSMutableArray *tempArr = [NSMutableArray arrayWithCapacity:self.dataArrray.count];
-        for (NSInteger i = 0; i < self.dataArrray.count; i ++) {
-            ZDDMenuModel *model = self.dataArrray[i];
-            [tempArr addObject:model.title];
-        }
-        _titleArray = tempArr.copy;
-    }
-    return _titleArray;
-}
+//- (ZDDCategoryTagView *)changeTypeView {
+//    if (!_changeTypeView) {
+//        _changeTypeView = [[ZDDCategoryTagView alloc] initWithTitles:self.titleArray];
+//        _changeTypeView.delegate = self;
+//    }
+//    return _changeTypeView;
+//}
+
 
 
 - (UIPageViewController *)pageController {

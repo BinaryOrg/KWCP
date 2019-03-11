@@ -33,6 +33,8 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (3.0.0):
     - CocoaLumberjack/Default
+  - CTAssetsPickerController (3.3.1):
+    - PureLayout (~> 3.0.0)
   - DateTools (2.0.0)
   - FLAnimatedImage (1.0.12)
   - FreeStreamer (3.8.3):
@@ -66,6 +68,7 @@ PODS:
   - PINRemoteImage/PINCache (3.0.0-beta.13):
     - PINCache (= 3.0.1-beta.6)
     - PINRemoteImage/Core
+  - PureLayout (3.0.2)
   - QMUIKit (3.1.1):
     - QMUIKit/QMUIComponents (= 3.1.1)
     - QMUIKit/QMUICore (= 3.1.1)
@@ -339,13 +342,11 @@ PODS:
   - RealReachability/Connection (1.3.0)
   - RealReachability/Ping (1.3.0)
   - SAMKeychain (1.5.3)
-  - SDWebImage (4.4.6):
-    - SDWebImage/Core (= 4.4.6)
-  - SDWebImage/Core (4.4.6)
-  - SDWebImage/GIF (4.4.6):
-    - FLAnimatedImage (~> 1.0)
-    - SDWebImage/Core
+  - SDWebImage (4.4.5):
+    - SDWebImage/Core (= 4.4.5)
+  - SDWebImage/Core (4.4.5)
   - SSZipArchive (2.1.4)
+  - SVProgressHUD (2.2.5)
   - Texture (2.7):
     - Texture/PINRemoteImage (= 2.7)
   - Texture/Core (2.7)
@@ -354,6 +355,7 @@ PODS:
     - PINRemoteImage/PINCache
     - Texture/Core
   - TTGTagCollectionView (1.11.1)
+  - "UITextView+Placeholder (1.2.1)"
   - XHLaunchAd (3.9.8):
     - FLAnimatedImage (~> 1.0.12)
   - YTKNetwork (2.0.4):
@@ -375,6 +377,7 @@ DEPENDENCIES:
   - AVOSCloudIM
   - Bugly
   - CocoaLumberjack (~> 3.0.0)
+  - CTAssetsPickerController (~> 3.3.0)
   - DateTools
   - FLAnimatedImage
   - FreeStreamer (~> 3.8.2)
@@ -389,10 +392,11 @@ DEPENDENCIES:
   - QMUIKit
   - SAMKeychain
   - SDWebImage
-  - SDWebImage/GIF
   - SSZipArchive
+  - SVProgressHUD
   - Texture
   - TTGTagCollectionView
+  - "UITextView+Placeholder"
   - XHLaunchAd
   - YTKNetwork
   - YYCategories
@@ -406,6 +410,7 @@ SPEC REPOS:
     - AVOSCloudIM
     - Bugly
     - CocoaLumberjack
+    - CTAssetsPickerController
     - DateTools
     - FLAnimatedImage
     - FreeStreamer
@@ -422,14 +427,17 @@ SPEC REPOS:
     - PINCache
     - PINOperation
     - PINRemoteImage
+    - PureLayout
     - QMUIKit
     - Reachability
     - RealReachability
     - SAMKeychain
     - SDWebImage
     - SSZipArchive
+    - SVProgressHUD
     - Texture
     - TTGTagCollectionView
+    - "UITextView+Placeholder"
     - XHLaunchAd
     - YTKNetwork
     - YYCache
@@ -444,6 +452,7 @@ SPEC CHECKSUMS:
   AVOSCloudIM: dd3ce21e697dd8af78645cee27c31d0e29121f14
   Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
   CocoaLumberjack: c823149bccc5519a9447aeb433be7b1212a7d6a5
+  CTAssetsPickerController: b1d1d50ab87cf6b8b13531de5f4530482e7e53ed
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   FreeStreamer: b205b0bf6a2e7855f935369145498f930eb27cac
@@ -460,14 +469,17 @@ SPEC CHECKSUMS:
   PINCache: d195fdba255283f7e9900a55e3cced377f431f9b
   PINOperation: a6219e6fc9db9c269eb7a7b871ac193bcf400aac
   PINRemoteImage: d6d51c5d2adda55f1ce30c96e850b6c4ebd2856a
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   QMUIKit: 9ab3ea87aaa8260b9cbfa30dead61622b84c5f96
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   RealReachability: eae9c58d2db52fadd8e1cba4b5d4c028454fbc47
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
-  SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
+  SDWebImage: ecc03494e973b93b80213649d32175f8d2d17d4d
   SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   Texture: 9d7e38965cf22ccd7cd9c249dd78b3f14e70ab6c
   TTGTagCollectionView: 86fcbfa6a7493c9e860b01c2e693cffc8acf6de1
+  "UITextView+Placeholder": 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
   XHLaunchAd: 45048592af01aa501c9d2d0c45e95ca74c4d0596
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
@@ -476,6 +488,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 9ca6e5d1cf123678972c99bca00b618516f557cb
+PODFILE CHECKSUM: 3776adf4c010d7f753a3ace789e731bfd9ff6253
 
 COCOAPODS: 1.5.3

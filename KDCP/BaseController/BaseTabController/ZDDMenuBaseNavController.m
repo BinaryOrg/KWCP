@@ -28,9 +28,9 @@
     
     self.popDelegate = self.interactivePopGestureRecognizer.delegate;
     
-    [self.navigationBar setShadowImage:[UIImage new]]; // 去除navBar下的1px的横线
-    [self.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor],NSFontAttributeName : [UIFont fontWithName:@"PingFangSC-Light" size:17]}];
+//    [self.navigationBar setShadowImage:[UIImage new]]; // 去除navBar下的1px的横线
+//    [self.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+//    [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor],NSFontAttributeName : [UIFont fontWithName:@"PingFangSC-Medim" size:17]}];
     // 设置导航控制器的代理
     self.delegate = self;
 }
