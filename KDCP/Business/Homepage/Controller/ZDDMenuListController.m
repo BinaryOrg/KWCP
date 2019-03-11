@@ -44,6 +44,7 @@
     }];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu_chose"] style:UIBarButtonItemStyleDone target:self action:@selector(choseCategory)];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:LoginSuccessNotification object:nil];
 
 }
 

@@ -165,6 +165,7 @@ UITableViewDataSource
     ZDDMenuDetailController *detail = [[ZDDMenuDetailController alloc] init];
 //    detail.note = self.list[indexPath.row];
 //    self.hidesBottomBarWhenPushed = YES;
+    detail.model = self.list[indexPath.row];
     [self.navigationController pushViewController:detail animated:YES];
 //    self.hidesBottomBarWhenPushed = NO;
 }

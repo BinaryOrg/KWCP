@@ -20,7 +20,7 @@
 
 @implementation ZDDMenuCommentCellNode
 
-- (instancetype)init {
+- (instancetype)initWithComment:(FUCKNoteModel *)comment {
     
     if (self = [super init]) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -29,18 +29,18 @@
         [self addContentNode];
         [self addLineNode];
         
-        self.iconNode.defaultImage = [UIImage imageNamed:@"HAO-7"];
-//        self.iconNode.URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, model.user.avater]];;
+//        self.iconNode.defaultImage = [UIImage imageNamed:@"HAO-7"];
+        self.iconNode.URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, comment.user.avater]];
         
-        self.nameNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:@"Maker" attributes:^(NSMutableDictionary *make) {
+        self.nameNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:comment.user.user_name attributes:^(NSMutableDictionary *make) {
             make.lh_font([UIFont systemFontOfSize:15]);
         }];
         
-        NSMutableAttributedString *contentAtt = [NSMutableAttributedString lh_makeAttributedString:@"唯美食与美女不可辜负" attributes:^(NSMutableDictionary *make) {
+        NSMutableAttributedString *contentAtt = [NSMutableAttributedString lh_makeAttributedString:comment.content attributes:^(NSMutableDictionary *make) {
             make.lh_font([UIFont systemFontOfSize:15]);
         }];
         
-        NSString *time = [self formateDateWithTimestamp:15462812];
+        NSString *time = [self formateDateWithTimestamp:comment.create_date];
         
         NSMutableAttributedString *timeAtt = [NSMutableAttributedString lh_makeAttributedString:time attributes:^(NSMutableDictionary *make) {
             make.lh_font([UIFont systemFontOfSize:13]).lh_color([UIColor grayColor]);

@@ -37,6 +37,8 @@
     [self setupUI];
 }
 
+
+
 - (void)setModel:(ABCFuckModel *)model {
     _model = model;
     self.collectView.isCollected = model.is_collect;

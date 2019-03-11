@@ -82,6 +82,7 @@ UITableViewDataSource
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"%@", @(self.note.create_date));
     self.navigationController.title = @"详情";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"评论" style:UIBarButtonItemStylePlain target:self action:@selector(commentClick)];
     [self.view addSubview:self.tableView];
@@ -251,7 +252,7 @@ UITableViewDataSource
             [cell.imageView1 yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, self.note.picture_path[0]]] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
             [cell.imageView2 yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, self.note.picture_path[1]]] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
             cell.summaryLabel.text = self.note.content;
-            cell.dateLabel.text = [self formatFromTS:self.note.last_update_date];
+            cell.dateLabel.text = [self formatFromTS:self.note.create_date];
             cell.likeCountLabel.text = [NSString stringWithFormat:@"%@", @(self.note.star_num)];
             cell.commentCountLabel.text = [NSString stringWithFormat:@"%@", @(self.note.comment_num)];
             if (self.note.is_star) {

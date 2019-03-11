@@ -11,6 +11,7 @@
 #import "ZDDMenuCommentCellNode.h"
 #import "UIView+ZDD.h"
 #import <MFNetworkManager/MFNetworkManager.h>
+#import "FUCKNoteModel.h"
 
 @interface ZDDMenuCommentListController ()<ASTableDelegate, ASTableDataSource>
 
@@ -47,10 +48,23 @@
 - (void)request {
     [MFNETWROK post:@"Comment/ListCommentByTargetid" params:@{@"targetId": self.targetId}
             success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
-            
+                NSLog(@"%@", result);
+                if ([result[@"resultCode"] isEqualToString:@"0"]) {
+                    if (self.list.count) {
+                        [self.list removeAllObjects];
+                    }
+                    for (NSDictionary *dic in result[@"data"]) {
+                        FUCKNoteModel *comment = [FUCKNoteModel yy_modelWithJSON:dic];
+                        [self.list addObject:comment];
+                    }
+                    
+                    [self.tableNode reloadData];
+                }
             }
             failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
-            
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [MFHUDManager showError:@"加载失败"];
+                });
             }];
 }
 
@@ -85,9 +99,27 @@
 
 #pragma mark - 发送评论
 - (void)sendComment {
-    
-
-    self.inputView.textView.text = @"";
+    [SVProgressHUD show];
+    NSString *content = self.inputView.textView.text;
+    [MFNETWROK post:@"http://120.78.124.36:10005/Comment/Create"
+             params:@{
+                      @"userId": [GODUserTool shared].user.user_id,
+                      @"targetId": self.targetId,
+                      @"content": content
+                      }
+            success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+                [self request];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                   self.inputView.textView.text = @"";
+                    [SVProgressHUD dismiss];
+                });
+            }
+            failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                   
+                    [SVProgressHUD dismiss];
+                });
+            }];
     [self.inputView.textView resignFirstResponder];
     
     
@@ -136,14 +168,16 @@
 
 #pragma mark - tableNodeDelegate
 - (NSInteger)tableNode:(ASTableNode *)tableNode numberOfRowsInSection:(NSInteger)section {
-    
+    NSLog(@"%@", @(self.list.count));
     return self.list.count;
 }
 
 
 - (ASCellNodeBlock)tableNode:(ASTableNode *)tableNode nodeBlockForRowAtIndexPath:(NSIndexPath *)indexPath {
     return ^ASCellNode * {
-        ZDDMenuCommentCellNode *cell = [[ZDDMenuCommentCellNode alloc] init];
+//        NSLog(@"%@", self.list[indexPath.row]);
+        ZDDMenuCommentCellNode *cell = [[ZDDMenuCommentCellNode alloc] initWithComment:self.list[indexPath.row]];
+//        cell.comment = self.list[indexPath.row];
         return cell;
     };
     
