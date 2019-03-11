@@ -7,14 +7,21 @@
 //
 
 #import "ZDDMenuListController.h"
+
+
 #import "ZDDMenuDetailController.h"
+#import "ZDDMenuTagController.h"
 
 #import "ZDDMenuListCell.h"
 
 
+#import <MJRefresh.h>
+
 @interface ZDDMenuListController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
+
+@property (nonatomic, strong) NSArray <ABCFuckModel *>*dataArr;
 
 @end
 
@@ -24,28 +31,55 @@
     [super viewDidLoad];
 
     [self setupUI];
+    [self loadData];
 }
 
 - (void)setupUI {
+    
+    self.title = @"推荐";
     
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
     }];
-    [self.tableView reloadData];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu_chose"] style:UIBarButtonItemStyleDone target:self action:@selector(choseCategory)];
 
 }
 
+- (void)loadData {
+    
+    MFNETWROK.requestSerialization = MFJSONRequestSerialization;;
+    [MFNETWROK post:@"Recipe/ListRecommendRecipe" params:@{@"userId": [GODUserTool shared].user.user_id.length ? [GODUserTool shared].user.user_id : @""} success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+        [self.tableView.mj_header endRefreshing];
+        if (statusCode == 200) {
+            self.dataArr = [NSArray yy_modelArrayWithClass:ABCFuckModel.class json:result[@"data"]];
+            [self.tableView reloadData];
+        }else {
+            [MFHUDManager showError:@"请求失败"];
+        }
+    } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+        [self.tableView.mj_header endRefreshing];
+        [MFHUDManager showError:@"请求失败"];
+    }];
+}
+
+- (void)choseCategory {
+    
+    ZDDMenuTagController *vc = [ZDDMenuTagController new];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return self.dataArr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     ZDDMenuListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ZDDMenuListCell"];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.model = self.dataArr[indexPath.row];
     return cell;
     
 }
@@ -96,6 +130,15 @@
         _tableView.dataSource = self;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [_tableView registerClass:ZDDMenuListCell.class forCellReuseIdentifier:@"ZDDMenuListCell"];
+        __weak typeof(self)weakSelf = self;
+        MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            [weakSelf loadData];
+        }];
+        header.lastUpdatedTimeLabel.hidden = YES;
+        header.stateLabel.textColor = [UIColor grayColor];
+        header.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+        
+        _tableView.mj_header = header;
     }
     return _tableView;
 }

@@ -10,7 +10,7 @@
 #import "ZDDThemeConfiguration.h"
 #import "TEMPMacro.h"
 
-#import "ZDDHomePageController.h"
+#import "ZDDMenuListController.h"
 #import "ZDDTwoTabController.h"
 #import "ZDDThreeTabController.h"
 #import "ZDDFourTabController.h"
@@ -63,7 +63,7 @@ UITabBarControllerDelegate
 }
 
 - (void)setupChildViewControllers {
-    ZDDHomePageController *one = [[ZDDHomePageController alloc] init];
+    ZDDMenuListController *one = [[ZDDMenuListController alloc] init];
 
     [self addChileVcWithTitle:@"菜谱大全" vc:one imageName:@"tab_now_nor" selImageName:@"tab_now_press"];
 

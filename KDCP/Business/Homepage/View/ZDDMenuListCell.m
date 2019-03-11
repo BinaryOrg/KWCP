@@ -22,16 +22,17 @@
 
 @implementation ZDDMenuListCell
 
+- (void)setModel:(ABCFuckModel *)model {
+    _model = model;
+    [self.backgroundIV yy_setImageWithURL:[NSURL URLWithString:model.cover_picture] placeholder:[UIImage imageNamed:@"freshFood"]];
+    self.titleLb.text = model.recipe_name;
+    self.subTitleLb.text = model.desc;
+}
+
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    
-    
-    
-    self.backgroundIV.image = [UIImage imageNamed:@"freshFood"];
-    //    self.backgroundIV.yy_imageURL = [NSURL URLWithString:@"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=208717556,829408777&fm=26&gp=0.jpg"];
-    self.titleLb.text = @"臭豆腐";
-    self.subTitleLb.text = @"正宗长沙臭豆腐，一口下去，满嘴清香，绕唇三日，消而不绝，口齿留香";
+   
     
     [self.contentView addSubview:self.titleLb];
     [self.titleLb mas_makeConstraints:^(MASConstraintMaker *make) {

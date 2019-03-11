@@ -37,6 +37,11 @@
     [self setupUI];
 }
 
+- (void)setModel:(ABCFuckModel *)model {
+    _model = model;
+    [self.tableNode reloadData];
+}
+
 - (void)setupUI {
     
     self.title = @"臭豆腐";

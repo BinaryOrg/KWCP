@@ -13,11 +13,12 @@
 #import "UINavigationController+FDFullscreenPopGesture.h"
 
 
+
+
 @interface ZDDHomePageController ()<ZDDCategoryTagViewDelegate, UIPageViewControllerDelegate, UIPageViewControllerDataSource>
 
 @property (nonatomic, strong) ZDDCategoryTagView *changeTypeView;
 @property (nonatomic, strong) NSArray *dataArrray;
-@property (nonatomic, strong) NSArray *titleArray;
 
 @property (nonatomic, strong) NSArray <ZDDMenuListController *>*controllerArray;
 @property (nonatomic, strong) UIPageViewController *pageController;
@@ -59,36 +60,7 @@
 
 - (void)loadData {
     
-    ZDDMenuModel *model = [ZDDMenuModel new];
-    model.title = @"家常菜";
-    
-    ZDDMenuModel *model1 = [ZDDMenuModel new];
-    model1.title = @"爽口菜";
-    
-    self.dataArrray = @[model, model1];
-    [self setupUI];
-    return;
-    
-    [MFHUDManager showLoading:@"请求中..."];
-    NSDictionary *paragmras = @{
-                                };
-    MFNETWROK.requestSerialization = MFJSONRequestSerialization;
-    [MFNETWROK get:@"getBookByType" params:paragmras success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
-        [MFHUDManager dismiss];
-        if (statusCode == 200) {
-            self.dataArrray = [NSArray yy_modelArrayWithClass:ZDDMenuModel.class json:result[@"data"][@"book"]];
-            
-            [self setupUI];
-            self.reloadBtn.hidden = YES;
-        }else {
-            self.reloadBtn.hidden = NO;
-            [MFHUDManager showError:@"请求失败"];
-        }
-    } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
-        
-        [MFHUDManager dismiss];
-        [MFHUDManager showError:@"请求失败"];
-    }];
+   
 }
 - (void)setupUI {
     
@@ -139,25 +111,16 @@
     [self.pageController setViewControllers:@[[self.controllerArray objectAtIndex:index]] direction:index>currentIndex?UIPageViewControllerNavigationDirectionForward:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
 }
 
-- (ZDDCategoryTagView *)changeTypeView {
-    if (!_changeTypeView) {
-        _changeTypeView = [[ZDDCategoryTagView alloc] initWithTitles:self.titleArray];
-        _changeTypeView.delegate = self;
-    }
-    return _changeTypeView;
-}
 
-- (NSArray *)titleArray {
-    if (!_titleArray) {
-        NSMutableArray *tempArr = [NSMutableArray arrayWithCapacity:self.dataArrray.count];
-        for (NSInteger i = 0; i < self.dataArrray.count; i ++) {
-            ZDDMenuModel *model = self.dataArrray[i];
-            [tempArr addObject:model.title];
-        }
-        _titleArray = tempArr.copy;
-    }
-    return _titleArray;
-}
+
+//- (ZDDCategoryTagView *)changeTypeView {
+//    if (!_changeTypeView) {
+//        _changeTypeView = [[ZDDCategoryTagView alloc] initWithTitles:self.titleArray];
+//        _changeTypeView.delegate = self;
+//    }
+//    return _changeTypeView;
+//}
+
 
 
 - (UIPageViewController *)pageController {
