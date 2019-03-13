@@ -40,6 +40,7 @@
 		37F5E38A222F924400CAE1CE /* ZDDInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F5E388222F924300CAE1CE /* ZDDInputView.m */; };
 		37F5E38D222F938800CAE1CE /* UIView+ZDD.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F5E38B222F938700CAE1CE /* UIView+ZDD.m */; };
 		37F5E390222F98FD00CAE1CE /* ZDDmenuCollectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F5E38F222F98FD00CAE1CE /* ZDDmenuCollectView.m */; };
+		4A09B9412238E69900C9747E /* FUCKCategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A09B9402238E69900C9747E /* FUCKCategoryTableViewCell.m */; };
 		4A3100FB222FA10F009292CB /* NSString+Regex.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3100F9222FA10F009292CB /* NSString+Regex.m */; };
 		4A7FCF06221B94F300CD6876 /* ZDDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7FCF05221B94F300CD6876 /* ZDDTabBarController.m */; };
 		4A9E410D2235F45F00B9E1B2 /* ABCMyCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9E410C2235F45F00B9E1B2 /* ABCMyCollectionViewController.m */; };
@@ -154,6 +155,8 @@
 		37F5E38C222F938800CAE1CE /* UIView+ZDD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZDD.h"; sourceTree = "<group>"; };
 		37F5E38E222F98FD00CAE1CE /* ZDDmenuCollectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDmenuCollectView.h; sourceTree = "<group>"; };
 		37F5E38F222F98FD00CAE1CE /* ZDDmenuCollectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDmenuCollectView.m; sourceTree = "<group>"; };
+		4A09B93F2238E69900C9747E /* FUCKCategoryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FUCKCategoryTableViewCell.h; sourceTree = "<group>"; };
+		4A09B9402238E69900C9747E /* FUCKCategoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FUCKCategoryTableViewCell.m; sourceTree = "<group>"; };
 		4A3100F9222FA10F009292CB /* NSString+Regex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Regex.m"; sourceTree = "<group>"; };
 		4A3100FA222FA10F009292CB /* NSString+Regex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Regex.h"; sourceTree = "<group>"; };
 		4A7FCF04221B94F300CD6876 /* ZDDTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDTabBarController.h; sourceTree = "<group>"; };
@@ -350,6 +353,8 @@
 				37F5E38F222F98FD00CAE1CE /* ZDDmenuCollectView.m */,
 				371B92DB2235179500D3D7DE /* ZDDMennuCategoryView.h */,
 				371B92DC2235179500D3D7DE /* ZDDMennuCategoryView.m */,
+				4A09B93F2238E69900C9747E /* FUCKCategoryTableViewCell.h */,
+				4A09B9402238E69900C9747E /* FUCKCategoryTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -922,6 +927,7 @@
 				7516DDAC2234E20600FE97DC /* GODFuckDetailViewController.m in Sources */,
 				7516DDA92234E17800FE97DC /* FUCKCommentTableViewCell.m in Sources */,
 				4AF49E17221A9E58004F45EB /* ZDDThemeConfiguration.m in Sources */,
+				4A09B9412238E69900C9747E /* FUCKCategoryTableViewCell.m in Sources */,
 				371B92DA2235174D00D3D7DE /* ZDDMenuTagController.m in Sources */,
 				7516DDA62234E10B00FE97DC /* FUCKIngLife2TableViewCell.m in Sources */,
 				7516DDAF2234EFD700FE97DC /* UIView+ZDD.m in Sources */,

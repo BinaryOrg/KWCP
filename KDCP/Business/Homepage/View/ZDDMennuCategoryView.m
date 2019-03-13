@@ -7,7 +7,7 @@
 //
 
 #import "ZDDMennuCategoryView.h"
-
+#import "FUCKCategoryTableViewCell.h"
 @interface ZDDMennuCategoryView ()<UITableViewDelegate, UITableViewDataSource>
 
 
@@ -51,24 +51,20 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    FUCKCategoryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cell"];
+        cell = [[FUCKCategoryTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cell"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     ZDDMenuModel *model = self.dataArr[indexPath.row];
-    cell.textLabel.text = model.title;
-    cell.textLabel.font = [UIFont fontWithName:@"PingFangSC-Light" size:16];
-    cell.textLabel.textColor = [UIColor whiteColor];
-    cell.backgroundColor = color(137, 137, 137, 1);
-    cell.selectionStyle = UITableViewCellSelectionStyleDefault;
+    cell.nameLabel.text = model.title;
     return cell;
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 50;
+    return 55;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -85,7 +81,10 @@
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.tableFooterView = [UIView new];
-        
+        _tableView.bounces = NO;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.showsHorizontalScrollIndicator  = NO;
+        _tableView.showsVerticalScrollIndicator  = NO;
     }
     return _tableView;
 }
