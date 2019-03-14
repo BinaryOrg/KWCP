@@ -7,6 +7,7 @@
 //
 
 #import "ZDDmenuCollectView.h"
+#import "UIColor+ZDDColor.h"
 
 @interface ZDDmenuCollectView ()
 
@@ -19,10 +20,11 @@
 @implementation ZDDmenuCollectView
 
 - (void)layoutSubviews {
-    [self addSubview:self.imgView];
+//    [self addSubview:self.imgView];
     [self addSubview:self.titleLb];
+    [self addSubview:self.imgButton];
     
-    [self.imgView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.imgButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(0);
         make.top.mas_equalTo(10);
         make.width.height.mas_equalTo(35);
@@ -30,17 +32,19 @@
     
     [self.titleLb mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(0);
-        make.top.mas_equalTo(self.imgView.mas_bottom).mas_equalTo(10);
+        make.top.mas_equalTo(self.imgButton.mas_bottom).mas_equalTo(10);
     }];
 }
 
 - (void)setIsCollected:(BOOL)isCollected {
     _isCollected = isCollected;
+    self.imgButton.selected = isCollected;
     if (isCollected) {
-        self.imgView.image = [UIImage imageNamed:@"collect"];
+//        self.imgView.image = [UIImage imageNamed:@"collect"];
         self.titleLb.text = @"已收藏";
     }else {
-        self.imgView.image = [UIImage imageNamed:@"disCollect"];
+//        self.imgView.image = [UIImage imageNamed:@"disCollect"];
+        
         self.titleLb.text = @"收藏";
     }
 }
@@ -50,9 +54,19 @@
     if (!_imgView) {
         _imgView = [[UIImageView alloc] init];
         _imgView.contentMode = UIViewContentModeScaleAspectFill;
-        _imgView.image = [UIImage imageNamed:@"collect"];
     }
     return _imgView;
+}
+
+- (TTAnimationButton *)imgButton {
+    if (!_imgButton) {
+        _imgButton = [TTAnimationButton buttonWithType:UIButtonTypeCustom];
+        [_imgButton setImage:[UIImage imageNamed:@"heart"] forState:UIControlStateNormal];
+        _imgButton.imageSelectedColor = [UIColor zdd_redColor];
+//        _imgButton.enableCustomImageSize = YES;
+        _imgButton.explosionRate = 100;
+    }
+    return _imgButton;
 }
 
 - (UILabel *)titleLb {
@@ -61,7 +75,6 @@
         _titleLb.font = [UIFont systemFontOfSize:15];
         _titleLb.textAlignment = NSTextAlignmentCenter;
         _titleLb.textColor = color(137, 137, 137, 1);
-        _titleLb.text = @"收藏";
     }
     return _titleLb;
 }

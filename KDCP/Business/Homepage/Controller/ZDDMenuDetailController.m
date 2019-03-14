@@ -47,7 +47,6 @@
 
 - (void)setupUI {
     
-    self.title = @"臭豆腐";
     self.fd_prefersNavigationBarHidden = YES;
     
     [self.view addSubview:self.tableNode.view];
@@ -73,6 +72,7 @@
         make.width.mas_equalTo(60);
     }];
     collectView.userInteractionEnabled = YES;
+    [collectView.imgButton addTarget:self action:@selector(clickCollect) forControlEvents:UIControlEventTouchUpInside];
     [collectView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickCollect)]];
     self.collectView = collectView;
     

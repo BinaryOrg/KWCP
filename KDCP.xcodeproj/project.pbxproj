@@ -846,7 +846,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-KDCP/Pods-KDCP-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-KDCP/Pods-KDCP-resources.sh",
 				"${PODS_ROOT}/AVOSCloud/AVOS/AVOSCloud/AVOSCloud_Art.inc",
 				"${PODS_CONFIGURATION_BUILD_DIR}/CTAssetsPickerController/CTAssetsPickerController.bundle",
 				"${PODS_ROOT}/DateTools/DateTools/DateTools/DateTools.bundle",
@@ -873,7 +873,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KDCP/Pods-KDCP-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KDCP/Pods-KDCP-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9BE694A407294B7E9F2A4F49 /* [CP] Check Pods Manifest.lock */ = {

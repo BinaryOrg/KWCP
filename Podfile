@@ -38,4 +38,6 @@ target 'KDCP' do
   pod 'UITextView+Placeholder'
   pod 'CTAssetsPickerController',  '~> 3.3.0'
   pod 'SVProgressHUD'
+  
+  pod 'TTAnimationButton'
 end

@@ -354,6 +354,7 @@ PODS:
     - PINRemoteImage/iOS (= 3.0.0-beta.13)
     - PINRemoteImage/PINCache
     - Texture/Core
+  - TTAnimationButton (0.1.1)
   - TTGTagCollectionView (1.11.1)
   - "UITextView+Placeholder (1.2.1)"
   - XHLaunchAd (3.9.8):
@@ -395,6 +396,7 @@ DEPENDENCIES:
   - SSZipArchive
   - SVProgressHUD
   - Texture
+  - TTAnimationButton
   - TTGTagCollectionView
   - "UITextView+Placeholder"
   - XHLaunchAd
@@ -436,6 +438,7 @@ SPEC REPOS:
     - SSZipArchive
     - SVProgressHUD
     - Texture
+    - TTAnimationButton
     - TTGTagCollectionView
     - "UITextView+Placeholder"
     - XHLaunchAd
@@ -478,6 +481,7 @@ SPEC CHECKSUMS:
   SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   Texture: 9d7e38965cf22ccd7cd9c249dd78b3f14e70ab6c
+  TTAnimationButton: 8a6d3633db911d619aba8c73905c0d174c2b2828
   TTGTagCollectionView: 86fcbfa6a7493c9e860b01c2e693cffc8acf6de1
   "UITextView+Placeholder": 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
   XHLaunchAd: 45048592af01aa501c9d2d0c45e95ca74c4d0596
@@ -488,6 +492,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 3776adf4c010d7f753a3ace789e731bfd9ff6253
+PODFILE CHECKSUM: ac803a3089a38f261a11fbc96541a2cd0fe1c464
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.1
