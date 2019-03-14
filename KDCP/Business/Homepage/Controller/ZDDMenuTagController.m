@@ -117,7 +117,7 @@
         config.textColor = [UIColor colorWithRed:51 green:51 blue:51];//color(53, 64, 72, 1);
         config.selectedTextColor = [UIColor blackColor];
         config.backgroundColor = [UIColor colorWithRed:245 green:245 blue:245];
-        config.selectedBackgroundColor = [UIColor whiteColor];
+        config.selectedBackgroundColor = [UIColor colorWithRed:245 green:245 blue:245];
         config.extraSpace = CGSizeMake(30, 15);
         config.shadowColor = [UIColor clearColor];
 //        config.borderColor = color(137, 137, 137, 0.3);
