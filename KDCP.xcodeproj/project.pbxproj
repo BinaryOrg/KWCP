@@ -41,6 +41,8 @@
 		37F5E38D222F938800CAE1CE /* UIView+ZDD.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F5E38B222F938700CAE1CE /* UIView+ZDD.m */; };
 		37F5E390222F98FD00CAE1CE /* ZDDmenuCollectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F5E38F222F98FD00CAE1CE /* ZDDmenuCollectView.m */; };
 		4A09B9412238E69900C9747E /* FUCKCategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A09B9402238E69900C9747E /* FUCKCategoryTableViewCell.m */; };
+		4A281F9D223B58D800620614 /* ZDDGODVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A281F9C223B58D800620614 /* ZDDGODVideoViewController.m */; };
+		4A281FA5223B685800620614 /* ZDDGODVideoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A281FA4223B685800620614 /* ZDDGODVideoTableViewCell.m */; };
 		4A3100FB222FA10F009292CB /* NSString+Regex.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3100F9222FA10F009292CB /* NSString+Regex.m */; };
 		4A7FCF06221B94F300CD6876 /* ZDDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7FCF05221B94F300CD6876 /* ZDDTabBarController.m */; };
 		4A9E410D2235F45F00B9E1B2 /* ABCMyCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9E410C2235F45F00B9E1B2 /* ABCMyCollectionViewController.m */; };
@@ -157,6 +159,10 @@
 		37F5E38F222F98FD00CAE1CE /* ZDDmenuCollectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDmenuCollectView.m; sourceTree = "<group>"; };
 		4A09B93F2238E69900C9747E /* FUCKCategoryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FUCKCategoryTableViewCell.h; sourceTree = "<group>"; };
 		4A09B9402238E69900C9747E /* FUCKCategoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FUCKCategoryTableViewCell.m; sourceTree = "<group>"; };
+		4A281F9B223B58D800620614 /* ZDDGODVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDGODVideoViewController.h; sourceTree = "<group>"; };
+		4A281F9C223B58D800620614 /* ZDDGODVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDGODVideoViewController.m; sourceTree = "<group>"; };
+		4A281FA3223B685800620614 /* ZDDGODVideoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDGODVideoTableViewCell.h; sourceTree = "<group>"; };
+		4A281FA4223B685800620614 /* ZDDGODVideoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDGODVideoTableViewCell.m; sourceTree = "<group>"; };
 		4A3100F9222FA10F009292CB /* NSString+Regex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Regex.m"; sourceTree = "<group>"; };
 		4A3100FA222FA10F009292CB /* NSString+Regex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Regex.h"; sourceTree = "<group>"; };
 		4A7FCF04221B94F300CD6876 /* ZDDTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDTabBarController.h; sourceTree = "<group>"; };
@@ -282,6 +288,7 @@
 		371D3A1D222E5E67007C14F7 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				4A281F9A223B58B700620614 /* Video */,
 				7516DD962234A0B200FE97DC /* Note */,
 				7516DD7B2234092B00FE97DC /* Person */,
 				371D3A1E222E5E67007C14F7 /* Homepage */,
@@ -426,6 +433,25 @@
 				37F5E379222F779400CAE1CE /* GODUserModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4A281F9A223B58B700620614 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				4A281FA2223B684400620614 /* Cell */,
+				4A281F9B223B58D800620614 /* ZDDGODVideoViewController.h */,
+				4A281F9C223B58D800620614 /* ZDDGODVideoViewController.m */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		4A281FA2223B684400620614 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4A281FA3223B685800620614 /* ZDDGODVideoTableViewCell.h */,
+				4A281FA4223B685800620614 /* ZDDGODVideoTableViewCell.m */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		4A9E41072235E5E800B9E1B2 /* DetailController */ = {
@@ -856,6 +882,9 @@
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/QMUIKit/QMUIKit/QMUIResources/QMUIResources.bundle",
 				"${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle",
+				"${PODS_ROOT}/SJBaseVideoPlayer/SJBaseVideoPlayer/SJDeviceVolumeAndBrightnessManager/ResourceLoader/SJDeviceVolumeAndBrightnessManager.bundle",
+				"${PODS_ROOT}/SJVideoPlayer/SJVideoPlayer/SJEdgeControlLayer/ResourceLoader/SJEdgeControlLayer.bundle",
+				"${PODS_ROOT}/SJVideoPlayer/SJVideoPlayer/SJFilmEditingControlLayer/ResourceLoader/SJFilmEditing.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -869,6 +898,9 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QMUIResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SAMKeychain.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SJDeviceVolumeAndBrightnessManager.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SJEdgeControlLayer.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SJFilmEditing.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -920,6 +952,7 @@
 				37F2A5A2222EC36D00EACEC4 /* ASButtonNode+LHExtension.m in Sources */,
 				7516DD9D2234A11800FE97DC /* FUCKFBNoteViewController.m in Sources */,
 				37F2A591222EB5EE00EACEC4 /* ZDDMenuFoodsListCellNode.m in Sources */,
+				4A281FA5223B685800620614 /* ZDDGODVideoTableViewCell.m in Sources */,
 				7516DD7E22340A1100FE97DC /* ZDDGODPersonViewController.m in Sources */,
 				4AF49DD5221A8FE3004F45EB /* TEMPKeyConfiguration.m in Sources */,
 				37F2A5A3222EC36D00EACEC4 /* UIView+LH.m in Sources */,
@@ -933,6 +966,7 @@
 				7516DDAF2234EFD700FE97DC /* UIView+ZDD.m in Sources */,
 				37F5E37E222F7D3800CAE1CE /* ZDDMenuCommentCellNode.m in Sources */,
 				7516DD8622340D6200FE97DC /* ZDDGODPersonSettingTableViewCell.m in Sources */,
+				4A281F9D223B58D800620614 /* ZDDGODVideoViewController.m in Sources */,
 				37F2A58B222EA23F00EACEC4 /* ZDDMenuDetailTopCellNode.m in Sources */,
 				4AF49DED221A92F1004F45EB /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				4AF49DFA221A937A004F45EB /* TEMPAppDelegate+OpenURL.m in Sources */,

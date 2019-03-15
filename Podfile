@@ -40,4 +40,12 @@ target 'KDCP' do
   pod 'SVProgressHUD'
   
   pod 'TTAnimationButton'
+#  pod 'JPVideoPlayer'
+#  pod 'ZFPlayer'
+#  pod 'ZFPlayer/AVPlayer', '~> 3.0'
+#  pod 'ZFPlayer/ControlView', '~> 3.0'
+  
+  pod 'SJVideoPlayer'
+  # The base player, without the control layer, can be used if you need a custom control layer.
+  pod 'SJBaseVideoPlayer'
 end
