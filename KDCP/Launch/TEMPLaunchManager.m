@@ -116,6 +116,11 @@
                 window.backgroundColor = [UIColor whiteColor];
                 [window makeKeyAndVisible];
             }
+        }else {
+            ZDDTabBarController *tabBarController = [[ZDDTabBarController alloc] initWithCenterButton:YES];
+            window.rootViewController = tabBarController;
+            window.backgroundColor = [UIColor whiteColor];
+            [window makeKeyAndVisible];
         }
     }];
     
