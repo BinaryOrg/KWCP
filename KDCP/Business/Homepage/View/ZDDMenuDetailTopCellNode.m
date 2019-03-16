@@ -30,7 +30,6 @@
         [self addTitleNode];
         [self addDescribNode];
         [self addLineNode];
-        
 //        self.topImageNode.defaultImage = [UIImage imageNamed:@"freshFood"];
         self.topImageNode.URL = [NSURL URLWithString:model.cover_picture];
         self.titleNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:model.recipe_name attributes:^(NSMutableDictionary *make) {

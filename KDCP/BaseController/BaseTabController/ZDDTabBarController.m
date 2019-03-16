@@ -68,8 +68,8 @@ UITabBarControllerDelegate
 
     [self addChileVcWithTitle:@"菜谱大全" vc:one imageName:@"tab_now_nor" selImageName:@"tab_now_press"];
 
-    ZDDGODVideoViewController *two = [[ZDDGODVideoViewController alloc] init];
-    [self addChileVcWithTitle:@"视频站" vc:two imageName:@"tab_see_nor" selImageName:@"tab_see_press"];
+//    ZDDGODVideoViewController *two = [[ZDDGODVideoViewController alloc] init];
+//    [self addChileVcWithTitle:@"视频站" vc:two imageName:@"tab_see_nor" selImageName:@"tab_see_press"];
     
     
     FUCKNoteViewController *three = [[FUCKNoteViewController alloc] init];

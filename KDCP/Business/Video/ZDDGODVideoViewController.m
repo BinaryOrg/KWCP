@@ -114,7 +114,7 @@ SJPlayerAutoplayDelegate
         [_player stopAndFadeOut]; // 让旧的播放器淡出
         _player = [SJBaseVideoPlayer player]; // 创建一个新的播放器
         [_player controlLayerNeedDisappear];
-        _player.isPlayOnScrollView
+//        _player.isPlayOnScrollView
         // fade in(淡入)
         _player.view.alpha = 0.001;
         [UIView animateWithDuration:0.6 animations:^{
@@ -129,7 +129,7 @@ SJPlayerAutoplayDelegate
         make.edges.offset(0);
     }];
     
-//    _player.resumePlaybackWhenPlayerViewScrollAppears = YES;
+//    _player.resumePlaybackWhenPlayerViewScrollAppears = YES;3
     _player.URLAsset = [[SJVideoPlayerURLAsset alloc] initWithURL:[NSURL URLWithString:self.list[indexPath.row].vedio] playModel:[SJPlayModel UITableViewCellPlayModelWithPlayerSuperviewTag:cell.bgImageView.tag atIndexPath:indexPath tableView:self.tableView]];
     [_player.placeholderImageView yy_setImageWithURL:[NSURL URLWithString:self.list[indexPath.row].cover_picture] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
     _player.mute = YES;
@@ -147,6 +147,7 @@ SJPlayerAutoplayDelegate
 
 - (void)sendRequest {
     [_player pause];
+    _player = nil;
     NSString *url;
     if (self.flag) {
         url = @"http://120.78.124.36:10005/Recipe/ListCollectRecipeByUserId";

@@ -1145,7 +1145,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = KDCP/KDCP.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 96NZDADFWS;
+				DEVELOPMENT_TEAM = 24V79B9824;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = KDCP/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1153,7 +1153,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.binary.KDCP;
+				PRODUCT_BUNDLE_IDENTIFIER = org.binary.kwcp233;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1166,7 +1166,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = KDCP/KDCP.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 96NZDADFWS;
+				DEVELOPMENT_TEAM = 24V79B9824;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = KDCP/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1174,7 +1174,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.binary.KDCP;
+				PRODUCT_BUNDLE_IDENTIFIER = org.binary.kwcp233;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
