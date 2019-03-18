@@ -129,10 +129,20 @@ SJPlayerAutoplayDelegate
         make.edges.offset(0);
     }];
     
-//    _player.resumePlaybackWhenPlayerViewScrollAppears = YES;3
     _player.URLAsset = [[SJVideoPlayerURLAsset alloc] initWithURL:[NSURL URLWithString:self.list[indexPath.row].vedio] playModel:[SJPlayModel UITableViewCellPlayModelWithPlayerSuperviewTag:cell.bgImageView.tag atIndexPath:indexPath tableView:self.tableView]];
     [_player.placeholderImageView yy_setImageWithURL:[NSURL URLWithString:self.list[indexPath.row].cover_picture] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
     _player.mute = YES;
+    
+    _player.playerViewWillAppearExeBlock = ^(__kindof SJBaseVideoPlayer * _Nonnull videoPlayer) {
+        [videoPlayer play];
+        videoPlayer.view.hidden = NO;
+    };
+    
+    
+    _player.playerViewWillDisappearExeBlock = ^(__kindof SJBaseVideoPlayer * _Nonnull videoPlayer) {
+        [videoPlayer pause];
+        videoPlayer.view.hidden = YES;
+    };
 }
 
 - (void)refreshPage {
@@ -146,8 +156,6 @@ SJPlayerAutoplayDelegate
 }
 
 - (void)sendRequest {
-    [_player pause];
-    _player = nil;
     NSString *url;
     if (self.flag) {
         url = @"http://120.78.124.36:10005/Recipe/ListCollectRecipeByUserId";
@@ -174,7 +182,15 @@ SJPlayerAutoplayDelegate
                 }else {
                     
                 }
+                if ( !self.tableView.sj_currentPlayingIndexPath ) {
+                    [self.tableView sj_needPlayNextAsset];
+                }
+                else {
+                    self.tableView.sj_currentPlayingIndexPath = nil;
+                    self.player = nil;
+                }
                 if ([self.tableView.mj_header isRefreshing]) {
+                    [self.tableView sj_needPlayNextAsset];
                     [self.tableView.mj_header endRefreshing];
                 }
             } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
@@ -201,41 +217,7 @@ SJPlayerAutoplayDelegate
     [cell.like addTarget:self action:@selector(handleLikeEvent:) forControlEvents:UIControlEventTouchUpInside];
     
     return cell;
-//    if (note.picture_path.count == 1) {
-//        FUCKNoteTableViewCell *cell = [[FUCKNoteTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"fuck_note1"];
-//        [cell.avatarImageView yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, user.avater]] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
-//        cell.nameLabel.text = user.user_name;
-//        [cell.imageView1 yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, note.picture_path[0]]] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
-//        cell.summaryLabel.text = note.content;
-//        cell.dateLabel.text = [self formatFromTS:note.create_date];
-//        cell.likeCountLabel.text = [NSString stringWithFormat:@"%@", @(note.star_num)];
-//        cell.commentCountLabel.text = [NSString stringWithFormat:@"%@", @(note.comment_num)];
-//        if (note.is_star) {
-//            cell.likeImageView.image = [UIImage imageNamed:@"ic_messages_like_selected_20x20_"];
-//        }else {
-//            cell.likeImageView.image = [UIImage imageNamed:@"ic_messages_like_20x20_"];
-//        }
-//        [cell.likeButton addTarget:self action:@selector(like1:) forControlEvents:UIControlEventTouchUpInside];
-//        return cell;
-//    }else {
-//        FUCKNote2TableViewCell *cell = [[FUCKNote2TableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"fuck_note2"];
-//        [cell.avatarImageView yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, user.avater]] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
-//        [cell.avatarImageView yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, user.avater]] placeholder:[UIImage imageNamed:@"HAO-0"] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation completion:nil];
-//        cell.nameLabel.text = user.user_name;
-//        [cell.imageView1 yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, note.picture_path[0]]]  options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
-//        [cell.imageView2 yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, note.picture_path[1]]]  options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
-//        cell.summaryLabel.text = note.content;
-//        cell.dateLabel.text = [self formatFromTS:note.create_date];
-//        cell.likeCountLabel.text = [NSString stringWithFormat:@"%@", @(note.star_num)];
-//        cell.commentCountLabel.text = [NSString stringWithFormat:@"%@", @(note.comment_num)];
-//        if (note.is_star) {
-//            cell.likeImageView.image = [UIImage imageNamed:@"ic_messages_like_selected_20x20_"];
-//        }else {
-//            cell.likeImageView.image = [UIImage imageNamed:@"ic_messages_like_20x20_"];
-//        }
-//        [cell.likeButton addTarget:self action:@selector(like2:) forControlEvents:UIControlEventTouchUpInside];
-//        return cell;
-//    }
+
     return nil;
 }
 
