@@ -213,9 +213,6 @@ SJPlayerAutoplayDelegate
     }
     
     [cell.bgImageView yy_setImageWithURL:[NSURL URLWithString:video.cover_picture] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
-    cell.like.selected = video.is_collect;
-    [cell.like addTarget:self action:@selector(handleLikeEvent:) forControlEvents:UIControlEventTouchUpInside];
-    
     return cell;
 
     return nil;
