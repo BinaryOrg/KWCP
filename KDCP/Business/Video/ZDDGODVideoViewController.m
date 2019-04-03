@@ -100,8 +100,8 @@ SJPlayerAutoplayDelegate
     // 配置列表自动播放
     SJPlayerAutoplayConfig *config = [SJPlayerAutoplayConfig configWithPlayerSuperviewTag:100 autoplayDelegate:self];
 //    config.animationType = SJAutoplayPositionTop;
-    [_tableView sj_enableAutoplayWithConfig:config];
-    [_tableView sj_needPlayNextAsset];
+    [self.tableView sj_enableAutoplayWithConfig:config];
+    [self.tableView sj_needPlayNextAsset];
 }
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
@@ -171,6 +171,7 @@ SJPlayerAutoplayDelegate
                     }
                     
                     [self.tableView reloadData];
+                    [self.tableView sj_needPlayNextAsset];
                 }else {
                     
                 }
