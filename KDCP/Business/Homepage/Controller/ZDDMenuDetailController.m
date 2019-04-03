@@ -123,7 +123,7 @@
 
     ZDDPhotoBrowseView *photoGroupView = [[ZDDPhotoBrowseView alloc] initWithGroupItems:tempArr.copy];
     [photoGroupView.pager removeFromSuperview];
-    photoGroupView.fromItemIndex = 0;
+    photoGroupView.fromItemIndex = index;
     photoGroupView.backtrack = YES;
     [photoGroupView presentFromImageView:fromView
                              toContainer:self.navigationController.view

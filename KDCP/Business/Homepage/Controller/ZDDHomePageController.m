@@ -34,6 +34,9 @@
     [super viewDidLoad];
     [self setReloadBtn];
     [self loadData];
+
+
+    
 }
 
 - (void)setReloadBtn {
