@@ -38,6 +38,10 @@
         self.bgImageView.layer.masksToBounds = YES;
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+//        self.cellButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//        self.cellButton.frame = self.bounds;
+//        [self.contentView addSubview:self.cellButton];
     }
     return self;
 }

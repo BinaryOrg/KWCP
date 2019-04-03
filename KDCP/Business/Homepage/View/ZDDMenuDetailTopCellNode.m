@@ -15,32 +15,12 @@
 @property (nonatomic, strong) ASTextNode *titleNode;
 @property (nonatomic, strong) ASTextNode *describNode;
 @property (nonatomic, strong) ASDisplayNode *lineNode;
-@property (nonatomic, strong) SJVideoPlayer *player;
 @property (nonatomic, strong) ABCFuckModel *fuckModel;
 
 @end
 
 @implementation ZDDMenuDetailTopCellNode
 
-
-- (SJVideoPlayer *)player {
-    if (!_player) {
-        _player = [SJVideoPlayer player];
-    }
-    return _player;
-}
-
-- (void)didLoad {
-    [super didLoad];
-//    if (self.fuckModel.vedio && ![self.fuckModel.vedio isEqualToString:@""]) {
-        self.player.view.frame = CGRectMake(0, 0, WIDTH(self.topImageNode.view), HEIGHT(self.topImageNode.view));
-        [self.topImageNode.view addSubview:self.player.view];
-    
-        SJPlayModel *playModel = [SJPlayModel new];
-        self.player.URLAsset = [[SJVideoPlayerURLAsset alloc] initWithURL:[NSURL URLWithString:@"https://www.apple.com/105/media/us/macbook-air/2018/9f419882_aefd_4083_902e_efcaee17a0b8/films/product/mba-product-tpl-cc-us-2018_1280x720h.mp4"] playModel:playModel];
-        [self.player.placeholderImageView yy_setImageWithURL:[NSURL URLWithString:self.fuckModel.cover_picture] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
-//    }
-}
 
 - (instancetype)initWithModel:(ABCFuckModel *)model {
     if (self = [super init]) {

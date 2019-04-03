@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ZDDGODVideoTableViewCell : UITableViewCell
 @property (nonatomic, strong) UIImageView *bgImageView;
 //@property (nonatomic, strong) TTAnimationButton *like;
+@property (nonatomic, strong) UIButton *cellButton;
 @end
 
 NS_ASSUME_NONNULL_END

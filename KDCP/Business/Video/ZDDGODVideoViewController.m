@@ -128,10 +128,16 @@ SJPlayerAutoplayDelegate
     _player.disablePromptWhenNetworkStatusChanges = YES;
 #endif
     [cell.bgImageView addSubview:self.player.view];
+    
     [_player.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.offset(0);
     }];
-    
+//    [cell bringSubviewToFront:cell.cellButton];
+    _player.gestureControl.singleTapHandler = ^(id<SJPlayerGestureControl>  _Nonnull control, CGPoint location) {
+        ZDDMenuDetailController *detail = [ZDDMenuDetailController new];
+        detail.model = self.list[indexPath.row];
+        [self.navigationController pushViewController:detail animated:YES];
+    };
     _player.URLAsset = [[SJVideoPlayerURLAsset alloc] initWithURL:[NSURL URLWithString:self.list[indexPath.row].vedio] playModel:[SJPlayModel UITableViewCellPlayModelWithPlayerSuperviewTag:cell.bgImageView.tag atIndexPath:indexPath tableView:self.tableView]];
     [_player.placeholderImageView yy_setImageWithURL:[NSURL URLWithString:self.list[indexPath.row].cover_picture] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
     _player.mute = YES;
@@ -216,10 +222,14 @@ SJPlayerAutoplayDelegate
     }
     
     [cell.bgImageView yy_setImageWithURL:[NSURL URLWithString:video.cover_picture] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
+//    [cell.cellButton addTarget:self action:@selector(handleCellEvent:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
 }
 
-
+//- (void)handleCellEvent:(UIButton *)sender {
+//    NSLog(@"%@", sender.superview.superview);
+//
+//}
 
 - (void)handleLikeEvent:(TTAnimationButton *)sender {
     sender.selected = !sender.selected;
