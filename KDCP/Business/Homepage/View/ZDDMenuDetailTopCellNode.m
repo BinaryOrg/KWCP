@@ -7,6 +7,7 @@
 //
 
 #import "ZDDMenuDetailTopCellNode.h"
+#import <SJVideoPlayer/SJVideoPlayer.h>
 
 @interface ZDDMenuDetailTopCellNode ()
 
@@ -14,18 +15,36 @@
 @property (nonatomic, strong) ASTextNode *titleNode;
 @property (nonatomic, strong) ASTextNode *describNode;
 @property (nonatomic, strong) ASDisplayNode *lineNode;
-
+@property (nonatomic, strong) ABCFuckModel *fuckModel;
+@property (nonatomic, strong) SJVideoPlayer *player;
 
 @end
 
-
-
-
 @implementation ZDDMenuDetailTopCellNode
+
+- (SJVideoPlayer *)player {
+    if (!_player) {
+        _player = [SJVideoPlayer player];
+    }
+    return _player;
+}
+
+- (void)didLoad {
+    [super didLoad];
+    //    if (self.fuckModel.vedio && ![self.fuckModel.vedio isEqualToString:@""]) {
+    self.player.view.frame = CGRectMake(0, 0, SCREENWIDTH, 300);
+    [self.view addSubview:self.player.view];
+    
+    SJPlayModel *playModel = [SJPlayModel new];
+    self.player.URLAsset = [[SJVideoPlayerURLAsset alloc] initWithURL:[NSURL URLWithString:@"https://www.apple.com/105/media/us/macbook-air/2018/9f419882_aefd_4083_902e_efcaee17a0b8/films/product/mba-product-tpl-cc-us-2018_1280x720h.mp4"] playModel:playModel];
+    [self.player.placeholderImageView yy_setImageWithURL:[NSURL URLWithString:self.fuckModel.cover_picture] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
+    //    }
+}
 
 - (instancetype)initWithModel:(ABCFuckModel *)model {
     if (self = [super init]) {
         self.nodeModel = model;
+        self.fuckModel = model;
         [self addTopImageNode];
         [self addTitleNode];
         [self addDescribNode];
@@ -39,7 +58,8 @@
             make.lh_font([UIFont fontWithName:@"PingFangSC-Light" size:16]).lh_color(color(137, 137, 137, 1));
 
         }];
-
+//
+       
         
     }
     return self;

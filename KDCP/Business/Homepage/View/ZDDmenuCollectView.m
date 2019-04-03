@@ -61,7 +61,7 @@
 - (TTAnimationButton *)imgButton {
     if (!_imgButton) {
         _imgButton = [TTAnimationButton buttonWithType:UIButtonTypeCustom];
-        [_imgButton setImage:[UIImage imageNamed:@"heart"] forState:UIControlStateNormal];
+        [_imgButton setImage:[UIImage imageNamed:@"ic_messages_like_selected_20x20_"] forState:UIControlStateNormal];
         _imgButton.imageSelectedColor = [UIColor zdd_redColor];
 //        _imgButton.enableCustomImageSize = YES;
         _imgButton.explosionRate = 100;

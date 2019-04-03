@@ -16,6 +16,9 @@
 #import "ZDDGODVideoTableViewCell.h"
 #import <SJBaseVideoPlayer/UIScrollView+ListViewAutoplaySJAdd.h>
 #import <SJVideoPlayer/SJVideoPlayer.h>
+
+#import "ZDDMenuDetailController.h"
+
 @interface ZDDGODVideoViewController ()
 <
 UITableViewDelegate,
@@ -125,14 +128,43 @@ SJPlayerAutoplayDelegate
     _player.disablePromptWhenNetworkStatusChanges = YES;
 #endif
     [cell.bgImageView addSubview:self.player.view];
+    
     [_player.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.offset(0);
     }];
-    
-//    _player.resumePlaybackWhenPlayerViewScrollAppears = YES;3
+//    [cell bringSubviewToFront:cell.cellButton];
+    _player.gestureControl.singleTapHandler = ^(id<SJPlayerGestureControl>  _Nonnull control, CGPoint location) {
+        ZDDMenuDetailController *detail = [ZDDMenuDetailController new];
+        detail.model = self.list[indexPath.row];
+        [self.navigationController pushViewController:detail animated:YES];
+    };
     _player.URLAsset = [[SJVideoPlayerURLAsset alloc] initWithURL:[NSURL URLWithString:self.list[indexPath.row].vedio] playModel:[SJPlayModel UITableViewCellPlayModelWithPlayerSuperviewTag:cell.bgImageView.tag atIndexPath:indexPath tableView:self.tableView]];
     [_player.placeholderImageView yy_setImageWithURL:[NSURL URLWithString:self.list[indexPath.row].cover_picture] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
     _player.mute = YES;
+    
+    _player.playerViewWillAppearExeBlock = ^(__kindof SJBaseVideoPlayer * _Nonnull videoPlayer) {
+        [videoPlayer play];
+        videoPlayer.view.hidden = NO;
+    };
+    
+    
+    _player.playerViewWillDisappearExeBlock = ^(__kindof SJBaseVideoPlayer * _Nonnull videoPlayer) {
+        [videoPlayer pause];
+        videoPlayer.view.hidden = YES;
+    };
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    CATransform3D transform = CATransform3DIdentity;
+    transform = CATransform3DRotate(transform, 0, 0, 0, 1);//渐变
+    transform = CATransform3DTranslate(transform, 0, -100, 0);//左边水平移动
+    transform = CATransform3DScale(transform, 0, 0, 0);//由小变大
+    cell.layer.transform = transform;
+    cell.layer.opacity = 0.0;
+    [UIView animateWithDuration:0.6 animations:^{
+        cell.layer.transform = CATransform3DIdentity;
+        cell.layer.opacity = 1;
+    }];
 }
 
 - (void)refreshPage {
@@ -146,8 +178,6 @@ SJPlayerAutoplayDelegate
 }
 
 - (void)sendRequest {
-    [_player pause];
-    _player = nil;
     NSString *url;
     if (self.flag) {
         url = @"http://120.78.124.36:10005/Recipe/ListCollectRecipeByUserId";
@@ -175,7 +205,15 @@ SJPlayerAutoplayDelegate
                 }else {
                     
                 }
+                if ( !self.tableView.sj_currentPlayingIndexPath ) {
+                    [self.tableView sj_needPlayNextAsset];
+                }
+                else {
+                    self.tableView.sj_currentPlayingIndexPath = nil;
+                    self.player = nil;
+                }
                 if ([self.tableView.mj_header isRefreshing]) {
+                    [self.tableView sj_needPlayNextAsset];
                     [self.tableView.mj_header endRefreshing];
                 }
             } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
@@ -198,49 +236,14 @@ SJPlayerAutoplayDelegate
     }
     
     [cell.bgImageView yy_setImageWithURL:[NSURL URLWithString:video.cover_picture] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
-    cell.like.selected = video.is_collect;
-    [cell.like addTarget:self action:@selector(handleLikeEvent:) forControlEvents:UIControlEventTouchUpInside];
-    
+//    [cell.cellButton addTarget:self action:@selector(handleCellEvent:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
-//    if (note.picture_path.count == 1) {
-//        FUCKNoteTableViewCell *cell = [[FUCKNoteTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"fuck_note1"];
-//        [cell.avatarImageView yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, user.avater]] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
-//        cell.nameLabel.text = user.user_name;
-//        [cell.imageView1 yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, note.picture_path[0]]] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
-//        cell.summaryLabel.text = note.content;
-//        cell.dateLabel.text = [self formatFromTS:note.create_date];
-//        cell.likeCountLabel.text = [NSString stringWithFormat:@"%@", @(note.star_num)];
-//        cell.commentCountLabel.text = [NSString stringWithFormat:@"%@", @(note.comment_num)];
-//        if (note.is_star) {
-//            cell.likeImageView.image = [UIImage imageNamed:@"ic_messages_like_selected_20x20_"];
-//        }else {
-//            cell.likeImageView.image = [UIImage imageNamed:@"ic_messages_like_20x20_"];
-//        }
-//        [cell.likeButton addTarget:self action:@selector(like1:) forControlEvents:UIControlEventTouchUpInside];
-//        return cell;
-//    }else {
-//        FUCKNote2TableViewCell *cell = [[FUCKNote2TableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"fuck_note2"];
-//        [cell.avatarImageView yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, user.avater]] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
-//        [cell.avatarImageView yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, user.avater]] placeholder:[UIImage imageNamed:@"HAO-0"] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation completion:nil];
-//        cell.nameLabel.text = user.user_name;
-//        [cell.imageView1 yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, note.picture_path[0]]]  options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
-//        [cell.imageView2 yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", MFNETWROK.baseURL, note.picture_path[1]]]  options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
-//        cell.summaryLabel.text = note.content;
-//        cell.dateLabel.text = [self formatFromTS:note.create_date];
-//        cell.likeCountLabel.text = [NSString stringWithFormat:@"%@", @(note.star_num)];
-//        cell.commentCountLabel.text = [NSString stringWithFormat:@"%@", @(note.comment_num)];
-//        if (note.is_star) {
-//            cell.likeImageView.image = [UIImage imageNamed:@"ic_messages_like_selected_20x20_"];
-//        }else {
-//            cell.likeImageView.image = [UIImage imageNamed:@"ic_messages_like_20x20_"];
-//        }
-//        [cell.likeButton addTarget:self action:@selector(like2:) forControlEvents:UIControlEventTouchUpInside];
-//        return cell;
-//    }
-    return nil;
 }
 
-
+//- (void)handleCellEvent:(UIButton *)sender {
+//    NSLog(@"%@", sender.superview.superview);
+//
+//}
 
 - (void)handleLikeEvent:(TTAnimationButton *)sender {
     sender.selected = !sender.selected;
@@ -280,10 +283,14 @@ SJPlayerAutoplayDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 //    GODFuckDetailViewController *detail = [[GODFuckDetailViewController alloc] init];
-//    detail.note = self.list[indexPath.row];
+//    detail.note = ;
 //    //    self.hidesBottomBarWhenPushed = YES;
 //    [self.navigationController pushViewController:detail animated:YES];
     //    self.hidesBottomBarWhenPushed = NO;
+    
+    ZDDMenuDetailController *detail = [ZDDMenuDetailController new];
+    detail.model = self.list[indexPath.row];
+    [self.navigationController pushViewController:detail animated:YES];
 }
 
 - (void)fbClick {
@@ -313,17 +320,6 @@ SJPlayerAutoplayDelegate
     CGRect tableViewFrame = self.tableView.frame;
     tableViewFrame.size.height -= self.tabBarController.tabBar.bounds.size.height;
     
-}
-
-
-
-- (void)tableView:(UITableView *)tableView willDisplayCell:(ZDDGODVideoTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    __weak typeof(self) _self = self;
-//    cell.view.clickedPlayButtonExeBlock = ^(SJPlayView * _Nonnull view) {
-//        __strong typeof(_self) self = _self;
-//        if ( !self ) return;
-//        [self sj_playerNeedPlayNewAssetAtIndexPath:indexPath];
-//    };
 }
 
 - (void)viewDidAppear:(BOOL)animated {

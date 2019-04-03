@@ -74,20 +74,23 @@
     for (NSInteger i = 0; i < self.model.cooking_step.count; i ++) {
         ABCFuckDetail2 *stepMode = self.model.cooking_step[i];
         ASTextNode *stepNode = [ASTextNode new];
-        stepNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:[NSString stringWithFormat:@"步骤 %ld", i] attributes:^(NSMutableDictionary *make) {
+        stepNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:[NSString stringWithFormat:@"步骤 %ld", i + 1] attributes:^(NSMutableDictionary *make) {
             make.lh_font([UIFont fontWithName:@"PingFangSC-Medium" size:18]).lh_color([UIColor blackColor]);
         }];
         
         stepNode.style.minWidth = ASDimensionMake(ScreenWidth - 100);
         
-        ASNetworkImageNode *imgNode = [[ASNetworkImageNode alloc] init];
-        imgNode.contentMode = UIViewContentModeScaleAspectFill;
-        imgNode.style.preferredSize = CGSizeMake(SCREENWIDTH, 250);
-        imgNode.cornerRadius = 6;
-        imgNode.URL = [NSURL URLWithString:stepMode.url];
-        [imgNode addTarget:self action:@selector(clickImageNode:) forControlEvents:ASControlNodeEventTouchUpInside];
-        [tempImageArr addObject:imgNode];
-
+        ASNetworkImageNode *imgNode = nil;
+        if (stepMode.url.length) {
+            imgNode = [[ASNetworkImageNode alloc] init];
+            imgNode.contentMode = UIViewContentModeScaleAspectFill;
+            imgNode.style.preferredSize = CGSizeMake(SCREENWIDTH, 250);
+            imgNode.cornerRadius = 6;
+            imgNode.URL = [NSURL URLWithString:stepMode.url];
+            [imgNode addTarget:self action:@selector(clickImageNode:) forControlEvents:ASControlNodeEventTouchUpInside];
+            [tempImageArr addObject:imgNode];
+            [self addSubnode:imgNode];
+        }
         
         ASTextNode *detailLb = [ASTextNode new];
         detailLb.attributedText = [NSMutableAttributedString lh_makeAttributedString:stepMode.word attributes:^(NSMutableDictionary *make) {
@@ -95,13 +98,19 @@
             
         }];
         
-        ASStackLayoutSpec *topSpec = [ASStackLayoutSpec stackLayoutSpecWithDirection:ASStackLayoutDirectionVertical spacing:25 justifyContent:ASStackLayoutJustifyContentStart alignItems:ASStackLayoutAlignItemsStart children:@[stepNode, imgNode]];
+        ASStackLayoutSpec *topSpec = [ASStackLayoutSpec verticalStackLayoutSpec];
+        if (stepMode.url.length) {
+            topSpec.spacing = 25;
+            topSpec.children = @[stepNode, imgNode];
+        }else {
+            topSpec.children = @[stepNode];
+        }
+        
         ASStackLayoutSpec *allSpec = [ASStackLayoutSpec stackLayoutSpecWithDirection:ASStackLayoutDirectionVertical spacing:20 justifyContent:ASStackLayoutJustifyContentStart alignItems:ASStackLayoutAlignItemsStart children:@[topSpec, detailLb]];
 
         [tempArr addObject:allSpec];
         
         [self addSubnode:stepNode];
-        [self addSubnode:imgNode];
         [self addSubnode:detailLb];
 
     }
