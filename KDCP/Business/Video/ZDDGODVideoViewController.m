@@ -16,6 +16,9 @@
 #import "ZDDGODVideoTableViewCell.h"
 #import <SJBaseVideoPlayer/UIScrollView+ListViewAutoplaySJAdd.h>
 #import <SJVideoPlayer/SJVideoPlayer.h>
+
+#import "ZDDMenuDetailController.h"
+
 @interface ZDDGODVideoViewController ()
 <
 UITableViewDelegate,
@@ -256,10 +259,14 @@ SJPlayerAutoplayDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 //    GODFuckDetailViewController *detail = [[GODFuckDetailViewController alloc] init];
-//    detail.note = self.list[indexPath.row];
+//    detail.note = ;
 //    //    self.hidesBottomBarWhenPushed = YES;
 //    [self.navigationController pushViewController:detail animated:YES];
     //    self.hidesBottomBarWhenPushed = NO;
+    
+    ZDDMenuDetailController *detail = [ZDDMenuDetailController new];
+    detail.model = self.list[indexPath.row];
+    [self.navigationController pushViewController:detail animated:YES];
 }
 
 - (void)fbClick {
