@@ -154,6 +154,19 @@ SJPlayerAutoplayDelegate
     };
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    CATransform3D transform = CATransform3DIdentity;
+    transform = CATransform3DRotate(transform, 0, 0, 0, 1);//渐变
+    transform = CATransform3DTranslate(transform, 0, -100, 0);//左边水平移动
+    transform = CATransform3DScale(transform, 0, 0, 0);//由小变大
+    cell.layer.transform = transform;
+    cell.layer.opacity = 0.0;
+    [UIView animateWithDuration:0.6 animations:^{
+        cell.layer.transform = CATransform3DIdentity;
+        cell.layer.opacity = 1;
+    }];
+}
+
 - (void)refreshPage {
     [self.tableView.mj_header beginRefreshing];
     [self sendRequest];
@@ -306,17 +319,6 @@ SJPlayerAutoplayDelegate
     CGRect tableViewFrame = self.tableView.frame;
     tableViewFrame.size.height -= self.tabBarController.tabBar.bounds.size.height;
     
-}
-
-
-
-- (void)tableView:(UITableView *)tableView willDisplayCell:(ZDDGODVideoTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    __weak typeof(self) _self = self;
-//    cell.view.clickedPlayButtonExeBlock = ^(SJPlayView * _Nonnull view) {
-//        __strong typeof(_self) self = _self;
-//        if ( !self ) return;
-//        [self sj_playerNeedPlayNewAssetAtIndexPath:indexPath];
-//    };
 }
 
 - (void)viewDidAppear:(BOOL)animated {
