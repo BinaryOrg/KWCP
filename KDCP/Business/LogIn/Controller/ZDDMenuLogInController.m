@@ -63,7 +63,7 @@
     
 
     YYAnimatedImageView *backgroundIV = [YYAnimatedImageView new];
-    backgroundIV.image = [UIImage imageNamed:@"logbgv.gif"];
+    backgroundIV.image = [YYImage imageNamed:@"logbgv.gif"];
     [self.view addSubview:backgroundIV];
     backgroundIV.contentMode = UIViewContentModeScaleAspectFill;
     backgroundIV.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);

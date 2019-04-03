@@ -214,8 +214,6 @@ SJPlayerAutoplayDelegate
     
     [cell.bgImageView yy_setImageWithURL:[NSURL URLWithString:video.cover_picture] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
     return cell;
-
-    return nil;
 }
 
 
