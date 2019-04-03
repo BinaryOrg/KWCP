@@ -84,7 +84,7 @@
         if (stepMode.url.length) {
             imgNode = [[ASNetworkImageNode alloc] init];
             imgNode.contentMode = UIViewContentModeScaleAspectFill;
-            imgNode.style.preferredSize = CGSizeMake(SCREENWIDTH, 250);
+            imgNode.style.preferredSize = CGSizeMake(SCREENWIDTH - 50, 250);
             imgNode.cornerRadius = 6;
             imgNode.URL = [NSURL URLWithString:stepMode.url];
             [imgNode addTarget:self action:@selector(clickImageNode:) forControlEvents:ASControlNodeEventTouchUpInside];

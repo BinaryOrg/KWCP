@@ -31,14 +31,14 @@
 
 - (void)didLoad {
     [super didLoad];
-    //    if (self.fuckModel.vedio && ![self.fuckModel.vedio isEqualToString:@""]) {
-    self.player.view.frame = CGRectMake(0, 0, SCREENWIDTH, 300);
-    [self.view addSubview:self.player.view];
-    
-    SJPlayModel *playModel = [SJPlayModel new];
-    self.player.URLAsset = [[SJVideoPlayerURLAsset alloc] initWithURL:[NSURL URLWithString:@"https://www.apple.com/105/media/us/macbook-air/2018/9f419882_aefd_4083_902e_efcaee17a0b8/films/product/mba-product-tpl-cc-us-2018_1280x720h.mp4"] playModel:playModel];
-    [self.player.placeholderImageView yy_setImageWithURL:[NSURL URLWithString:self.fuckModel.cover_picture] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
-    //    }
+    if (self.fuckModel.vedio && ![self.fuckModel.vedio isEqualToString:@""]) {
+        self.player.view.frame = CGRectMake(0, 0, SCREENWIDTH, 300);
+        [self.view addSubview:self.player.view];
+        
+        SJPlayModel *playModel = [SJPlayModel new];
+        self.player.URLAsset = [[SJVideoPlayerURLAsset alloc] initWithURL:[NSURL URLWithString:self.fuckModel.vedio] playModel:playModel];
+        [self.player.placeholderImageView yy_setImageWithURL:[NSURL URLWithString:self.fuckModel.cover_picture] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
+    }
 }
 
 - (instancetype)initWithModel:(ABCFuckModel *)model {
