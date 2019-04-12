@@ -19,7 +19,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.0</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.5</string>
+	<string>1.0.6</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MOBAppKey</key>
@@ -32,13 +32,13 @@
 		<true/>
 	</dict>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>为了正常使用本应用，请允许使用定位功能</string>
+	<string>为了正常获取您拍摄的菜谱的位置，请允许使用定位功能</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>为了正常使用本应用，请允许在您使用过程中使用定位功能</string>
+	<string>为了正常获取您拍摄的菜谱的位置，请允许在您使用过程中使用定位功能</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>为了正常使用本应用，请允许使用相册功能</string>
+	<string>为了正常上传您的菜谱，请允许使用相册功能</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>为了正常使用本应用，请允许使用相册功能</string>
+	<string>为了正常上传您的菜谱，请允许使用相册功能</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
