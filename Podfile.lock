@@ -14,16 +14,6 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - AVOSCloud (11.5.1)
-  - AVOSCloudIM (11.5.1):
-    - AVOSCloud (= 11.5.1)
-    - AVOSCloudIM/_ARC (= 11.5.1)
-    - AVOSCloudIM/_NOARC (= 11.5.1)
-  - AVOSCloudIM/_ARC (11.5.1):
-    - AVOSCloud (= 11.5.1)
-    - AVOSCloudIM/_NOARC (= 11.5.1)
-  - AVOSCloudIM/_NOARC (11.5.1):
-    - AVOSCloud (= 11.5.1)
   - Bugly (2.5.0)
   - CocoaLumberjack (3.0.0):
     - CocoaLumberjack/Default (= 3.0.0)
@@ -557,8 +547,6 @@ PODS:
     - YYImage
 
 DEPENDENCIES:
-  - AVOSCloud
-  - AVOSCloudIM
   - Bugly
   - CocoaLumberjack (~> 3.0.0)
   - CTAssetsPickerController (~> 3.3.0)
@@ -593,8 +581,6 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
-    - AVOSCloud
-    - AVOSCloudIM
     - Bugly
     - CocoaLumberjack
     - CTAssetsPickerController
@@ -640,8 +626,6 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  AVOSCloud: 3a337ec2290fe3b4411cd4098895323bc5a1133c
-  AVOSCloudIM: dd3ce21e697dd8af78645cee27c31d0e29121f14
   Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
   CocoaLumberjack: c823149bccc5519a9447aeb433be7b1212a7d6a5
   CTAssetsPickerController: b1d1d50ab87cf6b8b13531de5f4530482e7e53ed
@@ -685,6 +669,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 373beb20167fd73011fac052ac53838263ed1353
+PODFILE CHECKSUM: b2d991832d0d1a665202e12c47af4b5a3f3093f2
 
 COCOAPODS: 1.6.1
