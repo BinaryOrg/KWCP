@@ -35,6 +35,10 @@
         self.dateLabel.font = [UIFont systemFontOfSize:13];
         self.dateLabel.textColor = [UIColor zdd_grayColor];
         
+        self.dotButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [self.dotButton setImage:[UIImage imageNamed:@"fav_edit_22x22_"] forState:(UIControlStateNormal)];
+        self.dotButton.frame = CGRectMake(SCREENWIDTH - 20 - 40, MinY(self.avatarImageView), 40, 40);
+        [self.contentView addSubview:self.dotButton];
         
         self.summaryLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.avatarImageView.frame)+10, CGRectGetMaxY(self.dateLabel.frame) + 5, SCREENWIDTH - 20 - 80, 50)];
         self.summaryLabel.numberOfLines = 0;

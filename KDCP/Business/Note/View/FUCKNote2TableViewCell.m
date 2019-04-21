@@ -28,6 +28,10 @@
         //        UILabel *lineLabel = [[UILabel alloc] initWithFrame:CGRectMake(27, 15, 1.5, 20)];
         //        lineLabel.backgroundColor = [UIColor zdd_yellowColor];
         //        [self.contentView addSubview:lineLabel];
+        self.dotButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [self.dotButton setImage:[UIImage imageNamed:@"fav_edit_22x22_"] forState:(UIControlStateNormal)];
+        self.dotButton.frame = CGRectMake(SCREENWIDTH - 20 - 40, MinY(self.avatarImageView), 40, 40);
+        [self.contentView addSubview:self.dotButton];
         
         self.dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.avatarImageView.frame)+10, CGRectGetMaxY(self.nameLabel.frame), 300, 30)];
         [self.contentView addSubview:self.dateLabel];
