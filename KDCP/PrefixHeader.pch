@@ -16,7 +16,7 @@
 #import "NSMutableAttributedString+Chain.h"
 #import "GODUserTool.h"
 
-
+#import <QMUIKit/QMUIKit.h>
 #import <Masonry.h>
 #import <UIColor+QMUI.h>
 #import <YYWebImage/YYWebImage.h>

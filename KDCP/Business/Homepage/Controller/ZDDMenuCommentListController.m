@@ -208,7 +208,7 @@
     UIAlertAction *a3 = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
     }];
     
-    [sheet addAction:a1];
+//    [sheet addAction:a1];
     [sheet addAction:a2];
     [sheet addAction:a3];
     [self presentViewController:sheet animated:YES completion:nil];
